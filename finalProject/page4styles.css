@@ -1,0 +1,123 @@
+            body{
+            background: #1D1E20;
+            font-family: Lato, Helvetica nueu, arial, sans-serif;
+            /*margin-top:20px;*/
+            }
+            
+            #header{
+                position: fixed;
+                top:0%;
+                left:0%;
+                background: white;
+                z-index:2;
+                width: 800px;
+                height: 10%;
+            }
+            
+            #keep.svg{
+                position: fixed;
+            }
+            
+            div.heading2{
+                /*position: absolute;*/
+                margin-top:30px;
+                margin-left:5%;
+                font-family: Lato;
+                color: #efefef;
+                font-weight: 500;
+                font-size: 12;
+                text-align: center;
+                text-transform: uppercase;
+            }
+            
+            text.labels{
+                text-align: center;
+                letter-spacing: 0.5px;
+                font-family: 'lato';
+                color: #efefef;
+                font-weight: 400;
+                font-size: 14px;
+            }
+  
+             div.tooltip {	
+                position: absolute;	
+                text-align: center;
+                width: 100px;					
+                height: 95px;					
+                padding: 5px;
+                font: 12px sans-serif;
+                font-family: 'Lato', sans-serif;
+                font-weight: bold;
+                background: snow;	
+                border: 0px;		
+                border-radius: 2px;
+                line-height: 14px;
+                visibility: hidden;
+                color: 'black';
+             }
+             
+        #urbtn4{
+            position: absolute;
+            background: #191a1a;
+            z-index: 0;
+            left: 47%;
+            top: 9%;
+            border: 1px solid darkgray;
+            color: lightgray;
+            text-align: center;
+            width: 5%;
+            height: 3.5%;
+            font-size: 14px;
+        }
+        
+        #rubtn4{
+            position: absolute;
+            background: #191a1a;
+            z-index: 0;
+            left: 52%;
+            top: 9%;
+            border: 1px solid darkgray;
+            color: lightgray;
+            text-align: center;
+            width: 5%;
+            height: 3.5%;
+            font-size: 14px;
+        }
+        
+        #rubtn4:hover , #urbtn4:hover{
+            background: #efefef;
+            opacity: 0.8;
+            color: black;
+            font-weight: bold;
+            border-color: transparent;
+        }
+        
+           .leftlabel{
+                z-index:1;
+                font-family: Lato;
+                color: #efefef;
+                font-weight: 500;
+                font-size: 12;
+            }
+            
+            .rightlabel{
+                z-index:1;
+                font-family: Lato;
+                color: #efefef;
+                font-weight: 500;
+                font-size: 12;
+            }
+           
+           .conclusion{
+               bottom: 0;
+               top: 80%;
+               font-family: Lato, Helvetica nueu, arial, sans-serif;
+               font-size: 18px;
+           }
+           
+           .subLabel{
+               font-size: 12px;
+               font-family: Lato, Helvetica nueu, arial, sans-serif;
+           }
+       
+       

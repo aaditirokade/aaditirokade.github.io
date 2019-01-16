@@ -1,0 +1,377 @@
+body {
+        
+        	font-family: Lato, Helvetica nueu, arial, sans-serif;
+
+        }
+        
+        body#detail {
+            overflow-x: hidden;
+        }
+        
+        
+        
+        #map {
+          position:fixed;
+          width: 50%;
+          height: 100%;
+          margin: auto auto;
+        }
+        #map2 {
+          position:fixed;
+          left: 50%;
+          width: 50%;
+          height: 100%;
+          margin: auto auto;
+          transition: left .5s ease;
+        }
+        #detail #map2 {
+            left: 0%;
+        }
+        
+        svg {
+          position: absolute;
+          top:0;
+          bottom:0;
+          width: 100%;
+          height: 100%;
+        }
+         svg2 {
+          position: absolute;
+          top:0;
+          bottom:0;
+          width: 100%;
+          height: 100%;
+        }
+        .hidden {
+        	display: none;
+        }
+        text {
+            transition: fill-opacity 0.5s;
+            font-size: 12pt;
+        }
+        
+        #label1{
+            position: absolute;
+            z-index: 0;
+            left:38%;
+            top:10%;
+            font-size: 14px;
+            color: #efefef;
+        }
+        
+        #labell{
+            background:rgba(160,160,255,0.2);
+            /*border-bottom: solid;*/
+            /*border-width: 0.25px;*/
+            position: absolute;
+            z-index: 1;
+            left:20%;
+            top:5%;
+            font-size: 14px;
+            color: #efefef;
+            text-transform: uppercase;
+        }
+        
+        #label2 {
+            position: absolute;
+            z-index: 1;
+            left:35%;
+            top:10%;
+            font-family: Lato;
+            font-size: 14px;
+            color: #efefef;
+        
+        }
+        
+        #label3 {
+            position: fixed;
+            z-index: 0;
+            left:10%;
+            top:10%;
+            font-family: Lato;
+            font-size: 16px;
+            color: #efefef;
+            stroke-width: 2;
+        }
+   
+             
+             div.tooltip {	
+                position: absolute;	
+                text-align: center;
+                width: 130px;					
+                height: 60px;					
+                padding: 5px;
+                font: 12px sans-serif;
+                font-family: 'Lato', sans-serif;
+                font-weight: bold;
+                background: snow;	
+                border: 0px;		
+                border-radius: 2px;
+                line-height: 14px;
+                visibility: hidden;
+                color: 'black';
+                text-align: !important;
+             }
+             
+        .line1 {
+            fill: none;
+            /*stroke: red;*/
+            stroke: #e49307;
+            stroke-width: 1;
+            }
+            
+        .line2 {
+            fill: none;
+            /*stroke: blue;*/
+            stroke: #1c91d0;
+            stroke-width: 1;
+            }
+            
+        .line3 {
+            fill: none;
+            stroke: blue;
+            stroke: #ec5750;
+            stroke-width: 1;
+            }
+            
+        .overlay {
+            /*position: absolute;*/
+            left: 50%;
+            width: 50%;
+            height: 1500px;
+            margin: auto auto;
+            /*color: #1D1E20;*/
+            /*background-color: #1D1E20;*/
+            overflow-y: scroll;
+            /*pointer-events: all;*/
+            /*left:0;*/
+        }
+        
+        #overlay{
+            /*position: absolute;*/
+            /*left: 50%;*/
+            width: 100%;
+            height: 1500px;
+            background-color: #1D1E20;
+            margin: auto auto;
+            color: #1D1E20;
+            overflow-y: scroll;
+            /*pointer-events: all;*/
+            /*left:0;*/
+        
+            
+        }
+
+
+        .dot , .dot3{
+            fill: #e49307;
+            /*fill: red;*/
+            /*stroke: #fff;*/
+        }
+        
+        .dot2 , .dot4 {
+            /*fill: blue;*/
+            fill: #1c91d0;
+            /*stroke: #fff;*/
+        }
+             
+        .this{
+           text-align: center;
+        }
+        
+        .select{
+        z-index: 9999;
+        left: 90%;
+        }
+        
+        
+        /* button1 */
+        #urbtn1, #urbtn2{
+            position: absolute;
+            background: #191a1a;
+            z-index: 0;
+            left: 38%;
+            top: 15%;
+            border: 1px solid darkgray;
+            color: lightgray;
+            text-align: center;
+            width: 10%;
+            height: 3.5%;
+            font-size: 12px;
+        }
+        
+        #rubtn1 , #rubtn2{
+            position: absolute;
+            background: #191a1a;
+            z-index: 0;
+            left: 48%;
+            top: 15%;
+            border: 1px solid darkgray;
+            color: lightgray;
+            text-align: center;
+            width: 10%;
+            height: 3.5%;
+            font-size: 12px;
+        }
+        
+        
+        #rubtn1:hover , #urbtn1:hover, #rubtn2:hover , #urbtn2:hover , #rubtn1:focus , #urbtn1:focus, #rubtn2:focus , #urbtn2:focus
+        {
+            background: #efefef;
+            opacity: 0.8;
+            color: black;
+            font-weight: bold;
+            border-color: transparent;
+        }
+        
+        
+        
+        .xlabels{
+            color: white;
+            stroke: white;
+            /*font-weight:bold;*/
+            font-size: 14px;
+            font-family: Lato;
+            
+        }
+        
+        .dashed,.dashed2{
+            /*color: white;*/
+            stroke: dimgray;
+            stroke-dasharray: 10px;
+            
+        }
+        
+          svg#areasvg { 
+         
+            fill: #e49307;
+            /*fill-opacity: 0.35;*/
+            height: 1500px;
+            text-align: center;
+            
+        }
+        
+        .area { 
+         
+            fill: #e49307;
+            fill-opacity: 0.35;
+            height:1500;
+            stroke-width: 2px;
+        }
+        
+        .area2 { 
+         
+            fill: #1c91d0;
+            fill-opacity: 0.35;
+            font-size: 10px;
+            stroke-width: 2px;
+            
+        }
+        
+        
+        .area3 { 
+         
+            fill: #EC5750;
+            fill-opacity: 0.35;
+            font-size: 10px;
+            stroke-width: 2px;
+            
+        }
+        
+        #chart{
+            position: absolute;
+            padding-left:60px;
+            top: 40%;
+            font-size: 10px;
+        }
+        
+        .axis path, .axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+#linePlot{
+    height:1500px;
+}
+
+.tick{
+    
+    color: #efefef;
+    font-size: smaller;
+
+}
+
+/*grid{*/
+/*    position:absolute;*/
+/*    z-index: 90;*/
+/*    stroke: #efefef 0.5;*/
+/*}*/
+
+.grid path {
+  stroke-width: 0;
+}
+
+.grid .tick line {
+  stroke: #9FAAAE;
+  stroke-opacity: 0.3;
+}
+
+text.label {
+  font-size: 12px;
+  font-weight: 400;
+  fill: #efefef;
+  font-size: 12px; 
+}
+
+text#countryName{
+    text-align: center;
+}
+
+/*.footer {*/
+   /*position: fixed;*/
+   /*left: 0;*/
+   /*bottom: 0;*/
+   
+/*   bottom: 0%;*/
+/*   background-color: #111;*/
+   /*color: #efefef;*/
+   /*text-align: left;*/
+   /*padding-left: 25px;*/
+   /*z-index: 3;*/
+/*}*/
+
+.footer {
+  background-color: #1D1E24;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+
+   font-size: 10px;
+
+}
+
+    .footer text{
+            color: #cecece;
+            margin-left: 20px;
+            font-size: 12px;
+
+    }
+
+        a{
+            color: white;
+            
+            margin-left: 20px;
+            font-size: 10px;
+            text-decoration: underline;
+        }
+        
+a:link {
+  color: red;
+}
+
+a:hover {
+  color: hotpink;
+}

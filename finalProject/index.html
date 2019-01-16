@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <!--<title>MapboxGL & D3 geo</title>-->
+    
+    <!--d3js-->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="https://d3js.org/d3-axis.v1.min.js"></script>
+    
+   <!--MAPBOX JS-->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.50.0/mapbox-gl.css' rel='stylesheet' />
+    
+   <!--LATO FONT-->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+    
+    <!--CSS-->
+    <link rel='stylesheet' href='styles.css'>
+    
+            
+</head>
+
+<body>
+    
+    <div id="map"></div>
+    <div id="map2"></div>
+    <div id="overlay"></div>
+    <script src="script.js"></script>
+    <script src="plot.js"></script>
+    
+    <!--<div class="footer">-->
+    <!--            <svg id="footer "width="100%" height="30%">-->
+            
+    <!--               LINK TO DATASETS -->
+    <!--                <a href="">-->
+    <!--                  <text x="10" y="20" fill="#fff8dc" href=""> [dataset] </text>-->
+    <!--                </a>-->
+            
+    <!--                 LEGENDS -->
+    <!--               <text x="90" y="20" fill="#fff8dc"> dist (mag +/- 0.1) </text>-->
+    <!--               <line x1="205" y1="15" x2="245" y2="15" style="stroke:#AACC00;stroke-width:2" />-->
+            
+    <!--               <text x="285" y="20" fill="#fff8dc"> dist (depth +/- 0.5) </text>-->
+    <!--               <line x1="410" y1="15" x2="450" y2="15" style="stroke:#00D5FF;stroke-width:2" />-->
+            
+    <!--          </svg>-->
+    <!--      </div>-->
+    
+    
+    
+    <div class="footer">
+       <text> data: </text>
+          <a href="https://datacatalog.worldbank.org/dataset/sustainable-energy-all"> 1</a>
+            <a href="https://data.worldbank.org/indicator/SP.URB.TOTL"> 2</a>
+            <a href="http://dataportal.opendataforafrica.org/search?query=net%20migration&source=HomePage"> 3</a>
+       <svg> 
+          <rect class= 'legend1' x='860px' y='5px' width='8px' height='8px' style="fill:#e49307; opacity:0.7;"> </rect>
+          <text class= 'legend1' x='875px' y='13px' style="fill:#cecece;"> % access to electricity</text>
+       
+          <rect class= 'legend1' x='1010px' y='5px' width='8px' height='8px' style="fill:#1c91d0; opacity:0.7;"> </rect>
+          <text class= 'legend1' x='1025px' y='13px' style="fill:#cecece;"> % population</text>
+          
+          <rect class= 'legend1' x='1110px' y='5px' width='8px' height='8px' style="fill:#EC5750; opacity:0.7;"> </rect>
+          <text class= 'legend1' x='1125px' y='13px' style="fill:#cecece;"> net migration rate</text>
+       </svg>
+    </div>
+    
+</body>
