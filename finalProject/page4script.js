@@ -20,7 +20,7 @@
                 // label.append('text').attr('x','3%').attr('y','70%').attr('class','subLabel').text('COUNTRY CODE').style('fill','white').style('font-size','12px')
                 
                 
-                label.append('a').attr("xlink:href", "https://htmlpreview.github.io/?https://github.com/aaditirokade/major_studio_1/blob/master/finalProject/index.html")
+                label.append('a').attr("xlink:href", "https://aaditirokade.github.io/finalProject")
                     .append('text').attr('x','5%').attr('y','10%').text('HOME').attr('fill','#efefef')
                      .style('font-weight','bold').style('text-decoration','underline').style("font-size", "12px").style("font-family", "Lato")
 
