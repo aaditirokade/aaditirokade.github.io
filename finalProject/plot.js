@@ -144,7 +144,7 @@ var svg3 = d3.select("#overlay").append("svg").attr('id','linePlot')
       
       
     // VIEW ALL LINK   
-    svg3.append('a').attr("xlink:href", "https://htmlpreview.github.io/?https://github.com/aaditirokade/major_studio_1/blob/master/finalProject/page3index.html")
+    svg3.append('a').attr("xlink:href", "https://aaditirokade.github.io/finalProject/page3index.html")
       .append('text').attr('x','600').attr('y','70').text('VIEW ALL').attr('fill','#efefef')
       .style('font-weight','bold').style('text-decoration','underline').style("font-size", "12px").style("font-family", "Lato")
       
@@ -423,7 +423,7 @@ svg3.selectAll(".dot4").data(popGapData).enter().append("circle").attr("class", 
       
       
                 // VIEW ALL LINK   
-                svg.append('g').append('a').attr("xlink:href", "https://htmlpreview.github.io/?https://github.com/aaditirokade/major_studio_1/blob/master/finalProject/page3index.html")
+                svg.append('g').append('a').attr("xlink:href", "https://aaditirokade.github.io/finalProject/page3index.html")
                   .append('text').attr('x','600').attr('y','80').text('VIEW ALL').attr('fill','#efefef')
                   .style('font-weight','bold').style('text-decoration','underline').style("font-size", "10px").style("font-family", "Lato")
       
