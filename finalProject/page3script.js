@@ -55,11 +55,11 @@
                 label.append('rect').attr('x','74.5%').attr('y','75%').attr('width','12').attr('height','12').attr('fill','#ffe168')
                 label.append('text').attr('x','76%').attr('y','82%').text('2012').style('fill','white').style('font-size','12px').attr('font-family','Lato')
                 
-                label.append('a').attr("xlink:href", "https://htmlpreview.github.io/?https://github.com/aaditirokade/major_studio_1/blob/master/finalProject/page4index.html")
+                label.append('a').attr("xlink:href", "https://aaditirokade.github.io/finalProject/page4index.html")
                     .append('text').attr('x','87%').attr('y','10%').text('NET MIGRATION').attr('fill','#efefef')
                      .style('font-weight','bold').style('text-decoration','underline').style("font-size", "12px").style("font-family", "Lato")
                      
-                label.append('a').attr("xlink:href", "https://htmlpreview.github.io/?https://github.com/aaditirokade/major_studio_1/blob/master/finalProject/index.html")
+                label.append('a').attr("xlink:href", "https://aaditirokade.github.io/finalProject/index.html")
                     .append('text').attr('x','5%').attr('y','10%').text('HOME').attr('fill','#efefef')
                      .style('font-weight','bold').style('text-decoration','underline').style("font-size", "12px").style("font-family", "Lato")
               
