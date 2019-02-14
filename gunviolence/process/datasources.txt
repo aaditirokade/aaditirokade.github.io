@@ -1,0 +1,60 @@
+#
+# List of URLs pointing to publicly accessible data (including a brief description of the subject matter & data format)
+#
+# For example, the earthquake feeds we've been using could be summarized as:
+#   Description: Realtime feeds of recent earthquake times, locations, and magnitudes
+#   Provider: the US Geological Survey
+#   Format: multiple CSV files with different time/magnitude windows
+#   URL: https://earthquake.usgs.gov/earthquakes/feed/v1.0/csv.php
+
+
+Description: On time performance- flight delays at a glance
+Provider: Bureau of transportation statistics (US Department of transportation)
+Format: CSV
+URL:https://www.transtats.bts.gov/HomeDrillChart.asp , https://transtats.bts.gov/DL_SelectFields.asp
+
+Description: Crude oil vs Bitcoin
+Provider: https://coinmetrics.io/
+Format: CSV/ JSON/ EXCEL
+URL: https://public.opendatasoft.com/explore/dataset/bitcoin/information/ , https://public.opendatasoft.com/explore/dataset/bitcoin/information/
+
+Description: Mental health in Tech : gauging how mental health is viewed within the tech/IT workplace, and the prevalence of certain mental health disorders within the tech industry
+Provider: https://osmihelp.org/
+Format: CSV
+URL: https://data.world/kittybot/osmi-mental-health-tech-2016/workspace/file?filename=mental-heath-in-tech-2016_20161114.csv+%281%29%2Fmental-heath-in-tech-2016_20161114.csv
+
+Description: Food and Nutrition
+Provider: The USDA National Nutrient Database for Standard Reference (SR)
+Format: Excel
+URL: https://data.world/awram/food-nutritional-values
+
+Description: Uranium: an extension of the project initiated in assignment2
+Provider: Energy Information Administration (EIA)
+Format: PDF
+URL:https://www.eia.gov/uranium/marketing/archive/047892.pdf
+
+Description: Gun Violence Data (geolocation based)
+Provider: https://www.gunviolencearchive.org/
+Format: CSV
+URL: https://www.kaggle.com/jameslko/gun-violence-data
+
+Description: Happy DB
+Provider: crowd-sourced via Amazon’s Mechanical Turk
+Format: CSV
+URL: https://www.kaggle.com/ritresearch/happydb
+
+Description: Most Popular Quotes on Goodreads
+Provider: Goodreads
+Format: CSV
+URL: https://www.kaggle.com/pramud/most-popular-quotes-on-goodreads
+
+Description: Nobel prize winners (1901 through October 2016)
+Provider: Multiple contributors 
+Format: CSV
+URL: https://data.world/sya/nobel-prize-winners
+
+Description: IMDB 5000 Movie Dataset
+Provider: Chuan Sun (@sundeepblue on Github) scraped tons of metadata using a combination of www.the-numbers.com, IMDB.com, and a Python library called "scrapy".
+Format: CSV / JSON
+URL: https://data.world/popculture/imdb-5000-movie-dataset
+

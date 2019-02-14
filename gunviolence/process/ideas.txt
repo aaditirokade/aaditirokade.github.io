@@ -1,0 +1,58 @@
+Final project ideas:
+
+1. Flight performance: The U.S. Department of Transportation's (DOT) Bureau of Transportation Statistics tracks the on-time performance of domestic flights operated by large air carriers. Summary information on the number of on-time, delayed, canceled, and diverted flights is published in DOT's monthly Air Travel Consumer Report and in this dataset of 2015 flight delays and cancellations.
+https://transtats.bts.gov/DL_SelectFields.asp
+(United States Department of Transportation)  
+
+
+2. Bitcoin
+
+Transactions per day: 
+(open data soft) https://public.opendatasoft.com/explore/dataset/bitcoin-confirmed-transactions-per-day/table/?dataChart=eyJxdWVyaWVzIjpbeyJjaGFydHMiOlt7InR5cGUiOiJsaW5lIiwiZnVuYyI6IkFWRyIsInlBeGlzIjoidHJhbnNhY3Rpb25zIiwic2NpZW50aWZpY0Rpc3BsYXkiOnRydWUsImNvbG9yIjoiIzJDM0Y1NiJ9XSwieEF4aXMiOiJkYXRlIiwibWF4cG9pbnRzIjoiIiwidGltZXNjYWxlIjoiZGF5Iiwic29ydCI6IiIsImNvbmZpZyI6eyJkYXRhc2V0IjoiYml0Y29pbi1jb25maXJtZWQtdHJhbnNhY3Rpb25zLXBlci1kYXkiLCJvcHRpb25zIjp7fX19XSwiZGlzcGxheUxlZ2VuZCI6dHJ1ZSwiYWxpZ25Nb250aCI6dHJ1ZX0%3D
+
+2. Bitcoin (2013 to 2017)https://public.opendatasoft.com/explore/dataset/bitcoin/information/Investing in oil: https://public.opendatasoft.com/explore/dataset/bitcoin/information/ Comparison of crude oil spot day on a particular day vs bitcoin price(24hr average)
+Ask, Bid, Last Price, Total volume
+Which one is better to invest in, Bitcoin or oil? Is there a correlation between the Bitcoin price and Oil price?
+Can The Bitcoin Become The Global Currency For Oil?
+
+
+3. Mental health in Tech 
+(OSMI) Open Sourcing Mental Illness is a non-profit, 501(c)(3) corporation dedicated to raising awareness, educating, and providing resources to support mental wellness in the tech and open source communities.
+
+Data : 2016 : OSMI Mental Health in Tech Survey. We are interested in gauging how mental health is viewed within the tech/IT workplace, and the prevalence of certain mental health disorders within the tech industry.
+https://data.world/kittybot/osmi-mental-health-tech-2016/workspace/file?filename=mental-heath-in-tech-2016_20161114.csv+%281%29%2Fmental-heath-in-tech-2016_20161114.csv (the survey was (is) primarily distributed via Twitter. It also is mentioned in talks we give at tech conferences. It was targeted in this sense. As this was very much an opt-in survey, some self-selection bias is probably present (those who are more interested in mental health issues for one reason or another are more likely to respond)
+https://osmihelp.org/
+
+
+4. Food and Nutrition
+food nutritional value: https://data.world/awram/food-nutritional-values
+The USDA National Nutrient Database for Standard Reference (SR) is the major source of food composition data in the United States.(last updated in 2015)
+
+
+5. Extension of the project initiated in assignment 2 
+(https://github.com/samizdatco/dvia-2018/tree/master/2.mapping-quantities) 
+Uranium:
+Import exports and production of uranium trade
+Observe trends over the years
+Countries involved in the trade on a particular year, prices etc
+
+
+6. Gun Violence Data 
+https://www.kaggle.com/jameslko/gun-violence-data Geolocation based dataset-  date and time of the crime, address, number of guns involved / gun type, people injured/killed, country, district etc
+
+
+7. Happy DB 
+https://www.kaggle.com/ritresearch/happydb a corpus of more than 100,000 happy moments crowd-sourced via  Amazon’s Mechanical Turk. The goal of the corpus is to advance the understanding of the causes of happiness through text-based reflection.
+
+
+8. Most popular quotes on Goodreads:
+https://www.kaggle.com/pramud/most-popular-quotes-on-goodreads
+
+
+9. Nobel prize winners: 
+https://data.world/sya/nobel-prize-winners This dataset shows all Nobel Prize Laureates from the award's inception in 1901 through current day (October 2016). Longer span of duration and data is distributed among many categories
+
+
+10. 50)0 movies: 
+https://data.world/popculture/imdb-5000-movie-dataset 100 years in 66 countries (28 variables)
+100 years in 66 countries (28 variables)

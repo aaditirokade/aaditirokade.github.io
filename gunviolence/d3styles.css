@@ -1,0 +1,323 @@
+
+body{
+  background-color: #eef4ea;
+  font-family: Lato, Helvetica, Arial,sans-serif;
+  margin-top: 40px;
+
+}
+body text{
+  color: #222;
+}
+
+#header{
+
+  margin-left: 40px;
+  color: #222;
+  font-size: 28px;
+  font-family: Lato;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  line-height: 30px;
+  padding-bottom: 40;
+}
+
+
+.labels{
+  font-family: lato, helvetica nueu, arial, sans-serif;
+}
+
+
+div#container, div#container_injured,  div#container_gender, div#container_age{
+  width: 100%;
+  height:70%;
+  margin-left: 15%;
+  margin-top: 5%;
+}
+
+div#container2 , div#container3, div#container_tree {
+  width: 100%;
+  height:100%;
+  margin-left: 10%;
+  margin-top: 5%;
+}
+
+
+
+div#container3{
+  width: 100%;
+  height:100%;
+  margin-left: 10%;
+  margin-top: 5%;
+
+}
+
+
+#svg1 , #svg2 , #svg3 , #svg_injured, #svg_gender, #svg_age, #svg_tag{
+  margin-top: 5%;
+  margin-left: 30px;
+  width: 100%;
+  height: 100%;
+}
+
+text.value_child{
+
+  font-size: 8px;
+  fill: #222;
+  stroke: #222;
+  stroke-width: 0.7;
+
+}
+
+.bar {fill: #9f3434;}
+.bar2 {fill: #9c3d7c;}
+.bar3 {fill: #39245c;}
+.bar_injured {fill: #39245c;}
+.bar_killed {fill: #f4a475;}
+.bar_gender {fill: #312867;}
+.bar_female {fill: #d75b68;}
+.bar_age {fill: #8a0e64;}
+.bar_teen {fill: #f5633a;}
+
+text {
+  font-size: 12px;
+  fill: #222;
+}
+
+path {
+  stroke: gray;
+}
+
+line {
+  stroke: gray;
+}
+
+line2 {
+  stroke: gray;
+}
+
+line#limit , line#limit2 , line#limit3, line#limit_injured, line#limit_killed, line#limit_gender, line#limit_female,
+line#limit_age, line#limit_teen, line#limit_child{
+  stroke: #121135;
+  stroke-width: 0.75;
+  stroke-dasharray: 12 6;
+}
+
+
+.grid path {
+  stroke-width: 0;
+}
+
+.grid .tick line {
+  stroke: #9FAAAE;
+  stroke-opacity: 0.3;
+}
+
+text.divergence {
+  font-size: 14px;
+  /* fill: #2F4A6D; */
+  fill: #222;
+}
+
+text.value {
+  font-size: 8px;
+  color: #efefef;
+  stroke: beige;
+  stroke-width: 0.7;
+}
+
+text.title {
+  font-size: 22px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-family: Lato, Helvetica, Arial,sans-serif;
+}
+
+text.label {
+  font-size: 14px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
+text.source {
+  font-size: 10px;
+}
+
+#mapid {
+  /* position: absolute; */
+  /* z-index:1; */
+  margin-left: 15%;
+  margin-top: 3%;
+  width: 100%;
+  height: 80%;
+
+}
+
+#map{
+  margin-left: 15%;
+  margin-top: 3%;
+  width: 1000px;
+  height: 500px;
+
+}
+
+
+.states{
+  fill: #faf7c9;
+}
+path:hover {
+	fill-opacity: .7;
+}
+.state-borders {
+  fill: none;
+  stroke: #000;
+  stroke-width: 0.5px;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  pointer-events: none;
+}
+
+div.tooltip {
+          position: absolute;
+          text-align: center;
+          width: 80px;
+          height: 14px;
+          padding: 2px;
+          font: 12px sans-serif;
+          background: #fff;
+          border: 0px;
+          pointer-events: none;
+      }
+
+#radviz{
+   color: #123456;
+   height: 600px;
+}
+
+
+#svg3_injured {
+
+  width: 100%;
+  height: 100%;
+}
+
+
+#svg_tree{
+  width: 100%;
+  height: 100%;
+}
+a:link, a:visited {
+  color: #777;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #666;
+}
+
+blockquote {
+  margin: 0;
+}
+
+blockquote:before {
+  content: "“";
+  position: absolute;
+  left: -.4em;
+}
+
+blockquote:after {
+  content: "”";
+  position: absolute;
+}
+
+body > ul {
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 64px;
+}
+
+h1, h2, h3 {
+  font-weight: inherit;
+  margin: 0;
+}
+
+h2, h3 {
+  text-align: right;
+  font-size: inherit;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+h2 {
+  font-size: 24px;
+  position: absolute;
+}
+
+h3 {
+  bottom: -20px;
+  font-size: 18px;
+}
+
+.invert {
+  background: #1f1f1f;
+  color: #dcdccc;
+}
+
+.invert h2, .invert h3 {
+  color: #7f9f7f;
+}
+
+.string, .regexp {
+  color: #f39;
+}
+
+.keyword {
+  color: #00c;
+}
+
+.comment {
+  color: #777;
+  font-style: oblique;
+}
+
+.number {
+  color: #369;
+}
+
+.class, .special {
+  color: #1181B8;
+}
+
+/*---------*/
+.pie {
+  margin: 20px;
+}
+
+.pie text {
+  font-family: Helvetica, Arial, sans-serif;
+  fill: #312867;
+
+}
+
+g text {
+  font-family: Helvetica, Arial, sans-serif;
+  fill: #312867;
+  font-size: 18;
+
+}
+
+.pie .name-text{
+  font-size: 1em;
+}
+
+.pie .value-text{
+  font-size: 3em;
+}
+
+#svg_chart{
+  margin-left:20%;
+}

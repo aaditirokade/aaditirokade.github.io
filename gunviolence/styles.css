@@ -1,0 +1,17 @@
+
+body{
+  background-color: #222;
+}
+
+#header{
+  margin-top: 40px;
+  margin-left: 40px;
+  color: #efefef;
+  font-size: 28px;
+  font-family: Lato;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: 600;
+  line-height: 30px;
+  padding-bottom: 40;
+}

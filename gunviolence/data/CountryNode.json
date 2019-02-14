@@ -1,0 +1,201 @@
+{
+  "results": [
+    {
+      "country": "Alabama",
+      "total_16": 1309
+    },
+    {
+      "country": "Alaska",
+      "total_16": 445
+    },
+    {
+      "country": "Arizona",
+      "total_16": 554
+    },
+    {
+      "country": "Arkansas",
+      "total_16": 720
+    },
+    {
+      "country": "California",
+      "total_16": 3617
+    },
+    {
+      "country": "Colorado",
+      "total_16": 812
+    },
+    {
+      "country": "Connecticut",
+      "total_16": 803
+    },
+    {
+      "country": "Delaware",
+      "total_16": 328
+    },
+    {
+      "country": "District of Columbia",
+      "total_16": 497
+    },
+    {
+      "country": "Florida",
+      "total_16": 4201
+    },
+    {
+      "country": "Georgia",
+      "total_16": 1708
+    },
+    {
+      "country": "Hawaii",
+      "total_16": 79
+    },
+    {
+      "country": "Idaho",
+      "total_16": 155
+    },
+    {
+      "country": "Illinois",
+      "total_16": 5055
+    },
+    {
+      "country": "Indiana",
+      "total_16": 1511
+    },
+    {
+      "country": "Iowa",
+      "total_16": 659
+    },
+    {
+      "country": "Kansas",
+      "total_16": 572
+    },
+    {
+      "country": "Kentucky",
+      "total_16": 1021
+    },
+    {
+      "country": "Louisiana",
+      "total_16": 2070
+    },
+    {
+      "country": "Maine",
+      "total_16": 232
+
+    },
+    {
+      "country": "Maryland",
+      "total_16": 1293
+    },
+    {
+      "country": "Massachusetts",
+      "total_16": 1544
+    },
+    {
+      "country": "Michigan",
+      "total_16": 1316
+    },
+    {
+      "country": "Minnesota",
+      "total_16": 468
+    },
+    {
+      "country": "Mississippi",
+      "total_16": 852
+    },
+    {
+      "country": "Missouri",
+      "total_16": 1552
+    },
+    {
+      "country": "Montana",
+      "total_16": 162
+    },
+    {
+      "country": "Nebraska",
+      "total_16": 381
+    },
+    {
+      "country": "Nevada",
+      "total_16": 536
+    },
+    {
+      "country": "New Hampshire",
+      "total_16": 272
+    },
+    {
+      "country": "New Jersey",
+      "total_16": 1224
+    },
+    {
+      "country": "New Mexico",
+      "total_16": 399
+    },
+    {
+      "country": "New York",
+      "total_16": 2522
+    },
+    {
+      "country": "North Carolina",
+      "total_16": 2101
+    },
+    {
+      "country": "North Dakota",
+      "total_16": 150
+    },
+    {
+      "country": "Ohio",
+      "total_16": 2442
+    },
+    {
+      "country": "Oklahoma",
+      "total_16": 898
+    },
+    {
+      "country": "Oregon",
+      "total_16": 552
+    },
+    {
+      "country": "Pennsylvania",
+      "total_16": 2185
+    },
+    {
+      "country": "Rhode Island",
+      "total_16": 237
+    },
+    {
+      "country": "Tennessee",
+      "total_16": 2014
+    },
+    {
+      "country": "Texas",
+      "total_16": 3606
+    },
+    {
+      "country": "Utah",
+      "total_16": 250
+    },
+    {
+      "country": "Vermont",
+      "total_16": 84
+    },
+    {
+      "country": "Virginia",
+      "total_16": 1548
+    },
+    {
+      "country": "Washington",
+      "total_16": 768
+    },
+    {
+      "country": "West Virginia",
+      "total_16": 399
+    },
+    {
+      "country": "Wisconsin",
+      "total_16": 859
+    },
+    {
+      "country": "Wyoming",
+      "total_16": 127
+    }
+  ]
+}

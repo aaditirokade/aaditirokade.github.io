@@ -1,0 +1,219 @@
+[
+  {
+    "day": 1,
+    "killed": 73,
+    "injured": 113,
+    "guns": 262,
+    "incidents": 242
+  },
+  {
+    "day": 2,
+    "killed": 24,
+    "injured": 54,
+    "guns": 140,
+    "incidents": 109
+  },
+  {
+    "day": 3,
+    "killed": 42,
+    "injured": 58,
+    "guns": 219,
+    "incidents": 134
+  },
+  {
+    "day": 4,
+    "killed": 31,
+    "injured": 68,
+    "guns": 145,
+    "incidents": 126
+  },
+  {
+    "day": 5,
+    "killed": 42,
+    "injured": 62,
+    "guns": 148,
+    "incidents": 137
+  },
+  {
+    "day": 6,
+    "killed": 66,
+    "injured": 65,
+    "guns": 179,
+    "incidents": 150
+  },
+  {
+    "day": 7,
+    "killed": 53,
+    "injured": 91,
+    "guns": 181,
+    "incidents": 154
+  },
+  {
+    "day": 8,
+    "killed": 43,
+    "injured": 62,
+    "guns": 142,
+    "incidents": 133
+  },
+  {
+    "day": 9,
+    "killed": 37,
+    "injured": 72,
+    "guns": 194,
+    "incidents": 162
+  },
+  {
+    "day": 10,
+    "killed": 28,
+    "injured": 48,
+    "guns": 290,
+    "incidents": 149
+  },
+  {
+    "day": 11,
+    "killed": 62,
+    "injured": 102,
+    "guns": 254,
+    "incidents": 193
+  },
+  {
+    "day": 12,
+    "killed": 48,
+    "injured": 90,
+    "guns": 191,
+    "incidents": 172
+  },
+  {
+    "day": 13,
+    "killed": 39,
+    "injured": 79,
+    "guns": 212,
+    "incidents": 153
+  },
+  {
+    "day": 14,
+    "killed": 34,
+    "injured": 88,
+    "guns": 163,
+    "incidents": 152
+  },
+  {
+    "day": 15,
+    "killed": 34,
+    "injured": 81,
+    "guns": 180,
+    "incidents": 155
+  },
+  {
+    "day": 16,
+    "killed": 30,
+    "injured": 55,
+    "guns": 196,
+    "incidents": 132
+  },
+  {
+    "day": 17,
+    "killed": 41,
+    "injured": 60,
+    "guns": 214,
+    "incidents": 143
+  },
+  {
+    "day": 18,
+    "killed": 30,
+    "injured": 62,
+    "guns": 193,
+    "incidents": 149
+  },
+  {
+    "day": 19,
+    "killed": 32,
+    "injured": 49,
+    "guns": 201,
+    "incidents": 149
+  },
+  {
+    "day": 20,
+    "killed": 57,
+    "injured": 93,
+    "guns": 207,
+    "incidents": 190
+  },
+  {
+    "day": 21,
+    "killed": 44,
+    "injured": 108,
+    "guns": 199,
+    "incidents": 191
+  },
+  {
+    "day": 22,
+    "killed": 44,
+    "injured": 80,
+    "guns": 199,
+    "incidents": 145
+  },
+  {
+    "day": 23,
+    "killed": 53,
+    "injured": 83,
+    "guns": 213,
+    "incidents": 168
+  },
+  {
+    "day": 24,
+    "killed": 36,
+    "injured": 79,
+    "guns": 214,
+    "incidents": 186
+  },
+  {
+    "day": 25,
+    "killed": 42,
+    "injured": 88,
+    "guns": 227,
+    "incidents": 176
+  },
+  {
+    "day": 26,
+    "killed": 40,
+    "injured": 84,
+    "guns": 224,
+    "incidents": 187
+  },
+  {
+    "day": 27,
+    "killed": 45,
+    "injured": 100,
+    "guns": 191,
+    "incidents": 172
+  },
+  {
+    "day": 28,
+    "killed": 61,
+    "injured": 92,
+    "guns": 208,
+    "incidents": 188
+  },
+  {
+    "day": 29,
+    "killed": 34,
+    "injured": 69,
+    "guns": 183,
+    "incidents": 146
+  },
+  {
+    "day": 30,
+    "killed": 42,
+    "injured": 62,
+    "guns": 182,
+    "incidents": 137
+  },
+  {
+    "day": 31,
+    "killed": 34,
+    "injured": 28,
+    "guns": 200,
+    "incidents": 145
+  }
+]
