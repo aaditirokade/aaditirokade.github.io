@@ -9,3 +9,7 @@
 
 ### Honeywell
 1. [Distributed Data Analytics](https://nzkcd1.axshare.com/#g=1&p=flight_log)
+
+### Gaming
+1. [SkillHousie](https://aaditirokade.github.io/SkillHousie.pdf)
+
