@@ -1,0 +1,124 @@
+
+
+html, body {
+/*  padding: 20;*/
+  /* margin-top: 10; */
+  margin-left: 10;
+  margin-right: 10;
+  margin-bottom: 10;
+}
+
+/* default dimensions for the leaflet map */
+#quake-map{
+  left:0;
+  position: absolute;
+  margin-top: 10px;
+  width: 80%;
+  height: 100%;
+  z-index: 1;
+}
+
+
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #222;
+    height: 50px;
+    color: white;
+    font-size: 18px;
+    padding-left: 25px;
+    padding-top: 10px;
+    text-align: left;
+    z-index: 5;
+}
+
+.footer {
+   position: fixed;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   background-color: #222;
+   color: #efefef;
+   text-align: left;
+   padding-left: 25px;
+   z-index: 7;
+}
+
+#title{
+  position: fixed;
+  height:60px;
+  font-size: 21;
+  strokeWeight: bold;
+  color: #efefef;
+  stroke:2;
+  z-index: 6;
+  stroke-width: 2;
+  margin-left: 10px;
+  margin-top: 10px;
+  font-family: Lato;
+}
+
+/* .affix + .container-fluid {
+ padding-top: 70px;
+} */
+
+#info-pane-side{
+position: absolute;
+
+/* top: 23px; */
+right: 0;
+height: 1500px;
+/* width: 400px;
+height:1000px; */
+/* color: 'darkgray'; */
+min-width: 400px;
+/* z-index: 1; */
+/* padding: 1em; */
+background: #222;
+overflow: auto;
+z-index: 4;
+}
+
+.slidecontainer {
+margin-top:40px;
+left: 20px;
+width: 60%;
+height: 100%;
+font-family: "Lato", sans-serif;
+color: #efefef;
+stroke: 2;
+font-size: 14;
+font-weight: bold;
+}
+
+/* .slider { */
+/* -webkit-appearance: none; */
+/* width: 50%; */
+/* margin-top:20px; */
+/* height: 30px; */
+/* background: #d3d3d3; */
+/* outline: none; */
+/* opacity: 1;
+-webkit-transition: .2s;
+transition: opacity .2s;
+
+} */
+
+/* .slider:hover {
+opacity: 0.5;
+} */
+
+a { color: #fff8dc; }
+
+#slider{
+  position: fixed;
+  top: 10%;
+  z-index: 10;
+  color:#efefef;
+}
+
+#slider.label{
+  textSize: 12;
+}

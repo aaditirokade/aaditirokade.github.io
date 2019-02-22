@@ -1,0 +1,191 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <!--<link rel="stylesheet" href="lib/leaflet/leaflet.css" /> <!-- default styles -->
+
+  <!-- Leaflet CSS file-->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+
+   <!-- Make sure you put this AFTER Leaflet's CSS -->
+   <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js"
+   integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA=="
+   crossorigin=""></script>
+
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/8.2.1/nouislider.min.js"></script>
+   <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.bundle.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.3/Chart.min.js'></script>
+
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+   <!-- here map tiles -->
+   <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+   <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
+  type="text/javascript" charset="utf-8"></script>
+  <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
+  type="text/javascript" charset="utf-8"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <!-- load our dependencies and sketch file -->
+  <!-- leafletJS -->
+  <script src="lib/leaflet/leaflet.js"></script>
+
+  <!-- p5JS -->
+  <script src="lib/p5.min.js"></script>
+
+  <!-- Lodash makes JS easier by taking the hassle out of working with arrays, numbers, objects, strings etc -->
+  <script src="lib/lodash.min.js"></script>
+
+ <!-- Bundling different files (javascript or CSS) into a single file (optionally compressing it) while maintaining references and their proper ordering -->
+  <script src="lib/brewer.js"></script>
+
+  <style>
+    html, body {
+    /*  padding: 20;*/
+      margin-top: 10;
+      margin-left: 10;
+      margin-right: 10;
+      margin-bottom: 10;
+    }
+
+    /* default dimensions for the leaflet map */
+    #quake-map{
+      /* margin-top: 5; */
+      top: 0
+      left:0;
+      width: 1100px;
+      height: 600px;
+    }
+
+
+ .affix + .container-fluid {
+     padding-top: 70px;
+ }
+
+#info-pane-side{
+  position: absolute;
+  top: 23px;
+  right: 20px;
+  width: 300px;
+  height: 680px;
+  /* color: 'darkgray'; */
+  min-width: 200px;
+  z-index: 500;
+  padding: 1em;
+  background: #222;
+}
+
+.slidecontainer {
+  margin-top:40px;
+  left: 20px;
+  width: 60%;
+  font-family: "Lato", sans-serif;
+  color: #efefef;
+  stroke: 2;
+  font-size: 14;
+  font-weight: bold;
+}
+
+.slider {
+    /* -webkit-appearance: none; */
+    width: 50%;
+    /* margin-top:20px; */
+    height: 30px;
+    background: #d3d3d3;
+    /* outline: none; */
+    opacity: 1;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+
+}
+
+.slider:hover {
+    opacity: 0.5;
+}
+
+
+  </style>
+
+</head>
+<body>
+<!-- <div style="width: 640px; height: 480px" id="mapContainer"></div> -->
+
+  <!-- NAV BAR WITH TABS -->
+  <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="197">
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Seismic Events</a></li>
+      <li><a href="#">All</a></li>
+      <li id='mag'><a href="#" onclick=""> Magnitude</a></li>
+      <li><a href="#">Depth</a></li>
+      <!-- <li><a href="#">Page 3</a></li> -->
+    </ul>
+  </nav>
+
+
+ <!-- INFO PANE SIDEBAR -->
+  <div id="info-pane-side" class="leaflet-bar">
+
+    <!-- SLIDER container-->
+    <div class="slidecontainer">
+      <p>Default range slider:</p>
+      <input type="range" id="myRange" min="1" max="100" value="50">
+      <br>
+      <label id='week'> All Week </label>
+      <label id='day'> All Day </label>
+      <label id='hr'> All Hour </label>
+      <p>Value: <span id="demo"></span></p>
+
+    </div>
+    <div id='events'><svg> <text></text> <svg></div>
+
+ <!-- SLIDER script -->
+    <script>
+      var slider = document.getElementById("myRange");
+      var output = document.getElementById("demo");
+      output.innerHTML = slider.value;
+
+      slider.oninput = function() {
+        output.innerHTML = this.value;
+      }
+    </script>
+
+   <!-- GRAPH -->
+    <div id='graph'>
+      <h2></h2>
+      <!-- <canvas id="myChart" width="400" height="400" background='white'></canvas>
+      <script src='myChart.js'></script>
+      <canvas id="myChart1" width="400" height="400" background='white'></canvas>
+      <!-- <script src='myChart1.js'></script> -->
+      <!-- <script src="graph.js"></script> -->
+    </div>
+
+
+</div>
+
+
+<!-- MAP -->
+  <div id='quake-map'></div>
+
+
+  <!-- DROPDOWN -->
+  <!-- <div class="dropdown">
+  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">HTML</a></li>
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">JavaScript</a></li>
+  </ul>
+</div> -->
+
+
+
+
+  <!-- my JS code -->
+  <script src="sketch.js"></script>
+
+  <!-- p5.js will create a canvas element here at runtime -->
+</body>
+</html>
