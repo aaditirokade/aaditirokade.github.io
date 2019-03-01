@@ -12,5 +12,7 @@
 1. [Distributed Data Analytics](https://nzkcd1.axshare.com/#g=1&p=flight_log)
 
 ### Gaming
-1. [SkillHousie](https://aaditirokade.github.io/SkillHousie.pdf)
+1. [Gaming: SkillHousie](https://aaditirokade.github.io/SkillHousie.pdf)
 2. [Wayfinding in Public Hospitals](https://fetchfacilities.wordpress.com/)
+3. [Mindmapping](https://github.com/aaditirokade/thesis/blob/master/mindmap/mindmap.png)
+4. [Together App](https://github.com/aaditirokade/aaditirokade.github.io/blob/master/Together_CommunicationUXConcepts.pdf)
