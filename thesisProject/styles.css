@@ -1,0 +1,146 @@
+body {
+    font-family: Lato, Helvetica nueu, arial, sans-serif;
+    background: #071026;
+    color: #707070;
+     }
+     
+         div.tooltip {	
+                position: absolute;	
+                text-align: center;
+                width: 130px;					
+                height: 60px;					
+                padding: 5px;
+                font: 12px sans-serif;
+                font-family: 'Lato', sans-serif;
+                font-weight: bold;
+                background: snow;	
+                border: 0px;		
+                border-radius: 2px;
+                line-height: 14px;
+                visibility: hidden;
+                color: 'black';
+                text-align: '!important';
+                z-index: 9999;
+             }
+             
+
+.footer {
+  background-color: #1D1E24;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+
+   font-size: 10px;
+
+}
+
+    .footer text{
+            /*color: #cecece;*/
+            color: white;
+            margin-left: 20px;
+            font-size: 12px;
+    }
+
+#v-pills-tab{
+    text-align: right;
+    margin-top: 50%;
+}
+
+.col-4{
+    margin-top: 5%;
+}
+
+#h4, h4 {
+    font-size: 1.5rem;
+    color: #b1b1b1;
+    margin-top: 3%;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #b1b1b1;
+}
+
+.d3-tip {
+      line-height: 1;
+      font-weight: bold;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      border-radius: 2px;
+    }
+
+    /* Creates a small triangle extender for the tooltip */
+    .d3-tip:after {
+      box-sizing: border-box;
+      display: inline;
+      font-size: 10px;
+      width: 50%;
+      height: 50%;
+      line-height: 1;
+      color: lightgray;
+      position: absolute;
+      text-align: center;
+    }
+
+    /* Style northward tooltips differently */
+    .d3-tip.n:after {
+      margin: -1px 0 0 0;
+      top: 100%;
+      left: 0;
+    }
+
+div#tooltip {
+        position: absolute;
+        text-align: center;
+        width: 100px;
+        height: 40px;
+        padding: 2px;
+        font-size: 14px;
+        background: #fafad2;
+        border-radius: 2px;
+        pointer-events: none;
+        stroke: black;
+        fill: black;
+        color: black;
+    }
+    
+#heading{
+    
+    margin-left: 20%;
+     margin-top: 10%;
+    font-size: 24px;
+    color: white;
+    
+}
+
+#sidebar{
+    
+    margin-left: 5%;
+     margin-top: 30%;
+    font-size: 18px;
+    color: white;
+    
+}
+
+.sidebar{
+    
+    text-align: right;
+    
+}
+
+.aic_line {
+    fill: none;
+    stroke: #ffab00;
+    stroke-width: 2;
+}
