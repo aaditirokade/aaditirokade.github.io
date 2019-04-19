@@ -7,7 +7,9 @@ d3.json('./data/thesis_data.json').then((data) => {
     this.document.activeElement.id = '#air-india-tab';
     
     console.log(data);
-    var svg = d3.select(".col-7").append('svg').attr('width', '100%').attr('height','125%')
+    var svg = d3.select(".col-8").append('svg').attr('width', '100%').attr('height','100%')
+    var widthh = parseInt(svg.style('width'))+parseInt(svg.style('width'))/6;
+    console.log(widthh)
    
         // ------------------ highlight background ---------------------------
         // var rect = svg.append('rect').attr("x", '0%').attr('y', '0%')
@@ -21,16 +23,23 @@ d3.json('./data/thesis_data.json').then((data) => {
         //               .attr("width", dv_width/2*1.5).attr("height", dv_width/2*1.5)
        
       
-        // Set SVG
-        var base = d3.select('#base').attr("preserveAspectRatio", "xMinYMin meet")
+        // // Set SVG
+        // var base = d3.select('#base').attr('width', widthh).attr('height', widthh)
+        //                              .attr("viewBox", `0 0 ${widthh} ${widthh}`)
+        //                              .classed("svg-content", true)
+       
+         // Set SVG
+        var base = d3.select('#base').attr('width', 800).attr('height', 800)
+                                    //  .attr("viewBox", `-150 -50 1350 1350`)
                                      .attr("viewBox", `-150 -50 1350 1350`)
                                      .classed("svg-content", true)
-       
        
         // set Center of SVG
         var x = parseInt(d3.select("#base").attr("width")); 
         var y = parseInt(d3.select("#base").attr("height"));
-        var fin_x = x/2+150; 
+        // var fin_x = x/2+150; 
+        // var fin_y = y/2+150;
+          var fin_x = x/2+150; 
         var fin_y = y/2+150;
 
         var center = base.append('circle').attr('cx', fin_x).attr('cy', y/2+150).attr('r',5).attr('fill','#ffffff');
