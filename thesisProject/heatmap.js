@@ -1,12 +1,14 @@
 
-
 //Global Variables
-var svg_temp, boxwidth, canScale, tempScale, comScale, rainScale, comRateScale, svg_rain;
+var svg_temp, boxwidth, canScale, tempScale, comScale, rainScale, comRateScale, svg_rain, svg_pie, div_temp;
 
-//------------------------- DIV for TOOLTIP ------------------------
-    var div = d3.select('body').append('div').attr('class', 'tooltip');
+// //------------------------- DIV for TOOLTIP ------------------------
+var div_main = d3.select('body').append('div').attr('class', 'tooltip').attr('id','tooltip')
+.style('background','none').style('color','#efefef').style('text-align','left').style('font-weight','normal');
 
 
+
+d3.json('./data/thesis_data.json').then((pie_data) => {
 d3.json('./new/thesis_data1.json').then((data) => {
     
     
@@ -44,12 +46,7 @@ d3.json('./new/thesis_data1.json').then((data) => {
     var maxComRate = d3.max(data, function(d) { return d.com_rate; });
     comRateScale = d3.scaleLinear().domain([minComRate, maxComRate]).range([0, 200]);
     
-    // var myLabels = ["jan14", "feb14", "mar14", "apr14", "may14", "jun14", "jul14", "aug14", "sep14", "oct14", "nov14", "dec14","jan15", "feb15", "mar15", "apr15", "may15", "jun15", "jul15", "aug15", "sep15", "oct15", "nov15", "dec15",
-    //                 "jan16", "feb16", "mar16", "apr16", "may16", "jun16", "jul16", "aug16", "sep16", "oct16", "nov16", "dec16",
-    //                 "jan17", "feb17", "mar17", "apr17", "may17", "jun17", "jul17", "aug17", "sep17", "oct17", "nov17", "dec17",
-    //                 "jan18", "feb18", "mar18", "apr18", "may18", "jun18", "jul18", "aug18", "sep18", "oct18", "nov18", "dec18",]
-     
-    
+    // Labels
     var mylabe =[]
     for(i=14;i<19;i++){
         mylabe.push('jan'+i, 'feb'+i, 'mar'+i, 'apr'+i, 'may'+i,'jun'+i, 'jul'+i, 'aug'+i, 'sep'+i,'oct'+i, 'nov'+i, 'dec'+i);
@@ -59,6 +56,9 @@ d3.json('./new/thesis_data1.json').then((data) => {
     // ------------------------------- SVGs ------------------------------------
     // TEMPERATURE svg container
     svg_temp = d3.select("#temp").append('svg').attr('width','100%').attr('height','200px');
+    
+    // //------------------------- DIV for TOOLTIP ------------------------
+    // div_temp = svg_temp.append('div').attr('class', 'tooltip').attr('id','tempTooltip');
     
     // RAINFALL heatmap
     svg_rain = d3.select("#rain").append('svg').attr('width','100%').attr('height','200px');
@@ -92,92 +92,241 @@ d3.json('./new/thesis_data1.json').then((data) => {
     
     for(i=0; i<5;i++)
        showYear(data, 2014+i, i);
+       
+       
+       //---------------------------- pie chart ----------------------------------
+            // SETUP Container 
+             svg_pie = d3.select('#pie').append('svg').attr('width', '100%').attr('height','100%')
+            
+   
     });
+});
 
 
-//---------------- Plot values ---------------------------
-function showYear(all_data, year, n){
+
+
+
+
+    //---------------- Function to plot values ---------------------------
+    function showYear(all_data, year, n){
+        
+         
+         // Local-global variables
+         var rainCan, tempCan, rainCom, tempCom;
+        
+        //--------- filter data per year--------------------
+        var data = all_data.filter(d => {
+            return d.year === year;
+        });
+        
+        //-------------- Temperature heatmap--------------------
+        // Temperature
+        var box = svg_temp.append('g').attr("class", year)
+                .attr('transform', `translate(${(boxwidth+5)*n})`)
+        
+        box.selectAll("rect").data(data).enter()
+        .append("rect")
+        .attr("x", (d,i)=>{
+            return boxwidth/12*i;
+        })
+        .attr('y', '0%')
+        .attr('width',boxwidth/12-1)
+        .attr('height','100%')
+        .style('fill',(d,i)=>{
+            return tempScale(d.avg_temp);
+        }).on('mouseover', (d)=>{
+            
+            // Pie chart
+            makePie(d);
+        })
+        
+        
+        // -------------------- Rainfall Heatmap --------------------------
+        var rainbox = svg_rain.append('g').attr("class", year)
+                .attr('transform', `translate(${(boxwidth+5)*n})`)
+        
+        rainbox.selectAll("rect_rain").data(data).enter()
+        .append("rect")
+        .attr("x", (d,i)=>{
+            return boxwidth/12*i;
+        })
+        .attr('y', '0%')
+        .attr('width',boxwidth/12-1)
+        .attr('height','100%')
+        .style('fill',(d,i)=>{
+            return rainScale(d.rainfall_actual);
+        }).on('mouseover', (d)=>{
+            
+            // Pie chart
+            makePie(d);
+        })
+        
+        //--------------------------- Temp Can -----------------------------------
+        
+        createTempCan();
+        
+        setTimeout(function() {
+            updateTempCan();
+        },200);
+        
+        function createTempCan(){
+               
+                tempCan = box.selectAll("circle_tempCan").data(data).enter()
+                .append("circle")
+                .attr("cx", (d,i)=>{
+                    return (boxwidth/12*i)+(boxwidth/24);
+                })
+                .attr('cy', (d,i)=>{
+                    return canScale(0);
+                })
+                // .attr('r','3px')
+                .attr('r',(d)=>{
+                    if(d.year == '2014'&& d.month=='jan')return 0;
+                    else if (d.year == '2014'&& d.month=='feb')return 0;
+                    else if (d.year == '2014'&& d.month=='mar')return 0;
+                    else if (d.year == '2014'&& d.month=='apr')return 0;
+                    else if (d.year == '2014'&& d.month=='may')return 0;
+                    else return 3;
+                })
+                .style('fill', '#efefef')
+                .on('mouseover', (d)=>{
+                    
+                    div_main.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
+                    div_main.html('Temp: <br>'+ d.avg_temp +' °C <br><br> Can:<br> '+ d.overall_can_rate +
+                    '%'+ '<br><br> Com:<br>'+d.com) 
+                        //   .style("left", (d3.event.pageX) + "px")     
+                        //   .style("top", (d3.event.pageY - 28) + "px");
+                        .style('left','3%').style('bottom','52%').style('font-size', '14px').style('line-height','1.5')
+                   
+                })
+                .on('mouseout',(d)=>{
+                    div_main.style('visibility','hidden');
+                });
+        }
+        
+        
+          
+       function updateTempCan(){
+            tempCan.transition().duration(400).attr('cy',(d,i)=>{
+                return canScale(d.overall_can_rate);
+            })
+        }
+        
+        // -------------------------- Rain Can -----------------------------
+        createRainCan();
+        
+        setTimeout(function() {
+            updateRainCan();
+        },200);
+      
+        
+        function createRainCan(){
+          // Rain_Cancellations
+            rainCan = rainbox.selectAll("circle_rainCan").data(data).enter()
+            .append("circle")
+            .attr("cx", (d,i)=>{
+                return (boxwidth/12*i)+(boxwidth/24);
+            })
+            .attr('cy', (d)=>{
+                return canScale(0);
+            })
+            .attr('r',(d)=>{
+                if(d.year == '2014'&& d.month=='jan')return 0;
+                else if (d.year == '2014'&& d.month=='feb')return 0;
+                else if (d.year == '2014'&& d.month=='mar')return 0;
+                else if (d.year == '2014'&& d.month=='apr')return 0;
+                else if (d.year == '2014'&& d.month=='may')return 0;
+                else return 3;
+            })
+            .style('fill', '#efefef')
+            .on('mouseover', (d)=>{
+                    
+                    div_main.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
+                    div_main.html('Rain: <br>'+ d.rainfall_actual.toFixed(2) +' mm <br><br> Can:<br> '+ d.overall_can_rate +
+                    '%'+ '<br><br> Com:<br>'+d.com) 
+                        //   .style("left", (d3.event.pageX) + "px")     
+                        //   .style("top", (d3.event.pageY - 28) + "px");
+                        .style('left','3%').style('bottom','24%').style('font-size', '14px').style('line-height','1.5')
+                   
+                })
+                .on('mouseout',(d)=>{
+                    div_main.style('visibility','hidden');
+                });
+        }
     
-    //--------- filter data per year--------------------
-    var data = all_data.filter(d => {
-        return d.year === year;
-    });
     
-    //-------------- Temperature heatmap--------------------
-    // Temperature
-    var box = svg_temp.append('g').attr("class", year)
-            .attr('transform', `translate(${(boxwidth+5)*n})`)
-    
-    box.selectAll("rect").data(data).enter()
-    .append("rect")
-    .attr("x", (d,i)=>{
-        return boxwidth/12*i;
-    })
-    .attr('y', '0%')
-    .attr('width',boxwidth/12-1)
-    .attr('height','100%')
-    .style('fill',(d,i)=>{
-        return tempScale(d.avg_temp);
-    })
-    // .style('opacity', 0.05);
-    
-    // var can_plot = svg_temp.append('g').attr("class", year)
-    //         .attr('transform', `translate(${(boxwidth+5)*n})`)
-    
-    
-    // -------------------- Rainfall Heatmap --------------------------
-    var rainbox = svg_rain.append('g').attr("class", year)
-            .attr('transform', `translate(${(boxwidth+5)*n})`)
-    
-    rainbox.selectAll("rect_rain").data(data).enter()
-    .append("rect")
-    .attr("x", (d,i)=>{
-        return boxwidth/12*i;
-    })
-    .attr('y', '0%')
-    .attr('width',boxwidth/12-1)
-    .attr('height','100%')
-    .style('fill',(d,i)=>{
-        return rainScale(d.rainfall_actual);
-    })
-    
-    
-    // -------------------- CanPlot --------------------------
-    // Temp
-    box.selectAll("circle_tempCan").data(data).enter()
-    .append("circle")
-    .attr("cx", (d,i)=>{
-        return (boxwidth/12*i)+(boxwidth/24);
-    })
-    .attr('cy', (d,i)=>{
-        return canScale(d.overall_can_rate);
-    })
-    // .attr('r','3px')
-    .attr('r',(d)=>{
-        if(d.year == '2014'&& d.month=='jan')return 0;
-        else if (d.year == '2014'&& d.month=='feb')return 0;
-        else if (d.year == '2014'&& d.month=='mar')return 0;
-        else if (d.year == '2014'&& d.month=='apr')return 0;
-        else if (d.year == '2014'&& d.month=='may')return 0;
-        else return 3;
-    })
-    .style('fill', '#efefef')
-    
-    // createRain();
-    // setTimeout(function() {
-    //     updateRain();
-    // },3000)
+        function updateRainCan(){
+            rainCan.transition().duration(400).attr('cy',(d,i)=>{
+                return canScale(d.overall_can_rate);
+            })
+        }
     
     
     
-        // Rain
-        rainbox.selectAll("circle_rainCan").data(data).enter()
+        // ------------------------- Temp Com ---------------------------
+        
+        createTempCom();
+        
+        setTimeout(function() {
+            updateTempCom();
+        },800);
+       
+       function createTempCom(){
+                tempCom = box.selectAll("circle_tempCom").data(data).enter()
+                .append("circle")
+                .attr("cx", (d,i)=>{
+                    return (boxwidth/12*i)+(boxwidth/24);
+                })
+                .attr('cy', (d,i)=>{
+                    return comScale(0);
+                })
+                .attr('r',(d)=>{
+                    if(d.year == '2014'&& d.month=='jan')return 0;
+                    else if (d.year == '2014'&& d.month=='feb')return 0;
+                    else if (d.year == '2014'&& d.month=='mar')return 0;
+                    else if (d.year == '2014'&& d.month=='apr')return 0;
+                    else if (d.year == '2014'&& d.month=='may')return 0;
+                    else return 3;
+                }).attr('fill','none')
+                .attr('stroke', '#efefef').style('stroke-width', '0.5px')
+                .on('mouseover', (d)=>{
+                    
+                    div_main.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
+                    div_main.html('Temp: <br>'+ d.avg_temp +' °C <br><br> Can:<br> '+ d.overall_can_rate +
+                    '%'+ '<br><br> Com:<br>'+d.com) 
+                        //   .style("left", (d3.event.pageX) + "px")     
+                        //   .style("top", (d3.event.pageY - 28) + "px");
+                        .style('left','3%').style('bottom','52%').style('font-size', '14px').style('line-height','1.5')
+                   
+                })
+                .on('mouseout',(d)=>{
+                    div_main.style('visibility','hidden');
+                });
+       }
+       
+        function updateTempCom(){
+            tempCom.transition().duration(400).attr('cy',(d,i)=>{
+                return comScale(d.com);
+            })
+        }
+        
+        
+        // ------------------------- Rain Com ---------------------------
+        
+        createRainCom();
+        
+        setTimeout(function() {
+            updateRainCom();
+        },800);
+      
+      function createRainCom(){
+        rainCom = rainbox.selectAll("circle_rainCom").data(data).enter()
         .append("circle")
         .attr("cx", (d,i)=>{
             return (boxwidth/12*i)+(boxwidth/24);
         })
         .attr('cy', (d,i)=>{
-            return canScale(d.overall_can_rate);
+            return comScale(0);
         })
         .attr('r',(d)=>{
             if(d.year == '2014'&& d.month=='jan')return 0;
@@ -186,60 +335,107 @@ function showYear(all_data, year, n){
             else if (d.year == '2014'&& d.month=='apr')return 0;
             else if (d.year == '2014'&& d.month=='may')return 0;
             else return 3;
-        })
-        .style('fill', '#efefef')  
+        }).attr('fill','none')
+        .attr('stroke', '#efefef').attr('stroke-width', '0.5px')
+        .on('mouseover', (d)=>{
+                    
+                    div_main.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
+                    div_main.html('Rain: <br>'+ d.rainfall_actual.toFixed(2) +' mm <br><br> Can:<br> '+ d.overall_can_rate +
+                    '%'+ '<br><br> Com:<br>'+d.com) 
+                        //   .style("left", (d3.event.pageX) + "px")     
+                        //   .style("top", (d3.event.pageY - 28) + "px");
+                        .style('left','3%').style('bottom','24%').style('font-size', '14px').style('line-height','1.5')
+                   
+                })
+                .on('mouseout',(d)=>{
+                    div_main.style('visibility','hidden');
+                });
         
-    function createRain() {
-    }
-    
-    function updateRain() {
-        //select your rain
-        //tranisiotn/duration
-        //cx cy **new**
         
+      }
+      
+        function updateRainCom(){
+            rainCom.transition().duration(400).attr('cy',(d,i)=>{
+                return comScale(d.com);
+            })
+        }
+         
     }
 
-    
-    // -------------------- ComPlot --------------------------
-    // Temp
-    box.selectAll("circle_tempCom").data(data).enter()
-    .append("circle")
-    .attr("cx", (d,i)=>{
-        return (boxwidth/12*i)+(boxwidth/24);
-    })
-    .attr('cy', (d,i)=>{
-        return comScale(d.com);
-    })
-    .attr('r',(d)=>{
-        if(d.year == '2014'&& d.month=='jan')return 0;
-        else if (d.year == '2014'&& d.month=='feb')return 0;
-        else if (d.year == '2014'&& d.month=='mar')return 0;
-        else if (d.year == '2014'&& d.month=='apr')return 0;
-        else if (d.year == '2014'&& d.month=='may')return 0;
-        else return 3;
-    }).attr('fill','none')
-    .attr('stroke', '#efefef').style('stroke-width', '0.5px');
-    
-    
-    // Rain
-    rainbox.selectAll("circle_rainCom").data(data).enter()
-    .append("circle")
-    .attr("cx", (d,i)=>{
-        return (boxwidth/12*i)+(boxwidth/24);
-    })
-    .attr('cy', (d,i)=>{
-        return comScale(d.com);
-    })
-    .attr('r',(d)=>{
-        if(d.year == '2014'&& d.month=='jan')return 0;
-        else if (d.year == '2014'&& d.month=='feb')return 0;
-        else if (d.year == '2014'&& d.month=='mar')return 0;
-        else if (d.year == '2014'&& d.month=='apr')return 0;
-        else if (d.year == '2014'&& d.month=='may')return 0;
-        else return 3;
-    }).attr('fill','none')
-    .attr('stroke', '#efefef').attr('stroke-width', '0.5px')
-    
-    
-}
 
+// ----------------- Function makePie --------------------------
+
+    function makePie(pie_data){
+            
+            // REMOVE ALL GROUPS TO UPDATE NEW
+            // svg_pie.selectAll('svg > g > *').remove();
+            svg_pie.selectAll('svg > *').remove();
+      
+            var margin =10;
+            var pie_width= parseInt(svg_pie.style('width'))/2.8, pie_height =parseInt(svg_pie.style('width'))/2.8, pie_radius = Math.min(pie_width, pie_height) / 2;
+            var g = svg_pie.append("g")
+            // .attr("transform", "translate(" + pie_width / 2 + ","+ pie_height / 2 + ")");
+            .attr("transform", "translate("+ ((pie_width/1.5)+20)+","+pie_width/1.5+")");
+            const pie_colors = d3.scaleOrdinal().range(["#A9A9A9", "#BEBEBE", "#FFFFFF", "#D0D0D0", "#909090"]);
+            
+            // Generate the pie
+            var pie = d3.pie();
+            
+            // Generate the arcs
+            var arc = d3.arc()
+                        .innerRadius(0)
+                        .outerRadius(pie_radius);
+        
+   
+            var data_array=[];
+            data_array.push(pie_data.can_r1, pie_data.can_r2, pie_data.can_r3, pie_data.can_r5, pie_data.can_r5);
+            
+            
+            //Generate groups
+            var arcs = g.selectAll("arc")
+                        .data(pie(data_array))
+                        .enter()
+                        .append("g")
+                        .attr("class", "arc")
+                        
+        
+            //Draw arc paths
+            arcs.append("path")
+                .attr("fill", function(d, i) {
+                    return pie_colors(i);
+                }).attr('opacity', 0.8)
+                .attr("d", arc);
+            
+            
+            
+            //------------------ legends ---------------------------------------------------
+            var g_text = svg_pie.append('g')
+            
+            var x_text = pie_width*1.5;
+            var y_text = pie_width/1.5;
+            
+            // don't show text for 2014 (jan-may)
+            
+           
+                g_text.append('text').attr('class', 'legends').text((pie_data.month).toUpperCase() +' '+ pie_data.year)
+                .attr('x', x_text).attr('y', y_text-40).attr("fill", '#FFFFFF').style('font-size','18px')
+               
+                g_text.append('text').attr('class', 'legends').text('Weather: '+ data_array[0] +'%')
+                .attr('x', x_text).attr('y', y_text-5).attr("fill", '#FFFFFF').style('font-size','18px')
+                
+                g_text.append('text').attr('class', 'legends').text('Technical: '+ data_array[1] +'%')
+                .attr('x', x_text).attr('y', y_text+20).attr("fill", '#999999')
+                
+                g_text.append('text').attr('class', 'legends').text('Operational: '+ data_array[2] +'%')
+                .attr('x', x_text).attr('y', y_text+40).attr("fill", '#999999')
+                
+                g_text.append('text').attr('class', 'legends').text('Commercial: '+ data_array[3] +'%')
+                .attr('x', x_text).attr('y', y_text+60).attr("fill", '#999999')
+                
+                g_text.append('text').attr('class', 'legends').text('Misc: '+ data_array[4] +'%')
+                .attr('x', x_text).attr('y', y_text+80).attr("fill", '#999999')
+            
+     
+    }
+            
+            
