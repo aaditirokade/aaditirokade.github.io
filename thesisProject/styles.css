@@ -144,3 +144,11 @@ div#tooltip {
     stroke: #ffab00;
     stroke-width: 2;
 }
+
+#toggle{
+    cursor: pointer;
+}
+
+#toggle:hover rect{
+    stroke: red;
+}

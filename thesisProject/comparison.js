@@ -18,6 +18,7 @@ d3.json('./data/thesis_data.json').then((data) => {
 
 
 
+    
     // -------------- Set Margins Width & Height for DV ------------------
     var col10 = document.getElementById("this");
     
@@ -235,6 +236,15 @@ d3.json('./data/thesis_data.json').then((data) => {
      }
 
 
+ //tacker
+    var tracker = svg_plot.append('rect').attr('x',0 ).attr('y',0).attr('width',2).attr('height', '100%').attr('fill','#ffffff')
+
+    svg_plot.on('mousemove', ()=>{
+        console.log(d3.mouse(svg_plot.node())[0])
+        var x = d3.mouse(svg_plot.node())[0];
+        tracker.attr('x', x);
+    })
+    
 });  
 
 

@@ -3,13 +3,15 @@
 var svg_temp, boxwidth, canScale, tempScale, comScale, rainScale, comRateScale, svg_rain, svg_pie, div_temp;
 
 // //------------------------- DIV for TOOLTIP ------------------------
-var div_main = d3.select('body').append('div').attr('class', 'tooltip').attr('id','tooltip')
+// var div_main = d3.select('body').append('div').attr('class', 'tooltip').attr('id','tooltip')
+var div_temp = d3.select('#temp').append('div').attr('class', 'tooltip').attr('id','tooltip_temp')
 .style('background','none').style('color','#efefef').style('text-align','left').style('font-weight','normal');
 
-
+var div_rain = d3.select('#rain').append('div').attr('class', 'tooltip').attr('id','tooltip_rain')
+.style('background','none').style('color','#efefef').style('text-align','left').style('font-weight','normal');
 
 d3.json('./data/thesis_data.json').then((pie_data) => {
-d3.json('./new/thesis_data1.json').then((data) => {
+d3.json('./data/thesis_data1.json').then((data) => {
     
     
     //------------------------------- SCALES ------------------------------------
@@ -191,23 +193,23 @@ d3.json('./new/thesis_data1.json').then((data) => {
                 .style('fill', '#efefef')
                 .on('mouseover', (d)=>{
                     
-                    div_main.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
-                    div_main.html('Temp: <br>'+ d.avg_temp +' °C <br><br> Can:<br> '+ d.overall_can_rate +
+                    div_temp.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
+                    div_temp.html('Temp: <br>'+ d.avg_temp +' °C <br><br> Can:<br> '+ d.overall_can_rate +
                     '%'+ '<br><br> Com:<br>'+d.com) 
                         //   .style("left", (d3.event.pageX) + "px")     
                         //   .style("top", (d3.event.pageY - 28) + "px");
-                        .style('left','3%').style('bottom','52%').style('font-size', '14px').style('line-height','1.5')
+                        .style('left','3%').style('bottom','46%').style('font-size', '14px').style('line-height','1.5')
                    
                 })
                 .on('mouseout',(d)=>{
-                    div_main.style('visibility','hidden');
+                    div_temp.style('visibility','hidden');
                 });
         }
         
         
           
        function updateTempCan(){
-            tempCan.transition().duration(400).attr('cy',(d,i)=>{
+            tempCan.transition().ease(d3.easeElastic).duration(2000).attr('cy',(d,i)=>{
                 return canScale(d.overall_can_rate);
             })
         }
@@ -241,22 +243,22 @@ d3.json('./new/thesis_data1.json').then((data) => {
             .style('fill', '#efefef')
             .on('mouseover', (d)=>{
                     
-                    div_main.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
-                    div_main.html('Rain: <br>'+ d.rainfall_actual.toFixed(2) +' mm <br><br> Can:<br> '+ d.overall_can_rate +
+                    div_rain.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
+                    div_rain.html('Rain: <br>'+ d.rainfall_actual.toFixed(2) +' mm <br><br> Can:<br> '+ d.overall_can_rate +
                     '%'+ '<br><br> Com:<br>'+d.com) 
                         //   .style("left", (d3.event.pageX) + "px")     
                         //   .style("top", (d3.event.pageY - 28) + "px");
-                        .style('left','3%').style('bottom','24%').style('font-size', '14px').style('line-height','1.5')
-                   
+                        .style('left','3%').style('bottom','18%').style('font-size', '14px').style('line-height','1.5')
+                        //24%
                 })
                 .on('mouseout',(d)=>{
-                    div_main.style('visibility','hidden');
+                    div_rain.style('visibility','hidden');
                 });
         }
     
     
         function updateRainCan(){
-            rainCan.transition().duration(400).attr('cy',(d,i)=>{
+            rainCan.transition().ease(d3.easeElastic).duration(2000).attr('cy',(d,i)=>{
                 return canScale(d.overall_can_rate);
             })
         }
@@ -291,21 +293,21 @@ d3.json('./new/thesis_data1.json').then((data) => {
                 .attr('stroke', '#efefef').style('stroke-width', '0.5px')
                 .on('mouseover', (d)=>{
                     
-                    div_main.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
-                    div_main.html('Temp: <br>'+ d.avg_temp +' °C <br><br> Can:<br> '+ d.overall_can_rate +
+                    div_temp.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
+                    div_temp.html('Temp: <br>'+ d.avg_temp +' °C <br><br> Can:<br> '+ d.overall_can_rate +
                     '%'+ '<br><br> Com:<br>'+d.com) 
                         //   .style("left", (d3.event.pageX) + "px")     
                         //   .style("top", (d3.event.pageY - 28) + "px");
-                        .style('left','3%').style('bottom','52%').style('font-size', '14px').style('line-height','1.5')
+                        .style('left','3%').style('bottom','46%').style('font-size', '14px').style('line-height','1.5')
                    
                 })
                 .on('mouseout',(d)=>{
-                    div_main.style('visibility','hidden');
+                    div_temp.style('visibility','hidden');
                 });
        }
        
         function updateTempCom(){
-            tempCom.transition().duration(400).attr('cy',(d,i)=>{
+            tempCom.transition().ease(d3.easeElastic).duration(2000).attr('cy',(d,i)=>{
                 return comScale(d.com);
             })
         }
@@ -339,23 +341,23 @@ d3.json('./new/thesis_data1.json').then((data) => {
         .attr('stroke', '#efefef').attr('stroke-width', '0.5px')
         .on('mouseover', (d)=>{
                     
-                    div_main.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
-                    div_main.html('Rain: <br>'+ d.rainfall_actual.toFixed(2) +' mm <br><br> Can:<br> '+ d.overall_can_rate +
+                    div_rain.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
+                    div_rain.html('Rain: <br>'+ d.rainfall_actual.toFixed(2) +' mm <br><br> Can:<br> '+ d.overall_can_rate +
                     '%'+ '<br><br> Com:<br>'+d.com) 
                         //   .style("left", (d3.event.pageX) + "px")     
                         //   .style("top", (d3.event.pageY - 28) + "px");
-                        .style('left','3%').style('bottom','24%').style('font-size', '14px').style('line-height','1.5')
+                        .style('left','3%').style('bottom','18%').style('font-size', '14px').style('line-height','1.5')
                    
                 })
                 .on('mouseout',(d)=>{
-                    div_main.style('visibility','hidden');
+                    div_rain.style('visibility','hidden');
                 });
         
         
       }
       
         function updateRainCom(){
-            rainCom.transition().duration(400).attr('cy',(d,i)=>{
+            rainCom.transition().ease(d3.easeElastic).duration(2000).attr('cy',(d,i)=>{
                 return comScale(d.com);
             })
         }

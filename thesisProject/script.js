@@ -1,10 +1,14 @@
+var toggle = true;
 
 // //------------------------- DIV for TOOLTIP ------------------------
 var div_main = d3.select('body').append('div').attr('class', 'tooltip').attr('id','tooltip')
 .style('background','none').style('color','#efefef').style('text-align','left').style('font-weight','normal');
 
+
 // Load JSON
 d3.json('./data/thesis_data.json').then((data) => {
+    d3.json('./data/holidays19.json').then((holi) => {
+    
     
     var wid = document.getElementById('dv').style.width;
 
@@ -17,15 +21,24 @@ d3.json('./data/thesis_data.json').then((data) => {
     var cent1 = parseInt(d3.select("#base").attr("width")); 
     var center_x= cent1/2, center_y = cent1/2; 
     
-    var colors = ['#d75b68', '#BF98FF', '#93A7FA', '#6CB9AA', '#FF5388', '#D1A556', '#A5D672', '#92D2F7']  
-
+    var colors = ['#d75b68', '#BF98FF', '#93A7FA', '#6CB9AA', '#FF5388', '#D1A556', '#A5D672', '#92D2F7'] 
     
+    
+    
+    
+    
+    function makeGraph() {
+        
     var points =[];
+    
+    base.selectAll('.anything').remove();
+    
     //------------------ AIC can #F87979 ---------------------------------------------
         var aic_can = base.selectAll('aic_can')
                           .data(data).enter()
-                          .append('circle').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.AIC_can*10;
+                          .append('circle').attr('class','anything').attr('cx', center_x).attr('cy', (d)=>{
+                              if(toggle === true) return (center_x-165)-d.AIC_can*10;
+                              else return (center_x-165)-d.AIC_com*5;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle} ${center_x} ${center_y})`;
@@ -47,7 +60,7 @@ d3.json('./data/thesis_data.json').then((data) => {
         var jai_can = base.selectAll('jai_can')
                           .data(data).enter()
                           .append('circle').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.JAI_can*10;
+                              return (center_x-165)-d.JAI_can*5;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+3.75} ${center_x} ${center_y})`;
@@ -68,7 +81,7 @@ d3.json('./data/thesis_data.json').then((data) => {
         var seg_can = base.selectAll('seg_can')
                           .data(data).enter()
                           .append('circle').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.SEG_can*10;
+                              return (center_x-165)-d.SEG_can*5;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+7.5} ${center_x} ${center_y})`;
@@ -91,7 +104,7 @@ d3.json('./data/thesis_data.json').then((data) => {
         var gow_can = base.selectAll('gow_can')
                           .data(data).enter()
                           .append('circle').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.GOW_can*10;
+                              return (center_x-165)-d.GOW_can*5;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+11.75} ${center_x} ${center_y})`;
@@ -113,7 +126,7 @@ d3.json('./data/thesis_data.json').then((data) => {
         var igo_can = base.selectAll('igo_can')
                           .data(data).enter()
                           .append('circle').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.IGO_can*10;
+                              return (center_x-165)-d.IGO_can*5;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+15.25} ${center_x} ${center_y})`;
@@ -136,7 +149,7 @@ d3.json('./data/thesis_data.json').then((data) => {
         var iad_can = base.selectAll('iad_can')
                           .data(data).enter()
                           .append('circle').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.IAD_can*10;
+                              return (center_x-165)-d.IAD_can*5;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+19.00} ${center_x} ${center_y})`;
@@ -159,7 +172,7 @@ d3.json('./data/thesis_data.json').then((data) => {
         var vti_can = base.selectAll('vti_can')
                           .data(data).enter()
                           .append('circle').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-(d.VTI_can*10);
+                              return (center_x-165)-(d.VTI_can*5);
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+22.70} ${center_x} ${center_y})`;
@@ -181,7 +194,7 @@ d3.json('./data/thesis_data.json').then((data) => {
         var trj_can = base.selectAll('trj_can')
                           .data(data).enter()
                           .append('circle').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.TRJ_can*10;
+                              return (center_x-165)-d.TRJ_can*5;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+26.20} ${center_x} ${center_y})`;
@@ -283,8 +296,29 @@ d3.json('./data/thesis_data.json').then((data) => {
                             .attr("fill", "none").attr("stroke", colors[7]).attr("d", trj_line).attr('visibility','hidden');;
                         
                         paths.push(trj_path);  
+        
+        console.log(holi);
                         
-                        
+        //----------- Holidays ----------------
+        
+        var holidays = base.selectAll('holidays')
+                          .data(holi).enter()
+                          .append('circle').attr('cx', center_x).attr('cy', center_x-300).attr('r',2)
+                            .attr('transform', (d, i) => {
+                              var angle = (30*d.monthcount)+d.day; 
+                              return `rotate( ${angle} ${center_x} ${center_y})`;
+			            	})
+			            	.attr('fill','#ffffff').attr('visibility','visible')
+			            	.on('mouseover', (d)=>{
+			            	    div_main.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
+                                div_main.html(d.holiday + '<br>'+d.month +' '+ d.day + '<br>('+ d.metadata + ')') 
+                                .style("left", (d3.event.pageX) + "px").style("top", (d3.event.pageY - 28) + "px");
+                            })
+                            .on('mouseout',(d)=>{
+                                div_main.style('visibility','hidden');
+                            });	
+                            
+                            // points.push(trj_can);
         
         //------- Function opacity---------- 
         function opacity(d){
@@ -385,103 +419,31 @@ d3.json('./data/thesis_data.json').then((data) => {
     });
     
 
-        // // ---------------------- Interactivity ----------------------
-        
-        // d3.select(tabs[0]).on('click', (data) =>{
-        //     // Points
-        //     paths[0].attr('visibility','visible'); paths[1].attr('visibility','visible'); paths[2].attr('visibility','visible'); paths[3].attr('visibility','visible');
-        //     paths[4].attr('visibility','visible'); paths[5].attr('visibility','visible'); paths[6].attr('visibility','visible'); paths[7].attr('visibility','visible');
-        
-        //     // Paths
-        //     aic_path.attr('visibility','visible'); jai_path.attr('visibility','visible'); seg_path.attr('visibility','visible'); gow_path.attr('visibility','visible'); 
-        //     igo_path.attr('visibility','visible'); iad_path.attr('visibility','visible'); vti_path.attr('visibility','visible'); trj_path.attr('visibility','visible');
-        
-        
-        // // });
-        
-        // d3.select(tabs[1]).on('click', (data) =>{
-        //     // Points
-        //     aic_can.attr('visibility','visible'); jai_can.attr('visibility','hidden'); seg_can.attr('visibility','hidden'); gow_can.attr('visibility','hidden');
-        //     igo_can.attr('visibility','hidden'); iad_can.attr('visibility','hidden'); vti_can.attr('visibility','hidden'); trj_can.attr('visibility','hidden');
-        
-        //     // Paths
-        //     aic_path.attr('visibility','visible'); jai_path.attr('visibility','hidden'); seg_path.attr('visibility','hidden'); gow_path.attr('visibility','hidden'); 
-        //     igo_path.attr('visibility','hidden'); iad_path.attr('visibility','hidden'); vti_path.attr('visibility','hidden'); trj_path.attr('visibility','hidden');
-        
-        
-        // });
-        
-        // d3.select(tabs[2]).on('click', (data) =>{
-        //     // Points
-        //     aic_can.attr('visibility','hidden'); jai_can.attr('visibility','visible'); seg_can.attr('visibility','hidden'); gow_can.attr('visibility','hidden');
-        //     igo_can.attr('visibility','hidden'); iad_can.attr('visibility','hidden'); vti_can.attr('visibility','hidden'); trj_can.attr('visibility','hidden');
-       
-        //     // Paths
-        //     aic_path.attr('visibility','hidden'); jai_path.attr('visibility','visible'); seg_path.attr('visibility','hidden'); gow_path.attr('visibility','hidden'); 
-        //     igo_path.attr('visibility','hidden'); iad_path.attr('visibility','hidden'); vti_path.attr('visibility','hidden'); trj_path.attr('visibility','hidden');
-            
-        // });
-        
-        // d3.select(tabs[3]).on('click', (data) =>{
-        //     // Points
-        //     aic_can.attr('visibility','hidden'); jai_can.attr('visibility','hidden');seg_can.attr('visibility','visible'); gow_can.attr('visibility','hidden');
-        //     igo_can.attr('visibility','hidden'); iad_can.attr('visibility','hidden');vti_can.attr('visibility','hidden'); trj_can.attr('visibility','hidden');
-        
-        //     // Paths
-        //     aic_path.attr('visibility','hidden'); jai_path.attr('visibility','hidden'); seg_path.attr('visibility','visible'); gow_path.attr('visibility','hidden'); 
-        //     igo_path.attr('visibility','hidden'); iad_path.attr('visibility','hidden'); vti_path.attr('visibility','hidden'); trj_path.attr('visibility','hidden');
-        // });
-        
-        // d3.select(tabs[4]).on('click', (data) =>{
-        //     // Points
-        //     aic_can.attr('visibility','hidden'); jai_can.attr('visibility','hidden');seg_can.attr('visibility','hidden'); gow_can.attr('visibility','visible');
-        //     igo_can.attr('visibility','hidden'); iad_can.attr('visibility','hidden');vti_can.attr('visibility','hidden'); trj_can.attr('visibility','hidden');
-            
-        //     // Paths
-        //     aic_path.attr('visibility','hidden'); jai_path.attr('visibility','hidden'); seg_path.attr('visibility','hidden'); gow_path.attr('visibility','visible'); 
-        //     igo_path.attr('visibility','hidden'); iad_path.attr('visibility','hidden'); vti_path.attr('visibility','hidden'); trj_path.attr('visibility','hidden');
-        // });
-        
-        // d3.select(tabs[5]).on('click', (data) =>{
-        //     // Points
-        //     aic_can.attr('visibility','hidden'); jai_can.attr('visibility','hidden');seg_can.attr('visibility','hidden'); gow_can.attr('visibility','hidden');
-        //     igo_can.attr('visibility','visible'); iad_can.attr('visibility','hidden');vti_can.attr('visibility','hidden'); trj_can.attr('visibility','hidden');
-        
-        //     // Paths
-        //     aic_path.attr('visibility','hidden'); jai_path.attr('visibility','hidden'); seg_path.attr('visibility','hidden'); gow_path.attr('visibility','hidden'); 
-        //     igo_path.attr('visibility','visible'); iad_path.attr('visibility','hidden'); vti_path.attr('visibility','hidden'); trj_path.attr('visibility','hidden');
-        // });
-        
-        // d3.select(tabs[6]).on('click', (data) =>{
-        //     // Points
-        //     aic_can.attr('visibility','hidden'); jai_can.attr('visibility','hidden');seg_can.attr('visibility','hidden'); gow_can.attr('visibility','hidden');
-        //     igo_can.attr('visibility','hidden'); iad_can.attr('visibility','visible');vti_can.attr('visibility','hidden'); trj_can.attr('visibility','hidden');
-        
-        //     // Paths
-        //     aic_path.attr('visibility','hidden'); jai_path.attr('visibility','hidden'); seg_path.attr('visibility','hidden'); gow_path.attr('visibility','hidden'); 
-        //     igo_path.attr('visibility','hidden'); iad_path.attr('visibility','visible'); vti_path.attr('visibility','hidden'); trj_path.attr('visibility','hidden');
-        // });
-        
-        // d3.select(tabs[7]).on('click', (data) =>{
-        //     // Points
-        //     aic_can.attr('visibility','hidden'); jai_can.attr('visibility','hidden');seg_can.attr('visibility','hidden'); gow_can.attr('visibility','hidden');
-        //     igo_can.attr('visibility','hidden'); iad_can.attr('visibility','hidden');vti_can.attr('visibility','visible'); trj_can.attr('visibility','hidden');
-        
-        //     // Paths
-        //     aic_path.attr('visibility','hidden'); jai_path.attr('visibility','hidden'); seg_path.attr('visibility','hidden'); gow_path.attr('visibility','hidden'); 
-        //     igo_path.attr('visibility','hidden'); iad_path.attr('visibility','hidden'); vti_path.attr('visibility','visible'); trj_path.attr('visibility','hidden');
-        // });
-        
-        // d3.select().on('click', (data) =>{
-        //     // Points
-        //     aic_can.attr('visibility','hidden'); jai_can.attr('visibility','hidden');seg_can.attr('visibility','hidden'); gow_can.attr('visibility','hidden');
-        //     igo_can.attr('visibility','hidden'); iad_can.attr('visibility','hidden');vti_can.attr('visibility','hidden'); trj_can.attr('visibility','visible');
-        
-        //     // Paths    
-        //     aic_path.attr('visibility','hidden'); jai_path.attr('visibility','hidden'); seg_path.attr('visibility','hidden'); gow_path.attr('visibility','hidden'); 
-        //     igo_path.attr('visibility','hidden'); iad_path.attr('visibility','hidden'); vti_path.attr('visibility','hidden'); trj_path.attr('visibility','visible');
-        // });
-   
-   
-                             
+    // DROPDOWN selection
+    var dd_x = (cent1/2)-85, dd_y = (cent1/2)-15; 
+    var g = base.append('g').attr('id', 'toggle');
+    var dd =  g.append("rect").attr('x', dd_x).attr('y', dd_y).attr("width", 170).attr("height", 30)
+            .attr('fill', 'none').attr('stroke', '#ffffff').attr("rx", 3).attr("ry", 3);
+    
+    g.append("text").attr("x",  dd_x+30).attr("y",  dd_y+20).text('Cancellations').attr('fill', '#efefef').style('text-size', '12px');                      
+    
+    g.on('click',()=>{
+        toggle=!toggle;
+        console.log(toggle)
+        makeGraph();
+    });
+//     d3.select(".demoSelection")
+//     .append("option")
+//     .attr("value", 1)
+//     .text("Hello");
+// d3.select(".demoSelection")
+//     .append("option")
+//     .attr("value", 2)
+//     .text("Another Hello");
+    
+    }
+
+    makeGraph();
+    
+ });  
 });  

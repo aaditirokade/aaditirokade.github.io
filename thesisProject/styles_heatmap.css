@@ -4,7 +4,7 @@ body {
     color: #707070;
      }
      
-    #tooltip {	
+    .tooltip {	
                 position: absolute;
                 z-index: 999;
                 text-align: center;
