@@ -103,10 +103,10 @@ a:hover {
 div#tooltip {
         position: absolute;
         text-align: center;
-        width: 100px;
-        height: 40px;
+        width: 70px;
+        height: 110px;
         padding: 2px;
-        font-size: 14px;
+        font-size: 10px;
         background: #fefefe;
         border-radius: 2px;
         pointer-events: none;
@@ -138,3 +138,47 @@ div#tooltip {
     text-align: right;
     
 }
+
+.select {
+    
+    
+  font-size: 13px;
+  padding: 10px 8px 10px 14px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  
+  width: 120%;
+  background:url('arrow.png') no-repeat;
+  background-position:80% center;
+  
+  
+  background: none;
+  line-height: 1;
+  border: 0;
+  padding: 0;
+  color: #efefef;
+  border-bottom-color: #efefef;
+  border-radius: 0;
+  width: 20%;
+  position: relative;
+  z-index: 10;
+  font-size: 1em;
+  background-position:10% center;
+
+}
+
+.select select{
+  background: transparent;
+  line-height: 1;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  width: 20%;
+  position: relative;
+  z-index: 10;
+  font-size: 1em;
+}
+
