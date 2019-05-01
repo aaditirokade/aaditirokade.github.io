@@ -154,13 +154,16 @@ div#tooltip {
   background:url('arrow.png') no-repeat;
   background-position:80% center;
   
+  border-style: solid;
+  border-width: 0.5px;
+  
   
   background: none;
   line-height: 1;
-  border: 0;
+  /*border: 0;*/
   padding: 0;
   color: #efefef;
-  border-bottom-color: #efefef;
+  /*border-bottom-color: #efefef;*/
   border-radius: 0;
   width: 20%;
   position: relative;
@@ -182,3 +185,30 @@ div#tooltip {
   font-size: 1em;
 }
 
+h5{
+    color: #efefef;
+}
+
+h7{
+    margin-top:20px;
+    color: #aaaaaa;
+}
+
+p{
+    margin-top:20px;
+}
+
+.button
+     {
+       /*style button here*/
+       width:fit-content;
+       padding:0.5%;
+       border-style: solid;
+       border-width: 0.5px;
+       border-color: #efefef;
+       background: #efefef;
+       color: #071026;
+       font-size: 12px;
+       border-radius: 3px;
+    }
+    

@@ -3,11 +3,28 @@
 var svg_temp, boxwidth, canScale, tempScale, comScale, rainScale, comRateScale, svg_rain, svg_pie, div_temp;
 
 // //------------------------- DIV for TOOLTIP ------------------------
-// var div_main = d3.select('body').append('div').attr('class', 'tooltip').attr('id','tooltip')
-var div_temp = d3.select('#temp').append('div').attr('class', 'tooltip').attr('id','tooltip_temp')
+// Tooltip temp 
+var div_temp_can = d3.select('#temp').append('div').attr('class', 'div_temp_can').attr('id','div_temp_can')
 .style('background','none').style('color','#efefef').style('text-align','left').style('font-weight','normal');
 
-var div_rain = d3.select('#rain').append('div').attr('class', 'tooltip').attr('id','tooltip_rain')
+var div_temp_com = d3.select('#temp').append('div').attr('class', 'div_temp_com').attr('id','div_temp_com')
+.style('background','none').style('color','#efefef').style('text-align','left').style('font-weight','normal');
+
+
+
+// Tooltip rain 
+var div_rain_can = d3.select('#rain').append('div').attr('class', 'div_rain_can').attr('id','div_rain_can')
+.style('background','none').style('color','#efefef').style('text-align','left').style('font-weight','normal');
+
+var div_rain_com = d3.select('#rain').append('div').attr('class', 'div_rain_com').attr('id','div_rain_com')
+.style('background','none').style('color','#efefef').style('text-align','left').style('font-weight','normal');
+
+
+// Heatmap tooltips
+var div_rain_heatmap = d3.select('#rain').append('div').attr('class', 'tooltip_rain_heatmap').attr('id','tooltip_rain_heatmap')
+.style('background','none').style('color','#efefef').style('text-align','left').style('font-weight','normal');
+
+var div_temp_heatmap = d3.select('#temp').append('div').attr('class', 'tooltip_temp_heatmap').attr('id','tooltip_temp_heatmap')
 .style('background','none').style('color','#efefef').style('text-align','left').style('font-weight','normal');
 
 d3.json('./data/thesis_data.json').then((pie_data) => {
@@ -18,10 +35,8 @@ d3.json('./data/thesis_data1.json').then((data) => {
     // Cancellations scale
     var minCan = d3.min(data, function(d) { return d.overall_can_rate; });
     var maxCan = d3.max(data, function(d) { return d.overall_can_rate; });
-    // canScale = d3.scaleLinear().domain([0.33, 6.99]).range([ 0,250]);
-    // canScale = d3.scaleLinear().domain([minCan, maxCan]).range([ 0,250]);
+    
     canScale = d3.scaleLinear().domain([10, 0]).range([ 0,200]);
-    console.log(minCan); console.log(maxCan);
 
     
     // Temperature scale
@@ -137,11 +152,22 @@ d3.json('./data/thesis_data1.json').then((data) => {
         .style('fill',(d,i)=>{
             return tempScale(d.avg_temp);
         }).on('mouseover', (d)=>{
+            //highlight
+            // this.append("rect").attr('x','100%').attr('y','100%').
+            
+            div_temp_heatmap.style('visibility','visible');
+            
+             d3.select(this).enter().style('fill','#ffffff')
+            
+             div_temp_heatmap.html('<br> Temperature: '+ d.avg_temp.toFixed(2) +'°C').style("left", (d3.event.pageX +10) + "px")
+             .style("top", (d3.event.pageY +10) + "px");
             
             // Pie chart
             makePie(d);
         })
-        
+        .on('mouseout',(d)=>{
+                div_temp_heatmap.style('visibility','hidden');
+        });
         
         // -------------------- Rainfall Heatmap --------------------------
         var rainbox = svg_rain.append('g').attr("class", year)
@@ -159,9 +185,17 @@ d3.json('./data/thesis_data1.json').then((data) => {
             return rainScale(d.rainfall_actual);
         }).on('mouseover', (d)=>{
             
+            div_rain_heatmap.style('visibility','visible');
+            
+            div_rain_heatmap.html('<br> Rainfall: '+ d.rainfall_actual.toFixed(2) +'mm').style("left", (d3.event.pageX +10) + "px")
+             .style("top", (d3.event.pageY +10) + "px");
+             
             // Pie chart
             makePie(d);
         })
+        .on('mouseout',(d)=>{
+            div_rain_heatmap.style('visibility','hidden');
+        });
         
         //--------------------------- Temp Can -----------------------------------
         
@@ -193,16 +227,21 @@ d3.json('./data/thesis_data1.json').then((data) => {
                 .style('fill', '#efefef')
                 .on('mouseover', (d)=>{
                     
-                    div_temp.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
-                    div_temp.html('Temp: <br>'+ d.avg_temp +' °C <br><br> Can:<br> '+ d.overall_can_rate +
-                    '%'+ '<br><br> Com:<br>'+d.com) 
-                        //   .style("left", (d3.event.pageX) + "px")     
-                        //   .style("top", (d3.event.pageY - 28) + "px");
-                        .style('left','3%').style('bottom','46%').style('font-size', '14px').style('line-height','1.5')
+                    div_temp_can.style('visibility','visible');
+                    
+                    // div_temp.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
+                    // div_temp.html('Temp: <br>'+ d.avg_temp +' °C <br><br> Can:<br> '+ d.overall_can_rate +
+                    // '%'+ '<br><br> Com:<br>'+d.com) 
+                    
+                    //  div_temp.html('<br> Can:<br> '+ d.overall_can_rate +'%'+ '<br><br> Com:<br>'+d.com) 
+                    //     .style('left','3%').style('top','40%').style('font-size', '14px').style('line-height','1.5')
+                    
+                    div_temp_can.html('Cancellations: '+ d.overall_can_rate +'%').style("left", (d3.event.pageX +10) + "px")
+                    .style("top", (d3.event.pageY +10) + "px");
                    
                 })
                 .on('mouseout',(d)=>{
-                    div_temp.style('visibility','hidden');
+                    div_temp_can.style('visibility','hidden');
                 });
         }
         
@@ -242,17 +281,20 @@ d3.json('./data/thesis_data1.json').then((data) => {
             })
             .style('fill', '#efefef')
             .on('mouseover', (d)=>{
+                    div_rain_can.style('visibility','visible');
                     
-                    div_rain.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
-                    div_rain.html('Rain: <br>'+ d.rainfall_actual.toFixed(2) +' mm <br><br> Can:<br> '+ d.overall_can_rate +
-                    '%'+ '<br><br> Com:<br>'+d.com) 
-                        //   .style("left", (d3.event.pageX) + "px")     
-                        //   .style("top", (d3.event.pageY - 28) + "px");
-                        .style('left','3%').style('bottom','18%').style('font-size', '14px').style('line-height','1.5')
-                        //24%
+                    // div_rain.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
+                    // // div_rain.html('Rain: <br>'+ d.rainfall_actual.toFixed(2) +' mm <br><br> Can:<br> '+ d.overall_can_rate +
+                    // // '%'+ '<br><br> Com:<br>'+d.com) 
+
+                    // div_rain.html('<br> Can:<br> '+ d.overall_can_rate +'%'+ '<br><br> Com:<br>'+d.com) 
+                    //     .style('left','3%').style('bottom','18%').style('font-size', '14px').style('line-height','1.5')
+                    
+                    div_rain_can.html('Cancellations: '+ d.overall_can_rate +'%').style("left", (d3.event.pageX +10) + "px")
+                    .style("top", (d3.event.pageY +10) + "px");
                 })
                 .on('mouseout',(d)=>{
-                    div_rain.style('visibility','hidden');
+                    div_rain_can.style('visibility','hidden');
                 });
         }
     
@@ -292,17 +334,20 @@ d3.json('./data/thesis_data1.json').then((data) => {
                 }).attr('fill','none')
                 .attr('stroke', '#efefef').style('stroke-width', '0.5px')
                 .on('mouseover', (d)=>{
+                    div_temp_com.style('visibility','visible');
+                    // div_temp.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
+                    // div_temp.html('Temp: <br>'+ d.avg_temp +' °C <br><br> Can:<br> '+ d.overall_can_rate +
+                    // '%'+ '<br><br> Com:<br>'+d.com) 
+                    //     //   .style("left", (d3.event.pageX) + "px")     
+                    //     //   .style("top", (d3.event.pageY - 28) + "px");
+                    //     .style('left','3%').style('bottom','46%').style('font-size', '14px').style('line-height','1.5')
                     
-                    div_temp.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
-                    div_temp.html('Temp: <br>'+ d.avg_temp +' °C <br><br> Can:<br> '+ d.overall_can_rate +
-                    '%'+ '<br><br> Com:<br>'+d.com) 
-                        //   .style("left", (d3.event.pageX) + "px")     
-                        //   .style("top", (d3.event.pageY - 28) + "px");
-                        .style('left','3%').style('bottom','46%').style('font-size', '14px').style('line-height','1.5')
+                    div_temp_com.html('Complaints: '+ d.com).style("left", (d3.event.pageX +10) + "px")
+                    .style("top", (d3.event.pageY +10) + "px");
                    
                 })
                 .on('mouseout',(d)=>{
-                    div_temp.style('visibility','hidden');
+                    div_temp_com.style('visibility','hidden');
                 });
        }
        
@@ -340,17 +385,22 @@ d3.json('./data/thesis_data1.json').then((data) => {
         }).attr('fill','none')
         .attr('stroke', '#efefef').attr('stroke-width', '0.5px')
         .on('mouseover', (d)=>{
+            
+                    div_rain_com.style('visibility','visible');
                     
-                    div_rain.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
-                    div_rain.html('Rain: <br>'+ d.rainfall_actual.toFixed(2) +' mm <br><br> Can:<br> '+ d.overall_can_rate +
-                    '%'+ '<br><br> Com:<br>'+d.com) 
-                        //   .style("left", (d3.event.pageX) + "px")     
-                        //   .style("top", (d3.event.pageY - 28) + "px");
-                        .style('left','3%').style('bottom','18%').style('font-size', '14px').style('line-height','1.5')
+                    // div_rain.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
+                    // div_rain.html('Rain: <br>'+ d.rainfall_actual.toFixed(2) +' mm <br><br> Can:<br> '+ d.overall_can_rate +
+                    // '%'+ '<br><br> Com:<br>'+d.com) 
+                    //     //   .style("left", (d3.event.pageX) + "px")     
+                    //     //   .style("top", (d3.event.pageY - 28) + "px");
+                    //     .style('left','3%').style('bottom','18%').style('font-size', '14px').style('line-height','1.5')
+                    
+                    div_rain_com.html('Cancellations: '+ d.overall_can_rate +'%').style("left", (d3.event.pageX +10) + "px")
+                    .style("top", (d3.event.pageY +10) + "px");
                    
                 })
                 .on('mouseout',(d)=>{
-                    div_rain.style('visibility','hidden');
+                    div_rain_com.style('visibility','hidden');
                 });
         
         
@@ -374,11 +424,16 @@ d3.json('./data/thesis_data1.json').then((data) => {
             svg_pie.selectAll('svg > *').remove();
       
             var margin =10;
-            var pie_width= parseInt(svg_pie.style('width'))/2.8, pie_height =parseInt(svg_pie.style('width'))/2.8, pie_radius = Math.min(pie_width, pie_height) / 2;
+            
+            var pie_width= parseInt(svg_pie.style('width'))/2.8, 
+            pie_height =parseInt(svg_pie.style('width'))/2.8, 
+            pie_radius = Math.min(pie_width, pie_height) / 2.5;
+            
+            
             var g = svg_pie.append("g")
             // .attr("transform", "translate(" + pie_width / 2 + ","+ pie_height / 2 + ")");
-            .attr("transform", "translate("+ ((pie_width/1.5)+20)+","+pie_width/1.5+")");
-            const pie_colors = d3.scaleOrdinal().range(["#A9A9A9", "#BEBEBE", "#FFFFFF", "#D0D0D0", "#909090"]);
+            .attr("transform", "translate("+ ((pie_width/1.5)+70)+","+ pie_width/1.5+")");
+            const pie_colors = d3.scaleOrdinal().range(["#FFFFFF", "#BEBEBE", "#A9A9A9", "#D0D0D0", "#909090"]);
             
             // Generate the pie
             var pie = d3.pie();
