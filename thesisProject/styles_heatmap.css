@@ -131,3 +131,11 @@ p{
         font-size: 10px;
         color: black;
     }
+    
+div.container-fluid{
+    vertical-align: middle;
+}
+
+#main{
+     vertical-align: middle;
+}

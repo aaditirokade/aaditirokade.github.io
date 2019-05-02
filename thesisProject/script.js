@@ -348,7 +348,8 @@ d3.json('./data/thesis_data.json').then((data) => {
  
    }
 
-         
+         allValues('aic');
+         selected = 'aic';
         
        //------------------ One function ---------------------------------------------
 		    
@@ -358,6 +359,12 @@ d3.json('./data/thesis_data.json').then((data) => {
 		        circles =[], lines =[], paths =[], ypoints= [];
                 aic_cy=[], jai_cy =[], seg_cy =[], gow_cy = [], igo_cy =[], iad_cy=[], vti_cy=[], trj_cy = [];
                 
+               console.log(name);
+               
+               if(name ===''){
+                   name='aic';
+               }
+               console.log(name);
                
                 base.selectAll('.anything').remove();
                 base.selectAll('.path').remove();
@@ -596,7 +603,7 @@ d3.json('./data/thesis_data.json').then((data) => {
 
             var tabs = ['#all-tab', '#air-india-tab', '#jet-airways-tab', '#spicejet-tab', '#go-air-tab', '#indigo-tab', '#air-asia-tab', '#vistara-tab', '#trujet-tab']
         
-            d3.select(tabs[0]).on('click', (data) =>{ selected = 'all'; allValues('all'); });
+            d3.select(tabs[0]).on('click', (data) =>{ this.style('color','hotpink'); selected = 'all'; allValues('all'); });
             d3.select(tabs[1]).on('click', (data) =>{ selected = 'aic'; allValues('aic'); });
             d3.select(tabs[2]).on('click', (data) =>{ selected = 'jai'; allValues('jai'); });
             d3.select(tabs[3]).on('click', (data) =>{ selected = 'seg'; allValues('seg'); });
@@ -626,7 +633,7 @@ d3.json('./data/thesis_data.json').then((data) => {
                 else
                 g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Complaints').attr('fill', '#efefef').style('text-size', '12px'); 
             
-                
+                console.log(selected);
                 
                 if(selected =='aic') allValues('aic');
                 else if(selected =='jai') allValues('jai');

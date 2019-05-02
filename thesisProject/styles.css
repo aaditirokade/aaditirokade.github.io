@@ -3,25 +3,25 @@ body {
     background: #071026;
     color: #707070;
      }
-     
-    #tooltip {	
-                position: absolute;
-                z-index: 999;
-                text-align: center;
-                width: 100px;					
-                height: 90px;					
-                padding: 5px;
-                font: 12px sans-serif;
-                font-family: 'Lato', sans-serif;
-                font-weight: bold;
-                background: none;	
-                border: 0px;		
-                border-radius: 2px;
-                line-height: 1.4;
-                visibility: hidden;
-                color: '#efefef';
-                
-             }
+ 
+#tooltip {	
+            position: absolute;
+            z-index: 999;
+            text-align: center;
+            width: 100px;					
+            height: 90px;					
+            padding: 5px;
+            font: 12px sans-serif;
+            font-family: 'Lato', sans-serif;
+            font-weight: bold;
+            background: none;	
+            border: 0px;		
+            border-radius: 2px;
+            line-height: 1.4;
+            visibility: hidden;
+            color: '#efefef';
+            
+         }
              
 
 .footer {
@@ -36,12 +36,12 @@ body {
 
 }
 
-    .footer text{
-            /*color: #cecece;*/
-            color: white;
-            margin-left: 20px;
-            font-size: 12px;
-    }
+.footer text{
+        /*color: #cecece;*/
+        color: white;
+        margin-left: 20px;
+        font-size: 12px;
+}
 
 #v-pills-tab{
     text-align: right;
@@ -73,39 +73,10 @@ a:hover {
   text-decoration: none;
 }
 
-.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
-    color: #fff;
-    background-color: #b1b1b1;
+a:active {
+  color: hotpink;
+  text-decoration: none;
 }
-
-.d3-tip {
-      line-height: 1;
-      font-weight: bold;
-      padding: 12px;
-      background: rgba(0, 0, 0, 0.8);
-      color: #fff;
-      border-radius: 2px;
-    }
-
-    /* Creates a small triangle extender for the tooltip */
-    .d3-tip:after {
-      box-sizing: border-box;
-      display: inline;
-      font-size: 10px;
-      width: 50%;
-      height: 50%;
-      line-height: 1;
-      color: lightgray;
-      position: absolute;
-      text-align: center;
-    }
-
-    /* Style northward tooltips differently */
-    .d3-tip.n:after {
-      margin: -1px 0 0 0;
-      top: 100%;
-      left: 0;
-    }
 
 div#tooltip {
         position: absolute;
@@ -160,9 +131,6 @@ div#tooltip {
     stroke: red;
 }
 
- a{
-        /*text-decoration-style:normal;*/
-   }
  
  .button
      {
@@ -181,3 +149,11 @@ div#tooltip {
     {
         /*style button hover stuff here*/
      }
+     
+div.row{
+    vertical-align: middle;
+}
+
+#row{
+     vertical-align: middle;
+}

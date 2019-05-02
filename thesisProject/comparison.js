@@ -11,7 +11,7 @@ d3.json('./data/thesis_data.json').then((data) => {
   
 
     //-------------- SVG for DV -------------------
-    var svg_plot = d3.select("#plot").append('svg').attr('width','100%').attr('height',650)
+    var svg_plot = d3.select("#plot").append('svg').attr('width','100%').attr('height',700)
     var svg_labe = d3.select("#labe").append('svg').attr('width','100%').attr('height',40)
 
 
@@ -29,6 +29,26 @@ d3.json('./data/thesis_data.json').then((data) => {
     
     // --------------------- X-axis & labels -----------------
     
+            //  // Y transition for X-axis
+            // var labe_y=parseInt(svg_plot.style('height'))-40;
+        
+            // // Month labels
+            // var mylabe =['jun14','jul14','aug14','sep14','oct14','nov14','dec14'];
+            // for(i=15;i<19;i++){
+            //     mylabe.push('jan'+i, 'feb'+i, 'mar'+i, 'apr'+i, 'may'+i,'jun'+i, 'jul'+i, 'aug'+i, 'sep'+i,'oct'+i, 'nov'+i, 'dec'+i);
+            // }
+                
+            // //  X scales & axis:
+            // var x_labe = d3.scaleBand().range([ 0, parseInt(svg_labe.style('width'))]).domain(mylabe);
+                
+            // svg_labe.append("g").attr("transform", "translate(0,0)")
+            //         .call(d3.axisBottom(x_labe)).selectAll("text")	
+            //         .style("text-anchor", "end")
+            //         .attr("dx", "-.8em").attr("dy", ".15em")
+            //         .attr("transform", "rotate(-65)");
+            
+            
+            
              // Y transition for X-axis
             var labe_y=parseInt(svg_plot.style('height'))-40;
         
@@ -39,9 +59,9 @@ d3.json('./data/thesis_data.json').then((data) => {
             }
                 
             //  X scales & axis:
-            var x_labe = d3.scaleBand().range([ 0, parseInt(svg_labe.style('width'))]).domain(mylabe);
+            var x_labe = d3.scaleBand().range([ 0, parseInt(svg_plot.style('width'))]).domain(mylabe);
                 
-            svg_labe.append("g").attr("transform", "translate(0,0)")
+            svg_plot.append("g").attr("transform", `translate(0,${labe_y})`)
                     .call(d3.axisBottom(x_labe)).selectAll("text")	
                     .style("text-anchor", "end")
                     .attr("dx", "-.8em").attr("dy", ".15em")
@@ -261,15 +281,16 @@ d3.json('./data/thesis_data.json').then((data) => {
     //   div_plot.text('AIC: ' + data[currentMonth]['AIC_'+select.value] 
     //             + '<br>JAI: ' + data[currentMonth]['JAI_'+select.value])
     
-       div_plot.html('AIC: ' + data[currentMonth]['AIC_'+select.value] 
-                + '<br>JAI: ' + data[currentMonth]['JAI_'+select.value]
-                + '<br>SEG: ' + data[currentMonth]['SEG_'+select.value]
-                + '<br>GOW: ' + data[currentMonth]['GOW_'+select.value]
-                + '<br>IGO: ' + data[currentMonth]['IGO_'+select.value]
-                + '<br>IAD: ' + data[currentMonth]['IAD_'+select.value]
-                + '<br>VTI: ' + data[currentMonth]['VTI_'+select.value]
-                + '<br>TRJ: ' + data[currentMonth]['TRJ_'+select.value]
-                )
+       div_plot.html('Year: '+data[currentMonth]['year'] + '<br>Month: '+ data[currentMonth]['month']
+                + '<br>AIC: ' + data[currentMonth]['AIC_'+select.value] 
+                + '%<br>JAI: ' + data[currentMonth]['JAI_'+select.value]
+                + '%<br>SEG: ' + data[currentMonth]['SEG_'+select.value]
+                + '%<br>GOW: ' + data[currentMonth]['GOW_'+select.value]
+                + '%<br>IGO: ' + data[currentMonth]['IGO_'+select.value]
+                + '%<br>IAD: ' + data[currentMonth]['IAD_'+select.value]
+                + '%<br>VTI: ' + data[currentMonth]['VTI_'+select.value]
+                + '%<br>TRJ: ' + data[currentMonth]['TRJ_'+select.value]
+                +'%')
       .style("left", (d3.event.pageX - 100) + "px")
       .style("top", (d3.event.pageY - 100) + "px");
         
