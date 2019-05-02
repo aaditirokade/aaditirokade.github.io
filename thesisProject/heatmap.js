@@ -445,7 +445,7 @@ d3.json('./data/thesis_data1.json').then((data) => {
         
    
             var data_array=[];
-            data_array.push(pie_data.can_r1, pie_data.can_r2, pie_data.can_r3, pie_data.can_r5, pie_data.can_r5);
+            data_array.push(pie_data.can_r1, pie_data.can_r2, pie_data.can_r3, pie_data.can_r4, pie_data.can_r5);
             
             
             //Generate groups
