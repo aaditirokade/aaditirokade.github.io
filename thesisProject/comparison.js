@@ -5,7 +5,7 @@ var colors, tabs, id;
 
 
 // -------------- Load JSON  -------------------
-d3.json('./data/thesis_data.json').then((data) => {
+d3.json('./data/thesis_data_final.json').then((data) => {
     
     console.log(data);
   

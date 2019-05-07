@@ -27,8 +27,8 @@ var div_rain_heatmap = d3.select('#rain').append('div').attr('class', 'tooltip_r
 var div_temp_heatmap = d3.select('#temp').append('div').attr('class', 'tooltip_temp_heatmap').attr('id','tooltip_temp_heatmap')
 .style('background','none').style('color','#efefef').style('text-align','left').style('font-weight','normal');
 
-d3.json('./data/thesis_data_final.json').then((pie_data) => {
-d3.json('./data/thesis_data1_final.json').then((data) => {
+d3.json('./data/thesis_data.json').then((pie_data) => {
+d3.json('./data/thesis_data1.json').then((data) => {
     
     
     //------------------------------- SCALES ------------------------------------
@@ -114,8 +114,7 @@ d3.json('./data/thesis_data1_final.json').then((data) => {
        //---------------------------- pie chart ----------------------------------
             // SETUP Container 
              svg_pie = d3.select('#pie').append('svg').attr('width', '100%').attr('height','100%')
-    
-      makePie(pie_data[0]);
+            
    
     });
 });
@@ -143,7 +142,7 @@ d3.json('./data/thesis_data1_final.json').then((data) => {
                 .attr('transform', `translate(${(boxwidth+5)*n})`)
         
         box.selectAll("rect").data(data).enter()
-        .append("rect").attr('class', 'ok')
+        .append("rect")
         .attr("x", (d,i)=>{
             return boxwidth/12*i;
         })
@@ -151,30 +150,20 @@ d3.json('./data/thesis_data1_final.json').then((data) => {
         .attr('width',boxwidth/12-1)
         .attr('height','100%')
         .style('fill',(d,i)=>{
-            if(d.year == '2014'&& d.month=='jan')return 'none';
-                    else if (d.year == '2014'&& d.month=='feb')return 'none';
-                    else if (d.year == '2014'&& d.month=='mar')return 'none';
-                    else if (d.year == '2014'&& d.month=='apr')return 'none';
-                    else if (d.year == '2014'&& d.month=='may')return 'none';
-                    // else return 3;
-                    else return tempScale(d.avg_temp);
-                    
-            // return tempScale(d.avg_temp);
+            return tempScale(d.avg_temp);
         }).on('mouseover', (d)=>{
             //highlight
             // this.append("rect").attr('x','100%').attr('y','100%').
             
             div_temp_heatmap.style('visibility','visible');
             
-            console.log(this);
-            
+             d3.select(this).enter().style('fill','#ffffff')
             
              div_temp_heatmap.html('<br> Temperature: '+ d.avg_temp.toFixed(2) +'°C').style("left", (d3.event.pageX +10) + "px")
              .style("top", (d3.event.pageY +10) + "px");
             
             // Pie chart
             makePie(d);
-            
         })
         .on('mouseout',(d)=>{
                 div_temp_heatmap.style('visibility','hidden');
@@ -193,15 +182,7 @@ d3.json('./data/thesis_data1_final.json').then((data) => {
         .attr('width',boxwidth/12-1)
         .attr('height','100%')
         .style('fill',(d,i)=>{
-                    if(d.year == '2014'&& d.month=='jan')return 'none';
-                    else if (d.year == '2014'&& d.month=='feb')return 'none';
-                    else if (d.year == '2014'&& d.month=='mar')return 'none';
-                    else if (d.year == '2014'&& d.month=='apr')return 'none';
-                    else if (d.year == '2014'&& d.month=='may')return 'none';
-                    // else return 3;
-                    else return rainScale(d.rainfall_actual);
-                    
-            // return rainScale(d.rainfall_actual);
+            return rainScale(d.rainfall_actual);
         }).on('mouseover', (d)=>{
             
             div_rain_heatmap.style('visibility','visible');
@@ -452,7 +433,7 @@ d3.json('./data/thesis_data1_final.json').then((data) => {
             var g = svg_pie.append("g")
             // .attr("transform", "translate(" + pie_width / 2 + ","+ pie_height / 2 + ")");
             .attr("transform", "translate("+ ((pie_width/1.5)+70)+","+ pie_width/1.5+")");
-            const pie_colors = d3.scaleOrdinal().range(["#55555D", "#3D3C4A", "#B6B5BA", "#222431", "#171926"]);
+            const pie_colors = d3.scaleOrdinal().range(["#FFFFFF", "#BEBEBE", "#A9A9A9", "#D0D0D0", "#909090"]);
             
             // Generate the pie
             var pie = d3.pie();
@@ -496,13 +477,13 @@ d3.json('./data/thesis_data1_final.json').then((data) => {
                 g_text.append('text').attr('class', 'legends').text((pie_data.month).toUpperCase() +' '+ pie_data.year)
                 .attr('x', x_text).attr('y', y_text-40).attr("fill", '#FFFFFF').style('font-size','18px')
                
-                g_text.append('text').attr('class', 'legends').text('Weather: '+ data_array[2] +'%')
+                g_text.append('text').attr('class', 'legends').text('Weather: '+ data_array[0] +'%')
                 .attr('x', x_text).attr('y', y_text-5).attr("fill", '#FFFFFF').style('font-size','18px')
                 
                 g_text.append('text').attr('class', 'legends').text('Technical: '+ data_array[1] +'%')
                 .attr('x', x_text).attr('y', y_text+20).attr("fill", '#999999')
                 
-                g_text.append('text').attr('class', 'legends').text('Operational: '+ data_array[0] +'%')
+                g_text.append('text').attr('class', 'legends').text('Operational: '+ data_array[2] +'%')
                 .attr('x', x_text).attr('y', y_text+40).attr("fill", '#999999')
                 
                 g_text.append('text').attr('class', 'legends').text('Commercial: '+ data_array[3] +'%')

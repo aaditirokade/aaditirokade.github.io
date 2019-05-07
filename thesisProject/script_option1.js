@@ -10,7 +10,7 @@ var div_main = d3.select('body').append('div').attr('class', 'tooltip').attr('id
 
 
 // Load JSON
-d3.json('./data/thesis_data.json').then((data) => {
+d3.json('./data/thesis_data_fin.json').then((data) => {
     d3.json('./data/holidays19.json').then((holi) => {
     
     

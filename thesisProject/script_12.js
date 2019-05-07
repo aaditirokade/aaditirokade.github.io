@@ -8,10 +8,9 @@ var selected;
 var points = [], circles =[], lines =[], paths =[], ypoints= [];
 var aic_cy=[], jai_cy =[], seg_cy =[], gow_cy = [], igo_cy =[], iad_cy=[], vti_cy=[], trj_cy = []; 
 var ypoints = [];
-var colors = ['#d75b68', '#BF98FF', '#93A7FA', '#6CB9AA', '#FF5388', '#D1A556', '#A5D672', '#92D2F7'];
+var colors = ['#d75b68', '#BF98FF', '#839AFA', '#6CB9AA', '#FF5388', '#D1A556', '#90B967', '#7CCFFF'];
 
     
-   
 
 //------------------------- DIV for TOOLTIP ------------------------
 var div_main = d3.select('body').append('div').attr('class', 'tooltip').attr('id','tooltip')
@@ -19,7 +18,7 @@ var div_main = d3.select('body').append('div').attr('class', 'tooltip').attr('id
 
 
 // Load JSON
-d3.json('./data/thesis_data_final.json').then((data) => {
+d3.json('./data/thesis_data_fin.json').then((data) => {
     d3.json('./data/holidays19.json').then((holi) => {
     
     
@@ -46,13 +45,14 @@ d3.json('./data/thesis_data_final.json').then((data) => {
     var points =[];
     
     base.selectAll('.anything').remove();
+    // base.selectAll('').remove();
     
     //------------------ AIC can #F87979 ---------------------------------------------
         var aic_can = base.selectAll('aic_can')
                           .data(data).enter()
                           .append('circle').attr('class','anything').attr('cx', center_x).attr('cy', (d)=>{
                               if(toggle === true) return (center_x-165)-d.AIC_can*10;
-                              else return (center_x-165)-d.AIC_com*5;
+                              else return (center_x-165)-d.AIC_com*10;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle} ${center_x} ${center_y})`;
@@ -74,7 +74,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
         var jai_can = base.selectAll('jai_can')
                           .data(data).enter()
                           .append('circle').attr('class','anything').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.JAI_can*5;
+                              return (center_x-165)-d.JAI_can*10;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+3.75} ${center_x} ${center_y})`;
@@ -95,7 +95,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
         var seg_can = base.selectAll('seg_can')
                           .data(data).enter()
                           .append('circle').attr('class','anything').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.SEG_can*5;
+                              return (center_x-165)-d.SEG_can*10;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+7.5} ${center_x} ${center_y})`;
@@ -118,7 +118,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
         var gow_can = base.selectAll('gow_can')
                           .data(data).enter()
                           .append('circle').attr('class','anything').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.GOW_can*5;
+                              return (center_x-165)-d.GOW_can*10;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+11.75} ${center_x} ${center_y})`;
@@ -140,7 +140,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
         var igo_can = base.selectAll('igo_can')
                           .data(data).enter()
                           .append('circle').attr('class','anything').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.IGO_can*5;
+                              return (center_x-165)-d.IGO_can*10;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+15.25} ${center_x} ${center_y})`;
@@ -163,7 +163,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
         var iad_can = base.selectAll('iad_can')
                           .data(data).enter()
                           .append('circle').attr('class','anything').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.IAD_can*5;
+                              return (center_x-165)-d.IAD_can*10;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+19.00} ${center_x} ${center_y})`;
@@ -186,7 +186,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
         var vti_can = base.selectAll('vti_can')
                           .data(data).enter()
                           .append('circle').attr('class','anything').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-(d.VTI_can*5);
+                              return (center_x-165)-(d.VTI_can*10);
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+22.70} ${center_x} ${center_y})`;
@@ -208,7 +208,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
         var trj_can = base.selectAll('trj_can')
                           .data(data).enter()
                           .append('circle').attr('class','anything').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.TRJ_can*5;
+                              return (center_x-165)-d.TRJ_can*10;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+26.20} ${center_x} ${center_y})`;
@@ -264,8 +264,12 @@ d3.json('./data/thesis_data_final.json').then((data) => {
         var trj_line = d3.lineRadial().angle(function(d,i) { return angle[i]; }).radius(function(d,i) { return trj_cy[i]; });
 
         // PATHS
-        var aic_path =  base.append("path").attr('class','anything').attr('id','aic_path').datum(data).attr('transform',`translate(455,455) rotate(-30)`)
-                            .attr("fill", "none").attr("stroke", colors[0]).attr("d", aic_line);
+        var aic_path =  base.append("path").attr('class','anything').datum(data).attr('transform',`translate(455,455) rotate(-30)`)
+                            .attr("fill", "none").attr("stroke", colors[0]).attr("d", aic_line)
+                            
+                        .on('mouseover',()=>{
+                            d3.select(this).attr('stroke', '#ffffff')
+                        })
                             
                         paths.push(aic_path);    
                         
@@ -383,24 +387,24 @@ d3.json('./data/thesis_data_final.json').then((data) => {
                               .attr('cy', (d)=>{
                               
                                   if(toggle === true){
-                                      if(name=='aic') return (center_x-165)-d.AIC_can*10;
-                                      else if(name=='jai') return (center_x-165)-d.JAI_can*10;
-                                      else if(name=='seg') return (center_x-165)-d.SEG_can*10;
-                                      else if(name=='gow') return (center_x-165)-d.GOW_can*10;
-                                      else if(name=='igo') return (center_x-165)-d.IGO_can*10;
-                                      else if(name=='iad') return (center_x-165)-d.IAD_can*10;
-                                      else if(name=='vti') return (center_x-165)-d.VTI_can*10;
-                                      else if(name=='trj') return (center_x-165)-d.TRJ_can*10;
+                                      if(name=='aic') return (center_x-165)-d.AIC_can*20;
+                                      else if(name=='jai') return (center_x-165)-d.JAI_can*20;
+                                      else if(name=='seg') return (center_x-165)-d.SEG_can*20;
+                                      else if(name=='gow') return (center_x-165)-d.GOW_can*20;
+                                      else if(name=='igo') return (center_x-165)-d.IGO_can*20;
+                                      else if(name=='iad') return (center_x-165)-d.IAD_can*20;
+                                      else if(name=='vti') return (center_x-165)-d.VTI_can*20;
+                                      else if(name=='trj') return (center_x-165)-d.TRJ_can*20;
                                   }
                                   else {
-                                      if(name=='aic') return (center_x-165)-d.AIC_com*10;
-                                      else if(name=='jai') return (center_x-165)-d.JAI_com*10;
-                                      else if(name=='seg') return (center_x-165)-d.SEG_com*10;
-                                      else if(name=='gow') return (center_x-165)-d.GOW_com*10;
-                                      else if(name=='igo') return (center_x-165)-d.IGO_com*10;
-                                      else if(name=='iad') return (center_x-165)-d.IAD_com*10;
-                                      else if(name=='vti') return (center_x-165)-d.VTI_com*10;
-                                      else if(name=='trj') return (center_x-165)-d.TRJ_com*10;
+                                      if(name=='aic') return (center_x-165)-d.AIC_com*20;
+                                      else if(name=='jai') return (center_x-165)-d.JAI_com*20;
+                                      else if(name=='seg') return (center_x-165)-d.SEG_com*20;
+                                      else if(name=='gow') return (center_x-165)-d.GOW_com*20;
+                                      else if(name=='igo') return (center_x-165)-d.IGO_com*20;
+                                      else if(name=='iad') return (center_x-165)-d.IAD_com*20;
+                                      else if(name=='vti') return (center_x-165)-d.VTI_com*20;
+                                      else if(name=='trj') return (center_x-165)-d.TRJ_com*20;
                                   }
                                   
                                 })
@@ -603,13 +607,8 @@ d3.json('./data/thesis_data_final.json').then((data) => {
 
             var tabs = ['#all-tab', '#air-india-tab', '#jet-airways-tab', '#spicejet-tab', '#go-air-tab', '#indigo-tab', '#air-asia-tab', '#vistara-tab', '#trujet-tab']
         
-        
-            d3.select(tabs[0]).on('click', (data) =>{selected = 'all'; allValues('all'); });
-            d3.select(tabs[1]).on('click', (data) =>{ 
-                paths[1].style('stroke','#ffffff');
-                selected = 'aic'; allValues('aic'); 
-                
-            });
+            d3.select(tabs[0]).on('click', (data) =>{ this.style('color','hotpink'); selected = 'all'; allValues('all'); });
+            d3.select(tabs[1]).on('click', (data) =>{ selected = 'aic'; allValues('aic'); });
             d3.select(tabs[2]).on('click', (data) =>{ selected = 'jai'; allValues('jai'); });
             d3.select(tabs[3]).on('click', (data) =>{ selected = 'seg'; allValues('seg'); });
             d3.select(tabs[4]).on('click', (data) =>{ selected = 'gow'; allValues('gow'); });
@@ -627,18 +626,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
                     .attr('fill', 'none').attr('stroke', '#ffffff').attr("rx", 3).attr("ry", 3);
             
             g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Cancellations').attr('fill', '#efefef').style('text-size', '12px');                      
-            
-            dd.on('mouseover',()=>{
-                 g.selectAll('.button').remove();
-                 toggle = !toggle;
-                 
-                 if(toggle === true)
-                g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Cancellations').attr('fill', '#efefef').style('text-size', '12px'); 
-                else
-                g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Complaints').attr('fill', '#efefef').style('text-size', '12px'); 
-            
-            });
-            
+                    
             g.on('click',()=>{
                 
                 g.selectAll('.button').remove();

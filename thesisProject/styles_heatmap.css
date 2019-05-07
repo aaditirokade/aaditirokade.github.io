@@ -139,3 +139,25 @@ div.container-fluid{
 #main{
      vertical-align: middle;
 }
+
+.highlight {
+  fill: steelblue;
+}
+
+.active {
+  fill: steelblue;
+}
+
+.hover {
+  fill: #fff;
+}
+
+br {
+    display: block;
+    margin-bottom: 2px;
+    font-size:2px;
+    line-height: 2px;
+}
+
+#temp.text{
+}
