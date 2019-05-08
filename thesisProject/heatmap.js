@@ -151,11 +151,11 @@ d3.json('./data/thesis_data1_final.json').then((data) => {
         .attr('width',boxwidth/12-1)
         .attr('height','100%')
         .style('fill',(d,i)=>{
-            if(d.year == '2014'&& d.month=='jan')return 'none';
-                    else if (d.year == '2014'&& d.month=='feb')return 'none';
-                    else if (d.year == '2014'&& d.month=='mar')return 'none';
-                    else if (d.year == '2014'&& d.month=='apr')return 'none';
-                    else if (d.year == '2014'&& d.month=='may')return 'none';
+            if(d.year == '2014'&& d.month=='jan')return '#141623';
+                    else if (d.year == '2014'&& d.month=='feb')return '#141623';
+                    else if (d.year == '2014'&& d.month=='mar')return '#141623';
+                    else if (d.year == '2014'&& d.month=='apr')return '#141623';
+                    else if (d.year == '2014'&& d.month=='may')return '#141623';
                     // else return 3;
                     else return tempScale(d.avg_temp);
                     
@@ -169,7 +169,7 @@ d3.json('./data/thesis_data1_final.json').then((data) => {
             console.log(this);
             
             
-             div_temp_heatmap.html('<br> Temperature: '+ d.avg_temp.toFixed(2) +'°C').style("left", (d3.event.pageX +10) + "px")
+             div_temp_heatmap.html(d.avg_temp.toFixed(2) +'°C').style("left", (d3.event.pageX +10) + "px")
              .style("top", (d3.event.pageY +10) + "px");
             
             // Pie chart
@@ -193,11 +193,11 @@ d3.json('./data/thesis_data1_final.json').then((data) => {
         .attr('width',boxwidth/12-1)
         .attr('height','100%')
         .style('fill',(d,i)=>{
-                    if(d.year == '2014'&& d.month=='jan')return 'none';
-                    else if (d.year == '2014'&& d.month=='feb')return 'none';
-                    else if (d.year == '2014'&& d.month=='mar')return 'none';
-                    else if (d.year == '2014'&& d.month=='apr')return 'none';
-                    else if (d.year == '2014'&& d.month=='may')return 'none';
+                    if(d.year == '2014'&& d.month=='jan')return '#141623';
+                    else if (d.year == '2014'&& d.month=='feb')return '#141623';
+                    else if (d.year == '2014'&& d.month=='mar')return '#141623';
+                    else if (d.year == '2014'&& d.month=='apr')return '#141623';
+                    else if (d.year == '2014'&& d.month=='may')return '#141623';
                     // else return 3;
                     else return rainScale(d.rainfall_actual);
                     
@@ -206,7 +206,7 @@ d3.json('./data/thesis_data1_final.json').then((data) => {
             
             div_rain_heatmap.style('visibility','visible');
             
-            div_rain_heatmap.html('<br> Rainfall: '+ d.rainfall_actual.toFixed(2) +'mm').style("left", (d3.event.pageX +10) + "px")
+            div_rain_heatmap.html(d.rainfall_actual.toFixed(2) +'mm').style("left", (d3.event.pageX +10) + "px")
              .style("top", (d3.event.pageY +10) + "px");
              
             // Pie chart
@@ -414,7 +414,7 @@ d3.json('./data/thesis_data1_final.json').then((data) => {
                     //     //   .style("top", (d3.event.pageY - 28) + "px");
                     //     .style('left','3%').style('bottom','18%').style('font-size', '14px').style('line-height','1.5')
                     
-                    div_rain_com.html('Cancellations: '+ d.overall_can_rate +'%').style("left", (d3.event.pageX +10) + "px")
+                    div_rain_com.html('Complaints: '+ d.overall_can_rate +'%').style("left", (d3.event.pageX +10) + "px")
                     .style("top", (d3.event.pageY +10) + "px");
                    
                 })

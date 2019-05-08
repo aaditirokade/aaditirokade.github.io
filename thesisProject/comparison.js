@@ -227,7 +227,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
         tabs = ['air-india-tab', 'jet-airways-tab', 'spicejet-tab', 'go-air-tab', 'indigo-tab', 'air-asia-tab', 'vistara-tab', 'trujet-tab'];
         colors = ['#d75b68', '#BF98FF', '#93A7FA', '#6CB9AA', '#FF5388', '#D1A556', '#A5D672', '#92D2F7']
               
-             
+         update(data, 'air-india-tab');
 
         // -------------- Select carrier to update ---------------------
             for(i=0;i<8;i++){

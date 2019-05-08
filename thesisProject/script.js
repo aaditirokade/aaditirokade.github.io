@@ -9,6 +9,7 @@ var points = [], circles =[], lines =[], paths =[], ypoints= [];
 var aic_cy=[], jai_cy =[], seg_cy =[], gow_cy = [], igo_cy =[], iad_cy=[], vti_cy=[], trj_cy = []; 
 var ypoints = [];
 var colors = ['#d75b68', '#BF98FF', '#93A7FA', '#6CB9AA', '#FF5388', '#D1A556', '#A5D672', '#92D2F7'];
+var icao = ['aic', 'jai', 'sej', 'gow', 'igo', 'iad', 'vti', 'trj'];
 
     
    
@@ -34,6 +35,14 @@ d3.json('./data/thesis_data_final.json').then((data) => {
     
     var cent1 = parseInt(d3.select("#base").attr("width")); 
     var center_x= cent1/2, center_y = cent1/2; 
+
+    //legends
+    
+    base.append("text").attr('class','marks').attr("x", center_x-10).attr("y",  center_x+215+2).text('5%').attr('fill', '#888888').style('font-size', '10px');
+    base.append("text").attr('class','marks').attr("x", center_x-10).attr("y",  center_x+265+2).text('10%').attr('fill', '#888888').style('font-size', '10px');
+    base.append("text").attr('class','marks').attr("x", center_x-10).attr("y",  center_x+315+2).text('15%').attr('fill', '#888888').style('font-size', '10px');
+    base.append("text").attr('class','marks').attr("x", center_x-10).attr("y",  center_x+365+2).text('20%').attr('fill', '#888888').style('font-size', '10px');
+    // base.append("text").attr('class','marks').attr("x", center_x-10).attr("y",  center_x+425+2).text('25%').attr('fill', '#888888').style('font-size', '10px');
 
     
     // d3.select('holidays').on('click',(d)=>{
@@ -227,7 +236,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
 			            	
 		// ---------- Lines ---------------------------
         
-        var aic_cy=[]; var jai_cy =[]; var seg_cy =[]; var gow_cy = []; 
+        var aic_cy= []; var jai_cy =[]; var seg_cy =[]; var gow_cy = []; 
         var igo_cy =[]; var iad_cy=[]; var vti_cy=[]; var trj_cy = []; 
         
         var angle = [(Math.PI/6)*6, (Math.PI/6)*7, (Math.PI/6)*8, (Math.PI/6)*9, (Math.PI/6)*10, (Math.PI/6)*11, 
@@ -376,6 +385,8 @@ d3.json('./data/thesis_data_final.json').then((data) => {
 		        else if(name=='igo')i=4; else if(name=='iad')i=5;
 		        else if(name=='vti')i=6; else if(name=='trj')i=7;
 	
+	
+	            
     
                 circles[i] = base.selectAll('value'+i).data(data).enter()
                               .append('circle').attr('class','anything')
@@ -529,7 +540,6 @@ d3.json('./data/thesis_data_final.json').then((data) => {
                                   .attr("fill", "none").attr("stroke", colors[i]).attr("stroke-opacity", (d)=>{opacity(d);}).attr("d", lines[i]).attr('visibility','visible');
        
        
-           
         
 		        var radio = document.getElementById('holi');
 		        
@@ -602,21 +612,60 @@ d3.json('./data/thesis_data_final.json').then((data) => {
                 }
 
             var tabs = ['#all-tab', '#air-india-tab', '#jet-airways-tab', '#spicejet-tab', '#go-air-tab', '#indigo-tab', '#air-asia-tab', '#vistara-tab', '#trujet-tab']
-        
+            for(var l=1;l<=12;l++){
+                    d3.select('#line_aic_'+l).style('stroke','#ababab');  
+                    for (var j=0;j<8;j++){if(icao[j]!=='aic')d3.select('#line_'+icao[j]+'_'+l).style('stroke','#555');}
+           }
         
             d3.select(tabs[0]).on('click', (data) =>{selected = 'all'; allValues('all'); });
             d3.select(tabs[1]).on('click', (data) =>{ 
-                paths[1].style('stroke','#ffffff');
-                selected = 'aic'; allValues('aic'); 
-                
-            });
-            d3.select(tabs[2]).on('click', (data) =>{ selected = 'jai'; allValues('jai'); });
-            d3.select(tabs[3]).on('click', (data) =>{ selected = 'seg'; allValues('seg'); });
-            d3.select(tabs[4]).on('click', (data) =>{ selected = 'gow'; allValues('gow'); });
-            d3.select(tabs[5]).on('click', (data) =>{ selected = 'igo'; allValues('igo'); });
-            d3.select(tabs[6]).on('click', (data) =>{ selected = 'iad'; allValues('iad'); });
-            d3.select(tabs[7]).on('click', (data) =>{ selected = 'vti'; allValues('vti'); });
-            d3.select(tabs[8]).on('click', (data) =>{ selected = 'trj'; allValues('trj'); });
+                for(var l=1;l<=12;l++){
+                    d3.select('#line_aic_'+l).style('stroke','#ababab');  
+                    for (var j=0;j<8;j++){if(icao[j]!=='aic')d3.select('#line_'+icao[j]+'_'+l).style('stroke','#555');}
+                    }
+                selected = 'aic'; allValues('aic'); });
+            d3.select(tabs[2]).on('click', (data) =>{ 
+                for(var l=1;l<=12;l++){
+                    d3.select('#line_jai_'+l).style('stroke','#ababab');  
+                    for (var j=0;j<8;j++){if(icao[j]!=='jai')d3.select('#line_'+icao[j]+'_'+l).style('stroke','#555');}
+                    }
+                selected = 'jai'; allValues('jai'); });
+            d3.select(tabs[3]).on('click', (data) =>{ 
+                for(var l=1;l<=12;l++){
+                    d3.select('#line_sej_'+l).style('stroke','#ababab');  
+                    for (var j=0;j<8;j++){if(icao[j]!=='sej')d3.select('#line_'+icao[j]+'_'+l).style('stroke','#555');}
+                    }
+                selected = 'seg'; allValues('seg'); });
+            d3.select(tabs[4]).on('click', (data) =>{ 
+                for(var l=1;l<=12;l++){
+                    d3.select('#line_gow_'+l).style('stroke','#ababab');  
+                    for (var j=0;j<8;j++){if(icao[j]!=='gow')d3.select('#line_'+icao[j]+'_'+l).style('stroke','#555');}
+                    }
+                selected = 'gow'; allValues('gow'); });
+            d3.select(tabs[5]).on('click', (data) =>{ 
+                for(var l=1;l<=12;l++){
+                    d3.select('#line_igo_'+l).style('stroke','#ababab');  
+                    for (var j=0;j<8;j++){if(icao[j]!=='igo')d3.select('#line_'+icao[j]+'_'+l).style('stroke','#555');}
+                    }
+                selected = 'igo'; allValues('igo'); });
+            d3.select(tabs[6]).on('click', (data) =>{ 
+                for(var l=1;l<=12;l++){
+                    d3.select('#line_iad_'+l).style('stroke','#ababab');  
+                    for (var j=0;j<8;j++){if(icao[j]!=='iad')d3.select('#line_'+icao[j]+'_'+l).style('stroke','#555');}
+                    }
+                selected = 'iad'; allValues('iad'); });
+            d3.select(tabs[7]).on('click', (data) =>{ 
+                for(var l=1;l<=12;l++){
+                    d3.select('#line_vti_'+l).style('stroke','#ababab');  
+                    for (var j=0;j<8;j++){if(icao[j]!=='vti')d3.select('#line_'+icao[j]+'_'+l).style('stroke','#555');}
+                    }
+                selected = 'vti'; allValues('vti'); });
+            d3.select(tabs[8]).on('click', (data) =>{ 
+                for(var l=1;l<=12;l++){
+                    d3.select('#line_trj_'+l).style('stroke','#ababab');  
+                    for (var j=0;j<8;j++){if(icao[j]!=='trj')d3.select('#line_'+icao[j]+'_'+l).style('stroke','#555');}
+                    }
+                selected = 'trj'; allValues('trj'); });
             
         
         
@@ -632,10 +681,21 @@ d3.json('./data/thesis_data_final.json').then((data) => {
                  g.selectAll('.button').remove();
                  toggle = !toggle;
                  
-                 if(toggle === true)
+                if(toggle === true)
                 g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Cancellations').attr('fill', '#efefef').style('text-size', '12px'); 
                 else
                 g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Complaints').attr('fill', '#efefef').style('text-size', '12px'); 
+            
+            });
+            
+            dd.on('mouseout',()=>{
+                 g.selectAll('.button').remove();
+                 toggle = !toggle;
+                 
+                if(toggle === true)
+                g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Complaints').attr('fill', '#efefef').style('text-size', '12px'); 
+                else
+                g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Cancellations').attr('fill', '#efefef').style('text-size', '12px'); 
             
             });
             

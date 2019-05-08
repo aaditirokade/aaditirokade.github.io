@@ -1,6 +1,7 @@
 body {
     font-family: Lato, Helvetica nueu, arial, sans-serif;
-    background: #071026;
+    /*background: #071026;*/
+    background: #0A0B19;
     color: #707070;
      }
  
@@ -128,7 +129,7 @@ div#tooltip {
 }
 
 #toggle:hover rect{
-    stroke: red;
+    stroke: hotpink;
 }
 
  
@@ -164,9 +165,28 @@ div.row{
 }
 
 path{
-     stroke-opacity: 0.4 !important;
+     stroke-opacity: 0.5 !important;
+}
+
+path:hover{
+  stroke-opacity: 1 !important;
+  stroke-width: 2 !important;
 }
 
 .nav-link:active {
     color: white;
 }
+
+.marks{
+    font-size: 10px;
+}
+
+/*#line_aic_1 {*/
+/*    color: #ffffff;*/
+/*    stroke: #ffffff;*/
+/*}*/
+
+/*#line_trj {*/
+/*    color: #ffffff;*/
+/*    stroke: #ffffff;*/
+/*}*/
