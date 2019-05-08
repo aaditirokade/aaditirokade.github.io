@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Thesis Project</title>
+    
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    
+    <!--d3js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css" rel="stylesheet" />
+
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="./lib/c3-0.6.14/c3.min.js"></script>
+    
+    
+   <!--LATO FONT-->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+    
+    <!--CSS-->
+    <link rel='stylesheet' href='overlay_common.css'>
+    
+    <!-- Load c3.css -->
+    <link href="./lib/c3-0.6.14/c3.css" rel="stylesheet">
+
+    
+            
+</head>
+
+<body>
+   <!--<a href="./index.html" style="float: left; display:inline;">&ensp; &thinsp;  &ensp;  &ensp; < </a>-->
+   <!--<a href="./heatmap.html" style="float: right; display:inline;"> > &ensp; &thinsp;  &ensp;  &ensp; </a> -->
+   
+       
+<div class='main' id='main'> 
+        <a href="./ol_temp.html">
+                	<div class='button' style='float: right; display:inline; margin-right:40px;'> 
+                	 Temperature
+                	</div>	
+        </a>
+        
+        <a href="./index.html">
+                	<div class='button' style='float: left; display:inline; margin-left:20px;'> 
+                	 next
+                	</div>	
+        </a>
+   <div class="container" id='container1'>
+      
+      <p>
+          <h5 id="main_title" style="text-align:center;"> Visualizing the impact of Climate Change on Flight Experience </h5>
+          <h7><p style="text-align:center;" >Comparison of airlines carriers (2014-2018)</h7>
+   </div> 
+   <div>
+       <img src="./images/ol_pop.png" alt="Flowers in Chania">
+   </div>
+
+    <div class="footer">
+       <text> Sources: </text>
+          <a href="http://dgca.nic.in/"> DGCA </a>
+            <a href="http://www.imd.gov.in/Welcome%20To%20IMD/Welcome.php"> IMD </a>
+            <a href="https://data.gov.in/"> DataGov </a>
+    </div>
+  
+    <script src="comparison.js"></script>
+    
+  </div>
+</body>
+
+</html>

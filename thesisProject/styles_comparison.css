@@ -214,7 +214,10 @@ p{
 
 div.main{
     vertical-align: middle;
+    /*top: 50%;*/
+    /*position: absolute;*/
 }
+
 
 #main{
      vertical-align: middle;

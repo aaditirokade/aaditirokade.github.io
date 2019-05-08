@@ -116,6 +116,8 @@ p{
     
 div.container-fluid{
     vertical-align: middle;
+    top: 7%;
+    position: absolute;
 }
 
 #main{
@@ -142,4 +144,9 @@ br {
 }
 
 #temp.text{
+}
+
+div#pie{
+    vertical-align: middle;
+    align-items: center;
 }
