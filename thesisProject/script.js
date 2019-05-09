@@ -563,7 +563,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
                               .data(holi).enter()
                               .append('circle').attr('class','holidays').attr('cx', center_x).attr('cy', center_x-420).attr('r',2)
                                 .attr('transform', (d, i) => {
-                                  var angle = (30*d.monthcount)+d.day; 
+                                  var angle = ((30*d.monthcount)+d.day)-30; 
                                   return `rotate( ${angle} ${center_x} ${center_y})`;
     			            	})
     			            	.attr('fill','#ffffff').attr('visibility','visible')
