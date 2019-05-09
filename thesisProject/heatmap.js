@@ -113,8 +113,10 @@ d3.json('./data/thesis_data1_final.json').then((data) => {
        
        //---------------------------- pie chart ----------------------------------
             // SETUP Container 
-            var pie_w = parseFloat(d3.select('.col-6').attr('width'));
-             svg_pie = d3.select('#pie').append('svg').attr('width', pie_w).attr('height',pie_w)
+            var svgPie_w = d3.select('.col-6').style('width');
+             var svgPie_h = d3.select('.col-6').style('height');
+
+             svg_pie = d3.select('#pie').append('svg').attr('width', svgPie_w).attr('height', svgPie_h)
     
       makePie(pie_data[0]);
    
@@ -445,9 +447,13 @@ d3.json('./data/thesis_data1_final.json').then((data) => {
       
             var margin =10;
             
-            var pie_width= parseInt(svg_pie.style('width'))/2.8, 
-            pie_height =parseInt(svg_pie.style('width'))/2.8, 
-            pie_radius = Math.min(pie_width, pie_height) / 2.5;
+            // var pie_width= parseInt(svg_pie.style('width'))/2.8, 
+            // pie_height =parseInt(svg_pie.style('width'))/2.8, 
+            // pie_radius = Math.min(pie_width, pie_height) / 2.5;
+            
+            var pie_width= parseInt(svg_pie.style('width'))/3, 
+            pie_height = parseInt(svg_pie.style('width'))/3, 
+            pie_radius = Math.min(pie_width, pie_height)/2.4;
             
             
             var g = svg_pie.append("g")
@@ -489,7 +495,8 @@ d3.json('./data/thesis_data1_final.json').then((data) => {
             //------------------ legends ---------------------------------------------------
             var g_text = svg_pie.append('g')
             
-            var x_text = pie_width*1.5;
+            // var x_text = pie_width*1.5;
+             var x_text = pie_width*1.5;
             var y_text = pie_width/1.5;
             
             // don't show text for 2014 (jan-may)
