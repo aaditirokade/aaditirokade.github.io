@@ -29,39 +29,74 @@
     <link rel="stylesheet" href="styles_heatmap.css"/>
   </head>
   <body>
-    <div class="container-fluid" id='main'>
-      <div class="row">
-        <!--<br><a href="./comparison.html"><h6><< Back </h6></a> -->
-        <div class="col" id="pie"> </div>
+    
+  <div>
+    
+    <a href="./ol_comp.html">
+                	<div class='button' style='float: right; display:inline; margin-right:40px;'> 
+                	COMPARE CARRIERS >
+                	</div>	
+        </a>
         
-        <div class="col"><br>
-          <h5>Visualizing the impact of Climate Change on Flight Experience </h5>
-          <h7>Overall cancellation rate and complaints based on the weather parameters</h5>
+        <a href="./ol_rain.html">
+                	<div class='button' style='float: left; display:inline; margin-left:20px;'> 
+                	< RAINFALL
+                	</div>	
+        </a>
+       <div class="container" id='container1'>
+          
           <p>
-              Flight Cancellations Rate(%) & Passenger Complaints (per 10000 PAX) against Temperature(°C) and Rainfall(mm)
-              for 5 years (2014-18). There's a correlation between the Cancellations represented as a percentage of total number of flights and Complaints measured every 10000 passengers (PAX). After analyzing the patterns against Temperature and Rainfall (mapped as lowest to highest measured values from June 2014 to December 2018 with color scales in Coral and Aqua respectively), we observe that 'Weather' is one of the contributors, with its contribution gradually increasing towards 2018 alogwith the Climate Change.
-          </p>
+              <h5 id="main_title" style="text-align:center;"> Visualizing the impact of Climate Change on Flight Experience </h5>
+              <h7><p style="text-align:center;" > Weather & Flight Cancellations (2014-2018) </h7>
+       </div>
+    
+    <br><br>
+       
+        <div class="container-fluid" id='main'>
+          <!-- ROW-->
+            <div class="row">
+                    <!-- PIE CHART-->
+                    <div class="col-6" id="pie"> </div>
+                
+                    <!-- DESCRIPTION-->
+                    <div class="col-4"><br>
+                      <!--<h5>Visualizing the impact of Climate Change on Flight Experience </h5>-->
+                      <!--<h7>Overall cancellation rate and complaints based on the weather parameters</h5>-->
+                      <!--<p>-->
+                          Flight Cancellations Rate (%) & Passenger Complaints (/10000 PAX) 
+                          against Temperature (°C) and Rainfall (mm): 
+                          <br>
+                          The analysis of cancellation trends based on weather indicate 
+                          that the contribution of weather towards cancellations is 
+                          higher during the high rainfall and high temperature weather.
+                          <br><br><br><br>
+            </div>
         </div>
-      </div>
+      
+    
         <br>
         
-        <div class="temperature" id='temp' 
-        style="font-size:12px; font-family:Lato, helvetica, arial; color: #cecece; text-align:center;">
+        <div class="temperature" id='temp' style="font-size:12px; font-family:Lato, helvetica, arial; color: #cecece; text-align:center;">
           Temperature </div>
         <br>
-        <div class="rainfall" id='rain' 
-        style="font-size:12px; font-family:Lato, helvetica, arial; color: #cecece; text-align:center;"> 
+        
+        <div class="rainfall" id='rain' style="font-size:12px; font-family:Lato, helvetica, arial; color: #cecece; text-align:center;"> 
           Rainfall </div>
         <br>
+        
         <div class="labels" id="labe"></div>
         
     </div>
     
     <div class="footer">
-       <text> Sources: </text>
-          <a href="http://dgca.nic.in/"> DGCA </a>
-            <a href="http://www.imd.gov.in/Welcome%20To%20IMD/Welcome.php"> IMD </a>
-            <a href="https://data.gov.in/"> DataGov </a>
+        <text> Data: </text>
+            <a href="https://data.gov.in/"> 1 </a>
+            <a href="http://censusindia.gov.in/"> 2 </a>
+            <a href="http://dgca.nic.in/"> 3 </a>
+            <a href="http://www.imd.gov.in/Welcome%20To%20IMD/Welcome.php"> 4 </a>
+            <a href="https://www.tropmet.res.in/"> 5 </a>
+            <a href="www.weather.gov.sg/climate-world-climate/"> 6 </a>
+            <a href="https://www.bankbazaar.com/indian-holiday-calendar.html"> 7 </a>
     </div>
     
      <script src="heatmap.js"></script>

@@ -112,7 +112,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
 			            	.attr('fill',colors[2]).attr('visibility','visible')
 			            	.on('mouseover', (d)=>{
 			            	    div_main.transition().duration(50).style("opacity", 1).style("visibility", 'visible');
-                                div_main.html('Year : '+ d.year +'<br> Month : '+ d.month + '<br> Carrier : SEG' + '<br> Can : '+ d.SEG_can + '%') 
+                                div_main.html('Year : '+ d.year +'<br> Month : '+ d.month + '<br> Carrier : SEJ' + '<br> Can : '+ d.SEG_can + '%') 
                                         .style("left", (d3.event.pageX) + "px").style("top", (d3.event.pageY - 28) + "px");
                             })
                             .on('mouseout',(d)=>{
@@ -446,8 +446,8 @@ d3.json('./data/thesis_data_final.json').then((data) => {
         			            	}
         			               else if(name==='seg'){
     			            	        if (toggle === true)
-    			            	            div_main.html('Year : '+ d.year +'<br> Month : '+ d.month + '<br> Carrier : SEG' + '<br> Can : '+ d.SEG_can + '%');
-    			            	        else div_main.html('Year : '+ d.year +'<br> Month : '+ d.month + '<br> Carrier : SEG' + '<br> Com : '+ d.SEG_com ); 
+    			            	            div_main.html('Year : '+ d.year +'<br> Month : '+ d.month + '<br> Carrier : SEJ' + '<br> Can : '+ d.SEG_can + '%');
+    			            	        else div_main.html('Year : '+ d.year +'<br> Month : '+ d.month + '<br> Carrier : SEJ' + '<br> Com : '+ d.SEG_com ); 
         			            	}
         			               else if(name==='gow'){
     			            	        if (toggle === true)

@@ -113,7 +113,8 @@ d3.json('./data/thesis_data1_final.json').then((data) => {
        
        //---------------------------- pie chart ----------------------------------
             // SETUP Container 
-             svg_pie = d3.select('#pie').append('svg').attr('width', '100%').attr('height','100%')
+            var pie_w = parseFloat(d3.select('.col-6').attr('width'));
+             svg_pie = d3.select('#pie').append('svg').attr('width', pie_w).attr('height',pie_w)
     
       makePie(pie_data[0]);
    
@@ -450,6 +451,7 @@ d3.json('./data/thesis_data1_final.json').then((data) => {
             
             
             var g = svg_pie.append("g")
+            // .attr('width','100%').attr('height','100%')
             // .attr("transform", "translate(" + pie_width / 2 + ","+ pie_height / 2 + ")");
             .attr("transform", "translate("+ ((pie_width/1.5)+70)+","+ pie_width/1.5+")");
             const pie_colors = d3.scaleOrdinal().range(["#55555D", "#3D3C4A", "#B6B5BA", "#222431", "#171926"]);

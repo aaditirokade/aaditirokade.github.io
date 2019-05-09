@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--<meta http-equiv="XUA-Compatible" content="ie=edge" />-->
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    
+    <!--d3js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css" rel="stylesheet" />
+
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="./lib/c3-0.6.14/c3.min.js"></script>
+    
+    
+   <!--LATO FONT-->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="styles_heatmap.css"/>
+  </head>
+  <body>
+    <div class="container-fluid" id='main'>
+      <div class="row">
+        
+        <div class="col" id="pie"> </div>
+        
+        <div class="col"><br>
+          <h5>Visualizing the impact of Climate Change on Flight Experience </h5>
+          <h7>Overall cancellation rate and complaints based on the weather parameters</h5>
+          <p>
+              Flight Cancellations Rate(%) & Passenger Complaints (per 10000 PAX) against Temperature(°C) and Rainfall(mm)
+              for 5 years (2014-18). There's a correlation between the Cancellations represented as a percentage of total number of flights and Complaints measured every 10000 passengers (PAX). After analyzing the patterns against Temperature and Rainfall (mapped as lowest to highest measured values from June 2014 to December 2018 with color scales in Coral and Aqua respectively), we observe that 'Weather' is one of the contributors, with its contribution gradually increasing towards 2018 alogwith the Climate Change.
+          </p>
+        </div>
+      </div>
+        <br>
+        
+        <div class="temperature" id='temp' 
+        style="font-size:12px; font-family:Lato, helvetica, arial; color: #cecece; text-align:center;">
+          Temperature </div>
+        <br>
+        <div class="rainfall" id='rain' 
+        style="font-size:12px; font-family:Lato, helvetica, arial; color: #cecece; text-align:center;"> 
+          Rainfall </div>
+        <br>
+        <div class="labels" id="labe"></div>
+        
+    </div>
+    
+    <div class="footer">
+        <text> Data: </text>
+            <a href="https://data.gov.in/"> 1 </a>
+            <a href="http://censusindia.gov.in/"> 2 </a>
+            <a href="http://dgca.nic.in/"> 3 </a>
+            <a href="http://www.imd.gov.in/Welcome%20To%20IMD/Welcome.php"> 4 </a>
+            <a href="https://www.tropmet.res.in/"> 5 </a>
+            <a href="www.weather.gov.sg/climate-world-climate/"> 6 </a>
+            <a href="https://www.bankbazaar.com/indian-holiday-calendar.html"> 7 </a>
+    </div>
+    
+     <script src="heatmap.js"></script>
+  </body>
+</html>

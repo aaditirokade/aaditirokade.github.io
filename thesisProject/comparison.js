@@ -103,7 +103,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
                          // TOOLTIP : Visibility, transition, opacity, content
                             document.getElementById("tooltip").style.visibility='visible';
                             div.transition().duration(200).style("opacity", 1);
-                            div.html('AIC : '+ d.month +' '+ d.year +': '+ d.JAI_can +'%');
+                            div.html('JAI : '+ d.month +' '+ d.year +': '+ d.JAI_can +'%');
                       })
                       .on("mouseout", function(d) {
                             div.transition().duration(500).attr('fill','black').style("opacity", 0);
@@ -121,7 +121,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
                             // TOOLTIP : Visibility, transition, opacity, content
                             document.getElementById("tooltip").style.visibility='visible';
                             div.transition().duration(200).style("opacity", 1);
-                            div.html('AIC : '+ d.month +' '+ d.year +': '+ d.SEG_can +'%');
+                            div.html('SEJ : '+ d.month +' '+ d.year +': '+ d.SEG_can +'%');
                       })
                       .on("mouseout", function(d) {
                             div.transition().duration(500).attr('fill','black').style("opacity", 0);
@@ -139,7 +139,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
                             // TOOLTIP : Visibility, transition, opacity, content
                             document.getElementById("tooltip").style.visibility='visible';
                             div.transition().duration(200).style("opacity", 1);
-                            div.html('AIC : '+ d.month +' '+ d.year +': '+ d.GOW_can +'%');
+                            div.html('GOW : '+ d.month +' '+ d.year +': '+ d.GOW_can +'%');
                       })
                       .on("mouseout", function(d) {
                             div.transition().duration(500).attr('fill','black').style("opacity", 0);
@@ -157,7 +157,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
                             // TOOLTIP : Visibility, transition, opacity, content
                             document.getElementById("tooltip").style.visibility='visible';
                             div.transition().duration(200).style("opacity", 1);
-                            div.html('AIC : '+ d.month +' '+ d.year +': '+ d.IGO_can +'%');
+                            div.html('IGO : '+ d.month +' '+ d.year +': '+ d.IGO_can +'%');
                       })
                       .on("mouseout", function(d) {
                             div.transition().duration(500).attr('fill','black').style("opacity", 0);
@@ -175,7 +175,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
                             // TOOLTIP : Visibility, transition, opacity, content
                             document.getElementById("tooltip").style.visibility='visible';
                             div.transition().duration(200).style("opacity", 1);
-                            div.html('AIC : '+ d.month +' '+ d.year +': '+ d.IAD_can +'%');
+                            div.html('IAD : '+ d.month +' '+ d.year +': '+ d.IAD_can +'%');
                       })
                       .on("mouseout", function(d) {
                             div.transition().duration(500).attr('fill','black').style("opacity", 0);
@@ -192,7 +192,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
                             // TOOLTIP : Visibility, transition, opacity, content
                             document.getElementById("tooltip").style.visibility='visible';
                             div.transition().duration(200).style("opacity", 1);
-                            div.html('AIC : '+ d.month +' '+ d.year +': '+ d.VTI_can +'%');
+                            div.html('VTI : '+ d.month +' '+ d.year +': '+ d.VTI_can +'%');
                       })
                       .on("mouseout", function(d) {
                             div.transition().duration(500).attr('fill','black').style("opacity", 0);
@@ -210,7 +210,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
                             // TOOLTIP : Visibility, transition, opacity, content
                             document.getElementById("tooltip").style.visibility='visible';
                             div.transition().duration(200).style("opacity", 1);
-                            div.html('AIC : '+ d.month +' '+ d.year +': '+ d.TRJ_can +'%');
+                            div.html('TRJ : '+ d.month +' '+ d.year +': '+ d.TRJ_can +'%');
                       })
                       .on("mouseout", function(d) {
                             div.transition().duration(500).attr('fill','black').style("opacity", 0);
@@ -284,7 +284,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
        div_plot.html('Year: '+data[currentMonth]['year'] + '<br>Month: '+ data[currentMonth]['month']
                 + '<br>AIC: ' + data[currentMonth]['AIC_'+select.value] 
                 + '%<br>JAI: ' + data[currentMonth]['JAI_'+select.value]
-                + '%<br>SEG: ' + data[currentMonth]['SEG_'+select.value]
+                + '%<br>SEJ: ' + data[currentMonth]['SEG_'+select.value]
                 + '%<br>GOW: ' + data[currentMonth]['GOW_'+select.value]
                 + '%<br>IGO: ' + data[currentMonth]['IGO_'+select.value]
                 + '%<br>IAD: ' + data[currentMonth]['IAD_'+select.value]
