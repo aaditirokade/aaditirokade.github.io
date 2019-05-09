@@ -1,0 +1,224 @@
+body {
+    font-family: Lato, Helvetica nueu, arial, sans-serif;
+    background: #0A0B19;
+    color: #707070;
+     }
+     
+         div.tooltip {	
+                position: absolute;	
+                text-align: center;
+                width: 130px;					
+                height: 60px;					
+                padding: 5px;
+                font: 12px sans-serif;
+                font-family: 'Lato', sans-serif;
+                font-weight: bold;
+                background: #fefefe;	
+                border: 0px;		
+                border-radius: 2px;
+                line-height: 14px;
+                visibility: hidden;
+                color: 'black';
+                text-align: '!important';
+                z-index: 9999;
+             }
+             
+
+.footer {
+  background-color: #1D1E24;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+
+   font-size: 10px;
+
+}
+
+    .footer text{
+            /*color: #cecece;*/
+            color: white;
+            margin-left: 20px;
+            font-size: 12px;
+    }
+
+#v-pills-tab{
+    text-align: right;
+    margin-top: 50%;
+}
+
+.col-4{
+    margin-top: 5%;
+}
+
+#h4, h4 {
+    font-size: 1.5rem;
+    color: #b1b1b1;
+    margin-top: 3%;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #b1b1b1;
+}
+
+.d3-tip {
+      line-height: 1;
+      font-weight: bold;
+      padding: 12px;
+      background: rgba(0, 0, 0, 0.8);
+      color: #fff;
+      border-radius: 2px;
+    }
+
+    /* Creates a small triangle extender for the tooltip */
+    .d3-tip:after {
+      box-sizing: border-box;
+      display: inline;
+      font-size: 10px;
+      width: 50%;
+      height: 50%;
+      line-height: 1;
+      color: lightgray;
+      position: absolute;
+      text-align: center;
+    }
+
+    /* Style northward tooltips differently */
+    .d3-tip.n:after {
+      margin: -1px 0 0 0;
+      top: 100%;
+      left: 0;
+    }
+
+div#tooltip {
+        position: absolute;
+        text-align: center;
+        width: 70px;
+        height: 150px;
+        padding: 2px;
+        font-size: 10px;
+        background: #fefefe;
+        border-radius: 2px;
+        pointer-events: none;
+        stroke: black;
+        fill: black;
+        color: black;
+    }
+    
+#heading{
+    
+    margin-left: 20%;
+     margin-top: 10%;
+    font-size: 24px;
+    color: white;
+    
+}
+
+#sidebar{
+    
+    margin-left: 5%;
+     margin-top: 30%;
+    font-size: 18px;
+    color: white;
+    
+}
+
+.sidebar{
+    
+    text-align: right;
+    
+}
+
+.select {
+    
+    
+  font-size: 13px;
+  padding: 10px 8px 10px 14px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  position: relative;
+  
+  width: 120%;
+  background:url('arrow.png') no-repeat;
+  background-position:80% center;
+  
+  border-style: solid;
+  border-width: 0.5px;
+  
+  
+  background: none;
+  line-height: 1;
+  /*border: 0;*/
+  padding: 0;
+  color: #efefef;
+  /*border-bottom-color: #efefef;*/
+  border-radius: 0;
+  width: 20%;
+  position: relative;
+  z-index: 10;
+  font-size: 1em;
+  background-position:10% center;
+
+}
+
+.select select{
+  background: transparent;
+  line-height: 1;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  width: 20%;
+  position: relative;
+  z-index: 10;
+  font-size: 1em;
+}
+
+h5{
+    color: #efefef;
+}
+
+h7{
+    margin-top:20px;
+    color: #aaaaaa;
+}
+
+p{
+    margin-top:20px;
+}
+
+.button
+     {
+       /*style button here*/
+       width:fit-content;
+       padding:0.5%;
+       border-style: solid;
+       border-width: 0.5px;
+       border-color: #efefef;
+       background: #efefef;
+       color: #071026;
+       font-size: 12px;
+       border-radius: 3px;
+    }
+
+div.main{
+    vertical-align: middle;
+    /*top: 50%;*/
+    /*position: absolute;*/
+}
+
+
+#main{
+     vertical-align: middle;
+}

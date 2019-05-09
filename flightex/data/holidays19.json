@@ -1,0 +1,1024 @@
+[
+ {
+   "monthcount": 1,
+   "month": "jan",
+   "day": 1,
+   "holiday": "New Year’s Day",
+   "metadata": "Telangana, Meghalaya, Manipur, Arunachal Pradesh, Mizoram, Sikkim, Tamil Nadu, Mizoram, Nagaland, Telangana"
+ },
+ {
+   "monthcount": 1,
+   "month": "jan",
+   "day": 11,
+   "holiday": "Missionary Day",
+   "metadata": "Mizoram"
+ },
+ {
+   "monthcount": 1,
+   "month": "jan",
+   "day": 12,
+   "holiday": "Birthday of Swami Vivekananda",
+   "metadata": "West Bengal"
+ },
+ {
+   "monthcount": 1,
+   "month": "jan",
+   "day": 14,
+   "holiday": "Bhogi",
+   "metadata": "Telangana"
+ },
+ {
+   "monthcount": 1,
+   "month": "jan",
+   "day": 14,
+   "holiday": "Sankranti",
+   "metadata": "Karnataka, Assam, Andhra Pradesh"
+ },
+ {
+   "monthcount": 1,
+   "month": "jan",
+   "day": 15,
+   "holiday": "Pongal",
+   "metadata": ""
+ },
+ {
+   "monthcount": 1,
+   "month": "jan",
+   "day": 15,
+   "holiday": "Sankranti",
+   "metadata": "Telangana"
+ },
+ {
+   "monthcount": 1,
+   "month": "jan",
+   "day": 15,
+   "holiday": "Tusu Puja",
+   "metadata": "Assam"
+ },
+ {
+   "monthcount": 1,
+   "month": "jan",
+   "day": 16,
+   "holiday": "Thiruvalluvar Day",
+   "metadata": "Tamil Nadu"
+ },
+ {
+   "monthcount": 1,
+   "month": "jan",
+   "day": 17,
+   "holiday": "Uzhavar Tirunal",
+   "metadata": "Tamil Nadu and Puducherry"
+ },
+ {
+   "monthcount": 1,
+   "month": "jan",
+   "day": 23,
+   "holiday": "Jayanti of Netaji Subhas Chandra Bose",
+   "metadata": "West Bengal, Assam, Tripura, Odisha"
+ },
+ {
+   "monthcount": 1,
+   "month": "jan",
+   "day": 25,
+   "holiday": "Sri Chhotu Ram Jayanti",
+   "metadata": "Haryana"
+ },
+ {
+   "monthcount": 1,
+   "month": "jan",
+   "day": 25,
+   "holiday": "Statehood Day",
+   "metadata": "Himachal Pradesh"
+ },
+ {
+   "monthcount": 1,
+   "month": "jan",
+   "day": 31,
+   "holiday": "Me-dam-me-phi",
+   "metadata": "Assam"
+ },
+ {
+   "monthcount": 2,
+   "month": "feb",
+   "day": 5,
+   "holiday": "Losar",
+   "metadata": "Sikkim"
+ },
+ {
+   "monthcount": 2,
+   "month": "feb",
+   "day": 5,
+   "holiday": "Sonam Lhochhar",
+   "metadata": "Sikkim"
+ },
+ {
+   "monthcount": 2,
+   "month": "feb",
+   "day": 10,
+   "holiday": "Vasant Panchami",
+   "metadata": "West Bengal, Odisha, Punjab, Tripura, Haryana"
+ },
+ {
+   "monthcount": 2,
+   "month": "feb",
+   "day": 15,
+   "holiday": "Lui-Ngai-Ni",
+   "metadata": "Manipur"
+ },
+ {
+   "monthcount": 2,
+   "month": "feb",
+   "day": 19,
+   "holiday": "Jayanti of Chhatrapati Shivaji Maharaj",
+   "metadata": "Maharashtra"
+ },
+ {
+   "monthcount": 2,
+   "month": "feb",
+   "day": 19,
+   "holiday": "Birthday of Guru Ravidas",
+   "metadata": "Punjab, Haryana, Himachal Pradesh"
+ },
+ {
+   "monthcount": 2,
+   "month": "feb",
+   "day": 20,
+   "holiday": "Mizoram State Day",
+   "metadata": "Mizoram"
+ },
+ {
+   "monthcount": 2,
+   "month": "feb",
+   "day": 20,
+   "holiday": "Statehood Day",
+   "metadata": "Arunachal Pradesh"
+ },
+ {
+   "monthcount": 2,
+   "month": "feb",
+   "day": 28,
+   "holiday": "Jayanti of Maharshi Dayanand Saraswati",
+   "metadata": "Haryana"
+ },
+ {
+   "monthcount": 3,
+   "month": "mar",
+   "day": 4,
+   "holiday": "Maha Shivratri",
+   "metadata": ""
+ },
+ {
+   "monthcount": 3,
+   "month": "mar",
+   "day": 4,
+   "holiday": "Chapchar Kut",
+   "metadata": "Mizoram"
+ },
+ {
+   "monthcount": 3,
+   "month": "mar",
+   "day": 20,
+   "holiday": "Birthday of Hazrat Ali",
+   "metadata": "Uttar Pradesh"
+ },
+ {
+   "monthcount": 3,
+   "month": "mar",
+   "day": 21,
+   "holiday": "Doljatra",
+   "metadata": ""
+ },
+ {
+   "monthcount": 3,
+   "month": "mar",
+   "day": 21,
+   "holiday": "Holi",
+   "metadata": ""
+ },
+ {
+   "monthcount": 3,
+   "month": "mar",
+   "day": 21,
+   "holiday": "Yaoshang Second Day",
+   "metadata": "Manipur"
+ },
+ {
+   "monthcount": 3,
+   "month": "mar",
+   "day": 23,
+   "holiday": "Bihar Diwas",
+   "metadata": "Bihar"
+ },
+ {
+   "monthcount": 3,
+   "month": "mar",
+   "day": 23,
+   "holiday": "Bhagat Singh’s Shahidi Divas",
+   "metadata": "Haryana"
+ },
+ {
+   "monthcount": 3,
+   "month": "mar",
+   "day": 23,
+   "holiday": "Bhagat Singh’s Shahidi Divas",
+   "metadata": "Rajasthan, Punjab"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 1,
+   "holiday": "Bank holiday",
+   "metadata": "Bank account closing day"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 1,
+   "holiday": "Odisha Day",
+   "metadata": "Odisha"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 5,
+   "holiday": "Birthday of Babu Jagjivan Ram Birthday",
+   "metadata": "Telangana"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 6,
+   "holiday": "Ugadi",
+   "metadata": "Uttar Pradesh, Andhra Pradesh, Karnataka, Tamil Nadu"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 6,
+   "holiday": "Sajibu Nongmapanba",
+   "metadata": "Manipur"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 6,
+   "holiday": "First Navratra",
+   "metadata": "Jammu and Kashmir"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 6,
+   "holiday": "Gudi Padwa",
+   "metadata": "Maharashtra, Karnataka, Andhra Pradesh"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 7,
+   "holiday": "Cheti Chand",
+   "metadata": "Gujarat"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 7,
+   "holiday": "Sarhul",
+   "metadata": "Jharkhand"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 13,
+   "holiday": "Biju Festival",
+   "metadata": "Tripura"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 14,
+   "holiday": "Birthday of Ashoka",
+   "metadata": "Bihar"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 14,
+   "holiday": "Dr B R Ambedkar Jayanti",
+   "metadata": ""
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 14,
+   "holiday": "Maha Vishuba Sankranti",
+   "metadata": "Odisha"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 14,
+   "holiday": "Tamil New Year",
+   "metadata": "Tamil Nadu"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 14,
+   "holiday": "Vaisakhi",
+   "metadata": "Many states"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 14,
+   "holiday": "Ram Navami",
+   "metadata": ""
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 15,
+   "holiday": "Bohag Bihu",
+   "metadata": "Assam, Arunachal Pradesh"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 15,
+   "holiday": "Bengali New Year",
+   "metadata": "West Bengal, Tripura"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 15,
+   "holiday": "Himachal Day",
+   "metadata": "Himachal Pradesh"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 15,
+   "holiday": "Vishu",
+   "metadata": "Kerala"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 16,
+   "holiday": "Basaveshwar Jayanti",
+   "metadata": "Karnataka"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 17,
+   "holiday": "Mahavir Jayanti",
+   "metadata": ""
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 18,
+   "holiday": "Maundy Thursday",
+   "metadata": "Kerala"
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 19,
+   "holiday": "Good Friday",
+   "metadata": ""
+ },
+ {
+   "monthcount": 4,
+   "month": "apr",
+   "day": 21,
+   "holiday": "Garia Puja",
+   "metadata": "Tripura"
+ },
+ {
+   "monthcount": 5,
+   "month": "may",
+   "day": 1,
+   "holiday": "May Day",
+   "metadata": "Several states"
+ },
+ {
+   "monthcount": 5,
+   "month": "may",
+   "day": 1,
+   "holiday": "Maharashtra Day",
+   "metadata": "Maharashtra"
+ },
+ {
+   "monthcount": 5,
+   "month": "may",
+   "day": 7,
+   "holiday": "Parshuram Jayanti",
+   "metadata": "Uttar Pradesh, Himachal Pradesh, Punjab, Haryana"
+ },
+ {
+   "monthcount": 5,
+   "month": "may",
+   "day": 7,
+   "holiday": "Birthday of Rabindranath Tagore",
+   "metadata": "Tripura, West Bengal"
+ },
+ {
+   "monthcount": 5,
+   "month": "may",
+   "day": 16,
+   "holiday": "State Day",
+   "metadata": "Sikkim"
+ },
+ {
+   "monthcount": 5,
+   "month": "may",
+   "day": 19,
+   "holiday": "Buddha Purnima",
+   "metadata": "Celebrates the birth of Buddha"
+ },
+ {
+   "monthcount": 5,
+   "month": "may",
+   "day": 24,
+   "holiday": "Birthday of Kazi Nazrul Islam",
+   "metadata": "Tripura"
+ },
+ {
+   "monthcount": 5,
+   "month": "may",
+   "day": 24,
+   "holiday": "Maharana Pratap Jayanti",
+   "metadata": "Himachal Pradesh, Haryana"
+ },
+ {
+   "monthcount": 5,
+   "month": "may",
+   "day": 24,
+   "holiday": "Martyrdom Day of Guru Arjun Dev",
+   "metadata": "Punjab"
+ },
+ {
+   "monthcount": 5,
+   "month": "may",
+   "day": 31,
+   "holiday": "Jumat-ul-Wida",
+   "metadata": ""
+ },
+ {
+   "monthcount": 6,
+   "month": "jun",
+   "day": 5,
+   "holiday": "Idul Fitr",
+   "metadata": "Several states"
+ },
+ {
+   "monthcount": 6,
+   "month": "jun",
+   "day": 6,
+   "holiday": "Following day of Ramadan",
+   "metadata": "Telangana"
+ },
+ {
+   "monthcount": 6,
+   "month": "jun",
+   "day": 14,
+   "holiday": "Pahili Raja",
+   "metadata": "Odisha"
+ },
+ {
+   "monthcount": 6,
+   "month": "jun",
+   "day": 15,
+   "holiday": "Raja Sankranti",
+   "metadata": "Odisha"
+ },
+ {
+   "monthcount": 6,
+   "month": "jun",
+   "day": 17,
+   "holiday": "Jayanti of Sant Kabir",
+   "metadata": "Public holiday in Punjab, Haryana, Himachal Pradesh"
+ },
+ {
+   "monthcount": 6,
+   "month": "jun",
+   "day": 23,
+   "holiday": "Kharchi Puja",
+   "metadata": "Tripura"
+ },
+ {
+   "monthcount": 6,
+   "month": "jun",
+   "day": 30,
+   "holiday": "Remna Ni",
+   "metadata": "Mizoram"
+ },
+ {
+   "monthcount": 7,
+   "month": "jul",
+   "day": 4,
+   "holiday": "Ratha Yatra",
+   "metadata": "Odisha"
+ },
+ {
+   "monthcount": 7,
+   "month": "jul",
+   "day": 5,
+   "holiday": "Birthday of Guru Hargobind Ji",
+   "metadata": "Jammu and Kashmir"
+ },
+ {
+   "monthcount": 7,
+   "month": "jul",
+   "day": 6,
+   "holiday": "MHIP Day",
+   "metadata": "Mizoram"
+ },
+ {
+   "monthcount": 7,
+   "month": "jul",
+   "day": 7,
+   "holiday": "Ker Puja",
+   "metadata": "Tripura"
+ },
+ {
+   "monthcount": 7,
+   "month": "jul",
+   "day": 13,
+   "holiday": "Martyr’s Day",
+   "metadata": "Jammu and Kashmir"
+ },
+ {
+   "monthcount": 7,
+   "month": "jul",
+   "day": 17,
+   "holiday": "U Tirot Sing Day",
+   "metadata": "Meghalaya"
+ },
+ {
+   "monthcount": 7,
+   "month": "jul",
+   "day": 29,
+   "holiday": "Bonalu",
+   "metadata": ""
+ },
+ {
+   "monthcount": 7,
+   "month": "jul",
+   "day": 31,
+   "holiday": "Martyrdom Day of Shaheed Udham Singh",
+   "metadata": "Punjab, Haryana"
+ },
+ {
+   "monthcount": 7,
+   "month": "jul",
+   "day": 31,
+   "holiday": "Karkidaka Vavu",
+   "metadata": "Kerala"
+ },
+ {
+   "monthcount": 8,
+   "month": "aug",
+   "day": 12,
+   "holiday": "Idul Adha",
+   "metadata": "many states"
+ },
+ {
+   "monthcount": 8,
+   "month": "aug",
+   "day": 13,
+   "holiday": "Patriot’s Day",
+   "metadata": "Manipur"
+ },
+ {
+   "monthcount": 8,
+   "month": "aug",
+   "day": 15,
+   "holiday": "Raksha Bandhan",
+   "metadata": "Several states"
+ },
+ {
+   "monthcount": 8,
+   "month": "aug",
+   "day": 17,
+   "holiday": "Parsi New Year",
+   "metadata": "Gujarat, Maharashtra"
+ },
+ {
+   "monthcount": 8,
+   "month": "aug",
+   "day": 23,
+   "holiday": "Janmashtami",
+   "metadata": "Restricted holiday (RH)"
+ },
+ {
+   "monthcount": 8,
+   "month": "aug",
+   "day": 24,
+   "holiday": "Sreekrishna Jayanthi",
+   "metadata": "Telangana, Kerala, Odisha"
+ },
+ {
+   "monthcount": 8,
+   "month": "aug",
+   "day": 31,
+   "holiday": "Parkash Utsav Sri Guru Granth Sahib Ji",
+   "metadata": "Punjab"
+ },
+ {
+   "monthcount": 9,
+   "month": "sep",
+   "day": 1,
+   "holiday": "Muharram",
+   "metadata": "Celebrated by the Shia Muslim Community"
+ },
+ {
+   "monthcount": 9,
+   "month": "sep",
+   "day": 1,
+   "holiday": "Teej",
+   "metadata": "Haryana"
+ },
+ {
+   "monthcount": 9,
+   "month": "sep",
+   "day": 2,
+   "holiday": "Ganesh Chaturthi",
+   "metadata": ""
+ },
+ {
+   "monthcount": 9,
+   "month": "sep",
+   "day": 3,
+   "holiday": "Nuakhai",
+   "metadata": "Odisha"
+ },
+ {
+   "monthcount": 9,
+   "month": "sep",
+   "day": 7,
+   "holiday": "Birthday of Baba Sri Chand Ji",
+   "metadata": "Punjab"
+ },
+ {
+   "monthcount": 9,
+   "month": "sep",
+   "day": 10,
+   "holiday": "First Onam",
+   "metadata": "Kerala"
+ },
+ {
+   "monthcount": 9,
+   "month": "sep",
+   "day": 10,
+   "holiday": "Muharram (10th Day)",
+   "metadata": ""
+ },
+ {
+   "monthcount": 9,
+   "month": "sep",
+   "day": 11,
+   "holiday": "Thiruvonam",
+   "metadata": "Kerala"
+ },
+ {
+   "monthcount": 9,
+   "month": "sep",
+   "day": 12,
+   "holiday": "Third Onam",
+   "metadata": "Kerala"
+ },
+ {
+   "monthcount": 9,
+   "month": "sep",
+   "day": 12,
+   "holiday": "Saragarhi Day",
+   "metadata": "Punjab"
+ },
+ {
+   "monthcount": 9,
+   "month": "sep",
+   "day": 13,
+   "holiday": "Fourth Onam",
+   "metadata": "Kerala"
+ },
+ {
+   "monthcount": 9,
+   "month": "sep",
+   "day": 20,
+   "holiday": "Sree Narayana Guru Samadhi",
+   "metadata": "Kerala"
+ },
+ {
+   "monthcount": 9,
+   "month": "sep",
+   "day": 23,
+   "holiday": "Heroes’ Martyrdom Day",
+   "metadata": "Haryana"
+ },
+ {
+   "monthcount": 9,
+   "month": "sep",
+   "day": 28,
+   "holiday": "S Bhagat Singh’s Birthday",
+   "metadata": "Punjab"
+ },
+ {
+   "monthcount": 9,
+   "month": "sep",
+   "day": 28,
+   "holiday": "Bathukamma Starting Day",
+   "metadata": ""
+ },
+ {
+   "monthcount": 9,
+   "month": "sep",
+   "day": 29,
+   "holiday": "Mahalaya",
+   "metadata": "West Bengal, Karnataka, Odisha, Tripura"
+ },
+ {
+   "monthcount": 9,
+   "month": "sep",
+   "day": 29,
+   "holiday": "Maharaja Agrasen Jayanti",
+   "metadata": "Rajasthan, Haryana, Punjab"
+ },
+ {
+   "monthcount": 10,
+   "month": "oct",
+   "day": 5,
+   "holiday": "Maha Saptami",
+   "metadata": "West Bengal, Assam, Odisha"
+ },
+ {
+   "monthcount": 10,
+   "month": "oct",
+   "day": 6,
+   "holiday": "Durgashtami",
+   "metadata": "West Bengal, Andhra Pradesh, Odisha, Assam, Telangana"
+ },
+ {
+   "monthcount": 10,
+   "month": "oct",
+   "day": 6,
+   "holiday": "Mahanavami",
+   "metadata": "Odisha, Kerala, Bihar"
+ },
+ {
+   "monthcount": 10,
+   "month": "oct",
+   "day": 6,
+   "holiday": "Navami of Durga Pooja",
+   "metadata": "West Bengal, Assam, Tripura"
+ },
+ {
+   "monthcount": 10,
+   "month": "oct",
+   "day": 7,
+   "holiday": "Ayudha Pooja",
+   "metadata": "Tamil Nadu, Karnataka"
+ },
+ {
+   "monthcount": 10,
+   "month": "oct",
+   "day": 8,
+   "holiday": "Durga Pooja",
+   "metadata": "Sikkim, Odisha"
+ },
+ {
+   "monthcount": 10,
+   "month": "oct",
+   "day": 8,
+   "holiday": "Dussehra",
+   "metadata": ""
+ },
+ {
+   "monthcount": 10,
+   "month": "oct",
+   "day": 13,
+   "holiday": "Maharishi Valmiki Jayanti",
+   "metadata": "Punjab, Delhi, Haryana, Himachal Pradesh, Karnataka"
+ },
+ {
+   "monthcount": 10,
+   "month": "oct",
+   "day": 13,
+   "holiday": "Lakshmi Pooja",
+   "metadata": "West Bengal, Odisha, Tripura"
+ },
+ {
+   "monthcount": 10,
+   "month": "oct",
+   "day": 27,
+   "holiday": "Deepavali",
+   "metadata": "Several states"
+ },
+ {
+   "monthcount": 10,
+   "month": "oct",
+   "day": 27,
+   "holiday": "Diwali",
+   "metadata": ""
+ },
+ {
+   "monthcount": 10,
+   "month": "oct",
+   "day": 28,
+   "holiday": "Kali Puja",
+   "metadata": "West Bengal, Assam, Odisha"
+ },
+ {
+   "monthcount": 10,
+   "month": "oct",
+   "day": 28,
+   "holiday": "Vikram Samvat New Year",
+   "metadata": "Gujarat"
+ },
+ {
+   "monthcount": 10,
+   "month": "oct",
+   "day": 28,
+   "holiday": "Vishwakarma Day",
+   "metadata": ""
+ },
+ {
+   "monthcount": 10,
+   "month": "oct",
+   "day": 29,
+   "holiday": "Bhai Bij",
+   "metadata": "Gujarat"
+ },
+ {
+   "monthcount": 10,
+   "month": "oct",
+   "day": 29,
+   "holiday": "Diwali",
+   "metadata": "West Bengal"
+ },
+ {
+   "monthcount": 10,
+   "month": "oct",
+   "day": 30,
+   "holiday": "Ningol Chakkouba",
+   "metadata": "Manipur"
+ },
+ {
+   "monthcount": 11,
+   "month": "nov",
+   "day": 1,
+   "holiday": "Haryana Day",
+   "metadata": "Haryana"
+ },
+ {
+   "monthcount": 11,
+   "month": "nov",
+   "day": 1,
+   "holiday": "Kannada Rajyotsava",
+   "metadata": "Karnataka"
+ },
+ {
+   "monthcount": 11,
+   "month": "nov",
+   "day": 1,
+   "holiday": "Kut",
+   "metadata": "Manipur"
+ },
+ {
+   "monthcount": 11,
+   "month": "nov",
+   "day": 2,
+   "holiday": "Chhath Puja",
+   "metadata": "Uttar Pradesh, Assam, Haryana, Bihar"
+ },
+ {
+   "monthcount": 11,
+   "month": "nov",
+   "day": 8,
+   "holiday": "Wangala Festival",
+   "metadata": "Meghalaya"
+ },
+ {
+   "monthcount": 11,
+   "month": "nov",
+   "day": 10,
+   "holiday": "Id-e-Milad",
+   "metadata": ""
+ },
+ {
+   "monthcount": 11,
+   "month": "nov",
+   "day": 11,
+   "holiday": "Guru Nanak Birthday",
+   "metadata": ""
+ },
+ {
+   "monthcount": 11,
+   "month": "nov",
+   "day": 12,
+   "holiday": "Rasa Purnima",
+   "metadata": "Odisha"
+ },
+ {
+   "monthcount": 11,
+   "month": "nov",
+   "day": 23,
+   "holiday": "Seng Kut Snem",
+   "metadata": "Meghalaya"
+ },
+ {
+   "monthcount": 11,
+   "month": "nov",
+   "day": 24,
+   "holiday": "Martyrdom Day of Sri Guru Teg Bahadur Ji",
+   "metadata": "Punjab"
+ },
+ {
+   "monthcount": 11,
+   "month": "nov",
+   "day": 26,
+   "holiday": "Narak Chaturdashi",
+   "metadata": "Karnataka"
+ },
+ {
+   "monthcount": 12,
+   "month": "dec",
+   "day": 1,
+   "holiday": "State Inauguration Day",
+   "metadata": ""
+ },
+ {
+   "monthcount": 12,
+   "month": "dec",
+   "day": 1,
+   "holiday": "Indigenous faith day",
+   "metadata": "Arunachal Pradesh"
+ },
+ {
+   "monthcount": 12,
+   "month": "dec",
+   "day": 2,
+   "holiday": "Asom Divas",
+   "metadata": "Assam"
+ },
+ {
+   "monthcount": 12,
+   "month": "dec",
+   "day": 3,
+   "holiday": "World Disabled Day",
+   "metadata": "Tripura"
+ },
+ {
+   "monthcount": 12,
+   "month": "dec",
+   "day": 5,
+   "holiday": "Birthday of Sheikh Mohammad Abdullah",
+   "metadata": "Jammu and Kashmir"
+ },
+ {
+   "monthcount": 12,
+   "month": "dec",
+   "day": 12,
+   "holiday": "Pa Togan Nengminja Sangama",
+   "metadata": "Meghalaya"
+ },
+ {
+   "monthcount": 12,
+   "month": "dec",
+   "day": 18,
+   "holiday": "Death anniversary of U SoSo Tham",
+   "metadata": "Meghalaya"
+ },
+ {
+   "monthcount": 12,
+   "month": "dec",
+   "day": 25,
+   "holiday": "Christmas Day",
+   "metadata": "Celebrated in many states"
+ },
+ {
+   "monthcount": 12,
+   "month": "dec",
+   "day": 26,
+   "holiday": "Boxing Day",
+   "metadata": ""
+ },
+ {
+   "monthcount": 12,
+   "month": "dec",
+   "day": 26,
+   "holiday": "Birthday of Shaheed Udham Singh",
+   "metadata": "Haryana"
+ },
+ {
+   "monthcount": 12,
+   "month": "dec",
+   "day": 30,
+   "holiday": "U Kiang Nangbah",
+   "metadata": "Meghalaya"
+ }
+]

@@ -1,0 +1,116 @@
+body {
+    font-family: Lato, Helvetica nueu, arial, sans-serif;
+    background: #0A0B19;
+    color: #707070;
+     }
+
+.footer {
+  background-color: #1D1E24;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 20px;
+
+   font-size: 10px;
+
+}
+
+    .footer text{
+            color: #cecece;
+            /*color: white;*/
+            margin-left: 20px;
+            font-size: 12px;
+    }
+.footer a{
+            color: #cecece;
+            /*color: white;*/
+            margin-left: 3px;
+            font-size: 10px;
+    }
+
+#h4, h4 {
+    font-size: 1.5rem;
+    color: #b1b1b1;
+    margin-top: 3%;
+}
+
+a {
+  color: white;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-color: #b1b1b1;
+}
+
+
+div#tooltip {
+        position: absolute;
+        text-align: center;
+        width: 70px;
+        height: 150px;
+        padding: 2px;
+        font-size: 10px;
+        background: #fefefe;
+        border-radius: 2px;
+        pointer-events: none;
+        stroke: black;
+        fill: black;
+        color: black;
+    }
+    
+#heading{
+    
+    margin-left: 20%;
+     margin-top: 10%;
+    font-size: 24px;
+    color: white;
+    
+}
+
+img { 
+  width: 100%; 
+  height: 100%;
+}
+
+
+
+h5{
+    color: #efefef;
+}
+
+h7{
+    margin-top:20px;
+    color: #aaaaaa;
+}
+
+p{
+    margin-top:20px;
+}
+
+.button
+     {
+       /*style button here*/
+       width:fit-content;
+       padding:0.5%;
+       border-style: solid;
+       border-width: 0.5px;
+       border-color: #efefef;
+       background: #efefef;
+       color: #071026;
+       font-size: 12px;
+       border-radius: 3px;
+    }
+
+div.main{
+    vertical-align: middle;
+}
+
+#main{
+     vertical-align: middle;
+}

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Cancellatios</title>
+    
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    
+    <!--d3js-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.2/underscore-min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.10/c3.min.css" rel="stylesheet" />
+
+    <script src="https://d3js.org/d3.v5.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="./lib/c3-0.6.14/c3.min.js"></script>
+    
+    
+   <!--LATO FONT-->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato" />
+    
+    <!--CSS-->
+    <link rel='stylesheet' href='styles_comparison.css'>
+    
+    <!-- Load c3.css -->
+    <link href="./lib/c3-0.6.14/c3.css" rel="stylesheet">
+
+    
+            
+</head>
+
+<body>
+   <!--<a href="./index.html" style="float: left; display:inline;">&ensp; &thinsp;  &ensp;  &ensp; < </a>-->
+   <!--<a href="./heatmap.html" style="float: right; display:inline;"> > &ensp; &thinsp;  &ensp;  &ensp; </a> -->
+   
+       
+<div class='main' id='main'> 
+        <a href="./holidays.html">
+                	<div class='button' style='float: right; display:inline; margin-right:40px;'> 
+                	 SEASONS & HOLIDAYS >
+                	</div>	
+        </a>
+        
+        <a href="./ol_comp.html">
+                	<div class='button' style='float: left; display:inline; margin-left:20px;'> 
+                	< COMPARE CARRIERS
+                	</div>	
+        </a>
+   <div class="container" id='container1'>
+      
+      <p>
+          <h5 id="main_title" style="text-align:center;"> Visualizing the impact of Climate Change on Flight Experience </h5>
+      <h7><p style="text-align:center; margin-left:180px;" > Comparison of airlines carriers</h7>
+      
+       
+            <select class="select" id="select"  style="float: right; display:inline;">
+                <option value="can"> Cancellations </option>
+                <option value="com"> Complaints </option>
+            </select>
+   </div> 
+
+    <div class="container-fluid" id='container2'>
+      
+      <div class="row">
+        
+        <div class="sidebar">
+            <br><br>
+            <a class="nav-link" id="air-india-tab" href="#air-india"> Air India </a><br>
+            <a class="nav-link" id="jet-airways-tab" href="#jet-airways"> Jet Airways </a><br>
+            <a class="nav-link" id="spicejet-tab" href="#spicejet"> SpiceJet </a><br>
+            <a class="nav-link" id="go-air-tab" href="#go-air"> GoAir </a><br>
+            <a class="nav-link" id="indigo-tab" href="#indigo"> IndiGo </a><br>
+            <a class="nav-link" id="air-asia-tab" href="#air-asia"> AirAsia </a><br>
+            <a class="nav-link" id="vistara-tab" href="#vistara"> Vistara </a><br>
+            <a class="nav-link" id="trujet-tab" href="#trujet"> TruJet </a><br>
+        </div>
+        
+        <div class="col-10" id="this">
+          <div id="plot"></div>
+          <!--<div class="labels" id="labe"> </div>-->
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+        <text> Data: </text>
+            <a href="https://data.gov.in/"> 1 </a>
+            <a href="http://censusindia.gov.in/"> 2 </a>
+            <a href="http://dgca.nic.in/"> 3 </a>
+            <a href="http://www.imd.gov.in/Welcome%20To%20IMD/Welcome.php"> 4 </a>
+            <a href="https://www.tropmet.res.in/"> 5 </a>
+            <a href="www.weather.gov.sg/climate-world-climate/"> 6 </a>
+            <a href="https://www.bankbazaar.com/indian-holiday-calendar.html"> 7 </a>
+    </div>
+  
+    <script src="comparison.js"></script>
+    
+  </div>
+</body>
+
+</html>
