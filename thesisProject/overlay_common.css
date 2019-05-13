@@ -2,6 +2,7 @@ body {
     font-family: Lato, Helvetica nueu, arial, sans-serif;
     background: #0A0B19;
     color: #707070;
+    overflow: hidden;
      }
 
 .footer {

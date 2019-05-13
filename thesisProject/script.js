@@ -49,19 +49,27 @@ d3.json('./data/thesis_data_final.json').then((data) => {
     //     console.log('hi');
     // })
    
+   var all_toggle = 0;
    
    document.getElementById("all").onclick = function() {
        
-    var points =[];
+    all_toggle = !all_toggle;
     
     base.selectAll('.anything').remove();
+    base.selectAll('.path').remove();
+    
+    var points =[];
+    
+    if (all_toggle==1){
+        
+     
     
     //------------------ AIC can #F87979 ---------------------------------------------
         var aic_can = base.selectAll('aic_can')
                           .data(data).enter()
                           .append('circle').attr('class','anything').attr('cx', center_x).attr('cy', (d)=>{
                               if(toggle === true) return (center_x-165)-d.AIC_can*10;
-                              else return (center_x-165)-d.AIC_com*5;
+                              else return (center_x-165)-d.AIC_com*10;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle} ${center_x} ${center_y})`;
@@ -83,7 +91,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
         var jai_can = base.selectAll('jai_can')
                           .data(data).enter()
                           .append('circle').attr('class','anything').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.JAI_can*5;
+                              return (center_x-165)-d.JAI_can*10;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+3.75} ${center_x} ${center_y})`;
@@ -104,7 +112,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
         var seg_can = base.selectAll('seg_can')
                           .data(data).enter()
                           .append('circle').attr('class','anything').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.SEG_can*5;
+                              return (center_x-165)-d.SEG_can*10;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+7.5} ${center_x} ${center_y})`;
@@ -127,7 +135,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
         var gow_can = base.selectAll('gow_can')
                           .data(data).enter()
                           .append('circle').attr('class','anything').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.GOW_can*5;
+                              return (center_x-165)-d.GOW_can*10;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+11.75} ${center_x} ${center_y})`;
@@ -149,7 +157,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
         var igo_can = base.selectAll('igo_can')
                           .data(data).enter()
                           .append('circle').attr('class','anything').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.IGO_can*5;
+                              return (center_x-165)-d.IGO_can*10;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+15.25} ${center_x} ${center_y})`;
@@ -172,7 +180,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
         var iad_can = base.selectAll('iad_can')
                           .data(data).enter()
                           .append('circle').attr('class','anything').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.IAD_can*5;
+                              return (center_x-165)-d.IAD_can*10;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+19.00} ${center_x} ${center_y})`;
@@ -195,7 +203,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
         var vti_can = base.selectAll('vti_can')
                           .data(data).enter()
                           .append('circle').attr('class','anything').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-(d.VTI_can*5);
+                              return (center_x-165)-(d.VTI_can*10);
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+22.70} ${center_x} ${center_y})`;
@@ -217,7 +225,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
         var trj_can = base.selectAll('trj_can')
                           .data(data).enter()
                           .append('circle').attr('class','anything').attr('cx', center_x).attr('cy', (d)=>{
-                              return (center_x-165)-d.TRJ_can*5;
+                              return (center_x-165)-d.TRJ_can*10;
                             }).attr('r',2)
                             .attr('transform', (d, i) => {
                               var angle = set_angle(d); return `rotate( ${angle+26.20} ${center_x} ${center_y})`;
@@ -318,41 +326,47 @@ d3.json('./data/thesis_data_final.json').then((data) => {
         var trj_path =  base.append("path").attr('class','anything').datum(data).attr('transform',`translate(${center_x},${center_x}) rotate(-3.75)`)
                             .attr("fill", "none").attr("stroke", colors[7]).attr("d", trj_line);
                         
-                        paths.push(trj_path);  
+                        paths.push(trj_path);    
+        
+        
+    }
+     
+       
+     
     
                         
         
-        //------- Function opacity---------- 
-        function opacity(d){
-            
-             if(d.year==='2014') {console.log(d.month); return 0.2;}
-              else if(d.year==='2015')return 0.4;
-              else if(d.year==='2016')return 0.6;
-              else if(d.year==='2017')return 0.8;
-              else if(d.year==='2018')return 1.0;
-        }
+            //------- Function opacity---------- 
+            function opacity(d){
+                
+                 if(d.year==='2014') {console.log(d.month); return 0.2;}
+                  else if(d.year==='2015')return 0.4;
+                  else if(d.year==='2016')return 0.6;
+                  else if(d.year==='2017')return 0.8;
+                  else if(d.year==='2018')return 1.0;
+            }
         
         
-        //-------- Function --------- to set angle of rotation based on month
-        function set_angle(d) {
-            
-            var angle = 0;
-            
-              if(d.month=='jan') angle = 0;
-              else if(d.month=='feb')angle = 30.00*1;
-              else if(d.month=='mar')angle = 30.00*2;
-              else if(d.month=='apr')angle = 30.00*3;
-              else if(d.month=='may')angle = 30.00*4;
-              else if(d.month=='jun')angle = 30.00*5;
-              else if(d.month=='jul')angle = 30.00*6;
-              else if(d.month=='aug')angle = 30.00*7;
-              else if(d.month=='sep')angle = 30.00*8;
-              else if(d.month=='oct')angle = 30.00*9;
-              else if(d.month=='nov')angle = 30.00*10;
-              else if(d.month=='dec')angle = 30.00*11;
-            
-            return angle;
-        }
+            //-------- Function --------- to set angle of rotation based on month
+            function set_angle(d) {
+                
+                    var angle = 0;
+                    
+                      if(d.month=='jan') angle = 0;
+                      else if(d.month=='feb')angle = 30.00*1;
+                      else if(d.month=='mar')angle = 30.00*2;
+                      else if(d.month=='apr')angle = 30.00*3;
+                      else if(d.month=='may')angle = 30.00*4;
+                      else if(d.month=='jun')angle = 30.00*5;
+                      else if(d.month=='jul')angle = 30.00*6;
+                      else if(d.month=='aug')angle = 30.00*7;
+                      else if(d.month=='sep')angle = 30.00*8;
+                      else if(d.month=='oct')angle = 30.00*9;
+                      else if(d.month=='nov')angle = 30.00*10;
+                      else if(d.month=='dec')angle = 30.00*11;
+                    
+                    return angle;
+            }
 
  
    }
@@ -368,12 +382,12 @@ d3.json('./data/thesis_data_final.json').then((data) => {
 		        circles =[], lines =[], paths =[], ypoints= [];
                 aic_cy=[], jai_cy =[], seg_cy =[], gow_cy = [], igo_cy =[], iad_cy=[], vti_cy=[], trj_cy = [];
                 
-               console.log(name);
+          
                
                if(name ===''){
                    name='aic';
                }
-               console.log(name);
+       
                
                 base.selectAll('.anything').remove();
                 base.selectAll('.path').remove();
@@ -563,7 +577,7 @@ d3.json('./data/thesis_data_final.json').then((data) => {
                               .data(holi).enter()
                               .append('circle').attr('class','holidays').attr('cx', center_x).attr('cy', center_x-420).attr('r',2)
                                 .attr('transform', (d, i) => {
-                                  var angle = (30*d.monthcount)+d.day; 
+                                  var angle = ((30*d.monthcount)+d.day)-30; 
                                   return `rotate( ${angle} ${center_x} ${center_y})`;
     			            	})
     			            	.attr('fill','#ffffff').attr('visibility','visible')
@@ -675,29 +689,29 @@ d3.json('./data/thesis_data_final.json').then((data) => {
             var dd =  g.append("rect").attr('x', dd_x).attr('y', dd_y).attr("width", 170).attr("height", 30)
                     .attr('fill', 'none').attr('stroke', '#ffffff').attr("rx", 3).attr("ry", 3);
             
-            g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Cancellations').attr('fill', '#efefef').style('text-size', '12px');                      
+            g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('< CANCELLATIONS >').attr('fill', '#efefef').style('text-size', '12px');                      
             
-            dd.on('mouseover',()=>{
-                 g.selectAll('.button').remove();
-                 toggle = !toggle;
+            // dd.on('mouseover',()=>{
+            //      g.selectAll('.button').remove();
+            //      toggle = !toggle;
                  
-                if(toggle === true)
-                g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Cancellations').attr('fill', '#efefef').style('text-size', '12px'); 
-                else
-                g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Complaints').attr('fill', '#efefef').style('text-size', '12px'); 
+            //     if(toggle === true)
+            //     g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Cancellations').attr('fill', '#efefef').style('text-size', '12px'); 
+            //     else
+            //     g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Complaints').attr('fill', '#efefef').style('text-size', '12px'); 
             
-            });
+            // });
             
-            dd.on('mouseout',()=>{
-                 g.selectAll('.button').remove();
-                 toggle = !toggle;
+            // dd.on('mouseout',()=>{
+            //      g.selectAll('.button').remove();
+            //      toggle = !toggle;
                  
-                if(toggle === true)
-                g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Complaints').attr('fill', '#efefef').style('text-size', '12px'); 
-                else
-                g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Cancellations').attr('fill', '#efefef').style('text-size', '12px'); 
+            //     if(toggle === true)
+            //     g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Complaints').attr('fill', '#efefef').style('text-size', '12px'); 
+            //     else
+            //     g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Cancellations').attr('fill', '#efefef').style('text-size', '12px'); 
             
-            });
+            // });
             
             g.on('click',()=>{
                 
@@ -705,11 +719,10 @@ d3.json('./data/thesis_data_final.json').then((data) => {
                 toggle = !toggle;
                 
                 if(toggle === true)
-                g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Cancellations').attr('fill', '#efefef').style('text-size', '12px'); 
+                g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('< CANCELLATIONS >').attr('fill', '#efefef').style('text-size', '12px'); 
                 else
-                g.append("text").attr('class','button').attr("x",  dd_x+30).attr("y",  dd_y+20).text('Complaints').attr('fill', '#efefef').style('text-size', '12px'); 
+                g.append("text").attr('class','button').attr("x",  dd_x+35).attr("y",  dd_y+20).text('< COMPLAINTS >').attr('fill', '#efefef').style('text-size', '12px'); 
             
-                console.log(selected);
                 
                 if(selected =='aic') allValues('aic');
                 else if(selected =='jai') allValues('jai');

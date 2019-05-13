@@ -69,9 +69,14 @@ a {
   color: white;
 }
 
-a:hover, a:active {
+a:hover {
   color: hotpink;
   /*text-decoration: none;*/
+}
+
+a:selected {
+  color: hotpink;
+    
 }
 
 /*a:active {*/
@@ -157,6 +162,8 @@ div#tooltip {
      
 div.row{
     vertical-align: middle;
+    top: 3%;
+    position: absolute;
 }
 
 #row{
@@ -169,7 +176,7 @@ div.row{
 }
 
 path{
-     stroke-opacity: 0.5 !important;
+     stroke-opacity: 0.8 !important;
 }
 
 path:hover{
@@ -177,10 +184,21 @@ path:hover{
   stroke-width: 2 !important;
 }
 
-.nav-link:active {
-    color: white;
-}
+/*.nav-link:active {*/
+/*    color: white;*/
+/*}*/
 
 .marks{
     font-size: 10px;
+}
+
+
+a:selected {
+  color: hotpink;
+    
+}
+
+a:active {
+  color: hotpink;
+    
 }
